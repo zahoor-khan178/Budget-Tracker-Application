@@ -1,0 +1,631 @@
+
+
+/* Transaction List Styling */
+.transaclist-container {
+    padding: 20px;
+    background-color: rgba(245, 239, 239,0);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+  
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .transaction-item strong {
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  .transaction-item span {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (min-width: 2561px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    right: 50%;
+    transform: translateX(90%);
+    margin-top: 1px;
+  }
+  h2 {
+    margin-bottom: 8vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    padding: 2vw;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 1.5vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5vw;
+    color: #6c757d;
+    margin-top: 0;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width:1440px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    right: 50%;
+    transform: translateX(90%);
+    margin-top: 1px;
+  }
+  h2 {
+    margin-bottom: 8vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    padding: 2vw;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 1.5vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5vw;
+    color: #6c757d;
+    margin-top: 0;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width:1024px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    right: 50%;
+    margin-top: 1px;
+    transform: translateX(90%);
+  }
+  h2 {
+    margin-bottom: 8vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    padding: 20px;
+    width: 80%;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 1vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    gap: 5px;
+    font-size: 1vw;
+    color: #6c757d;
+    margin-top: 0;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width:769px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    right: 50%;
+    transform: translateX(90%);
+    margin-top: 1px;
+  }
+  h2 {
+    margin-bottom: 8vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+    font-size: 3vw;
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    padding: 20px;
+    width: 80%;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 1.5vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5vw;
+    color: #6c757d;
+    margin-top: 0;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    background-color: white;
+  }
+  h2 {
+    margin-bottom: 7vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+    font-size: 4vw
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    padding: 20px;
+    width: 60%;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 2vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    gap: 5px;
+    font-size: 2vw;
+    color: #6c757d;
+    margin-top: 0;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 2vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .transaclist-container {
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    background-color: white;
+  }
+  h2 {
+    margin-bottom: 5vh;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    height: fit-content;
+    padding: 0;
+  }
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2vh;
+    max-width: 80%;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0;
+  }
+  .transaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .transaction-item strong {
+    font-size: 3vw;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .transaction-item span {
+    display: flex;
+    margin-top: 5px;
+    font-size: 3vw;
+    color: #6c757d;
+    margin-top: 0;
+    width: 100%;
+  }
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 3vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+}
+
+  

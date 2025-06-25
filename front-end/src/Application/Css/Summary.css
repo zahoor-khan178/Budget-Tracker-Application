@@ -1,0 +1,255 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: rgba(245, 239, 239, 1);
+}
+
+.financial-summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(245, 239, 239, 1);
+  border-radius: 8px;
+  height: auto;
+  padding: 5vh 0;
+}
+
+.chart-container {
+  width: 100%;
+  height: 60vh;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 3vh;
+  height: fit-content;
+}
+
+.summary-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3vh 0;
+}
+
+.summary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.summary-item h3 {
+  color: #495057;
+}
+
+.summary-item p {
+  font-weight: bold;
+}
+
+.income {
+  margin-top: 5vh;
+}
+
+.income p {
+  color: #28a745;
+}
+
+.expense p {
+  color: #dc3545;
+}
+
+.balance p {
+  color: #007bff;
+}
+
+@media screen and (min-width: 2561px) {
+  .financial-summary-container {
+    width: 50vw;
+    position: absolute;
+    top: 5vh;
+    right: 15vw;
+  }
+
+  .chart-container {
+    padding: 2vw;
+  }
+
+  .summary-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    margin-top: 10px;
+  }
+
+  .summary-item {
+    width: 33%;
+    height: 100%;
+    padding: 3vw 0;
+    margin: 0;
+  }
+
+  .summary-item h3 {
+    font-size: 2vw;
+  }
+
+  .summary-item p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width:1440px) {
+  .financial-summary-container {
+    width: 50vw;
+    position: absolute;
+    top: 5vh;
+    right: 15vw;
+  }
+
+  .chart-container {
+    padding: 2vw;
+  }
+
+  .summary-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    margin-top: 10px;
+  }
+
+  .summary-item {
+    width: 33%;
+    height: 100%;
+    padding: 3vw 0;
+    margin: 0;
+  }
+
+  .summary-item h3 {
+    font-size: 2vw;
+  }
+
+  .summary-item p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width:1024px) {
+  .financial-summary-container {
+    width: 50vw;
+    position: absolute;
+    top: 5vh;
+    right: 15vw;
+  }
+
+  .summary-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    margin-top: 10px;
+  }
+
+  .summary-item {
+    width: 33%;
+    height: 100%;
+    padding: 3vw 0;
+    margin: 0;
+  }
+
+  .summary-item h3 {
+    font-size: 2vw;
+  }
+
+  .summary-item p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .financial-summary-container {
+    width: 50vw;
+    position: absolute;
+    top: 5vh;
+    right: 10vw;
+  }
+
+  .summary-item h3 {
+    font-size: 2vw;
+  }
+
+  .summary-item p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .financial-summary-container {
+    width: 80vw;
+    position: relative;
+    top: 15vh;
+    right: auto;
+  }
+
+  .summary-item h3 {
+    font-size: 3vw;
+  }
+
+  .summary-item p {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .financial-summary-container {
+    width: 80vw;
+    position: relative;
+    top: 15vh;
+    right: auto;
+  }
+
+  .chart-container {
+    height: 50vh;
+  }
+
+  .summary-item h3 {
+    font-size: 4vw;
+  }
+
+  .summary-item p {
+    font-size: 4vw;
+  }
+}

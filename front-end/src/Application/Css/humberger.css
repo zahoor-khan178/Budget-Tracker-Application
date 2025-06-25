@@ -1,0 +1,211 @@
+
+.humberger{
+
+    width: 6vw;
+    height: 40px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap:2px;
+    top: 20px;
+    left: 20px;
+
+    z-index: 2;
+
+}
+
+
+.humberger__line{
+
+    width: 100%;
+    height: 0.5vw;
+    background-color: black;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.humberger {
+
+  
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 2;
+
+}
+
+
+.humberger__line {
+
+
+    background-color: black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:320px) {
+
+
+
+    .humberger {
+
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        left: 20px;
+
+
+    }
+
+    .humberger__line {
+
+        width: 100%;
+        height: 2px;
+
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width:768px) {
+
+
+
+    .humberger {
+
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        left: 20px;
+
+
+    }
+
+    .humberger__line {
+
+        width: 100%;
+        height: 2px;
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:450px) {
+
+
+
+    .humberger {
+
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        left: 20px;
+
+
+    }
+
+    .humberger__line {
+
+        width: 100%;
+        height: 2px;
+
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width:320px) {
+
+
+
+    .humberger {
+
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        left: 20px;
+
+
+    }
+
+    .humberger__line {
+
+        width: 100%;
+        height: 2px;
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
