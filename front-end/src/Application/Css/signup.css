@@ -1,0 +1,253 @@
+/* General Body Styles (optional, for overall page look) */
+/* body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+} */
+
+/* Signup Container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width:60vw; */
+   
+
+}
+
+/* Signup Form Styling */
+.signup-form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    /* border-radius: 12px;  */
+    box-shadow: 0  0 10px 2px brown; /* Modern, softer shadow */
+    width: 30vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between elements */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover/focus */
+}
+
+
+
+.signup-form h2 {
+    color: #333;
+    /* color: brown; */
+    margin-bottom: 25px;
+    font-size: 2em; /* Larger heading */
+    font-weight: 600;
+}
+
+/* Form Group for Label and Input */
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between label and input */
+}
+
+.form-group label {
+  color: brown;
+    font-size: 1em;
+    font-weight: 600;
+    display: none;
+}
+
+/* Input Fields */
+.form-input {
+    width: 100%; /* Take full width of its parent */
+    padding: 12px 0;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded input fields */
+    font-size: 1em;
+    color: #333;
+    color:brown;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+     background-color: #f8f9fa;
+}
+
+.form-input::placeholder {
+    color: brown;
+}
+
+.form-input:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Soft focus shadow */
+}
+
+/* Signup Button */
+.signup-button {
+    width: 100%;
+    /* padding: 12px 20px; */
+    background-color: #007bff; 
+    background-color: brown; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px; /* Space above button */
+}
+
+.signup-button:hover {
+    /* background-color: #0056b3; */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* .signup-button:active {
+    background-color: #004085; 
+    transform: translateY(0); 
+} */
+
+
+
+@media (min-width:1441px) {
+
+    .signup-form{
+
+        gap: 3vh;
+        padding: 10vh 6vw;
+    }
+
+    .form-input, .signup-button{
+width: 30vw;
+        height: 6vh;
+        font-size: 1vw;
+           border-radius: 20px;
+      
+
+     }
+
+     .signup-form{
+        width: fit-content;
+          border-radius: 30px;
+      }
+
+      .signup-button{
+
+        height: 8vh;
+      }
+
+      .signup-form h2{
+
+        font-size: 2vw;
+      }
+}
+
+
+@media (max-width:1440px) {
+
+    .signup-form{
+
+        gap: 6vh;
+        width: fit-content;
+    }
+
+    .form-input, .signup-button{
+        width: 30vw;
+        height: 5vh;
+        font-size: 1vw;
+      
+
+     }
+
+     .signup-form{
+        width: fit-content;
+          border-radius: 20px;
+      }
+
+      .signup-button{
+
+        height: 8vh;
+      }
+}
+@media (max-width:1024px) {
+
+    .form-input, .signup-button{
+width: 40vw;
+        height: 5vh;
+      
+
+     }
+
+      .signup-form{
+        width: fit-content;
+          border-radius: 20px;
+      }
+
+      .signup-button{
+
+        height: 10vh;
+      }
+
+
+}
+@media (max-width:768px) {
+
+     .form-input, .signup-button{
+width: 60vw;
+        height: 5vh;
+      
+
+     }
+
+      .signup-form{
+        width: fit-content;
+          border-radius: 20px;
+      }
+
+      .signup-button{
+
+        height: 10vh;
+      }
+
+}
+
+
+@media (max-width: 450px) {
+    .signup-form {
+        /* padding: 30px 25px;  */
+        /* margin: 20px;  */
+        padding: 10vh 5vw;
+        width: 90vw;
+        box-sizing: border-box;
+        height: fit-content;
+        margin-bottom: 0;
+        /* padding: 0; */
+        border-radius: 0px;
+       
+        align-items: center;
+        
+        gap: 5vh;
+        border: 2px solid black;
+        box-shadow: none;
+        border-radius: 20px;
+        
+    }
+    .signup-form h2 {
+        font-size: 1.8em;
+    }
+    .form-input, .signup-button {
+        /* padding: 10px 12px; */
+        /* font-size: 0.95em; */
+        font-size: 4vw;
+        width: 100%;
+        height: 3.5vh;
+    }
+
+    .signup-button{
+
+        height: 8vh;
+    }
+}

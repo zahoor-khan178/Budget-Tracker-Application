@@ -1,21 +1,17 @@
 
 require('./model/dbconnection');
+const User = require('./model/userschema');
 const Transaction=require('./model/transaction')
 const express = require('express');
 const cors=require('cors');
-const transaction = require('./model/transaction');
-
-
-const app=express();
-
-app.use(express.json());  // parse the incoming data into javaScript object form
+// const transaction = require('./model/transaction');
+const jwt=require('jsonwebtoken');
+const jwtkey="BUDGET";
 
 
 
-
-
-
-
+const app = express();
+app.use(express.json());
 
 
 
@@ -28,9 +24,84 @@ app.use(cors());
 
 
 
+app.post('/register', async (req, resp) => {
+   try {
+      const user = new User(req.body);
+      let result = await user.save();
+      result = result.toObject();
+      delete result.password;
+
+      
+            jwt.sign({result},jwtkey,{expiresIn:"1h"},(err,token)=>{
+
+               if(err){
+
+                  resp.send('problem in token')
+               }
+               else{
+
+                     resp.send({result,auth:token})
+               }
+            })
 
 
-app.post('/transaction', async (req, resp) => {
+   } catch (error) {       
+    console.log('Error in signup API:',error);    
+}
+
+});
+
+
+app.post('/login', async (req, resp) => {
+
+   try {
+
+      if (req.body.email && req.body.password) {
+
+
+
+         const user = await User.findOne(req.body).select('-password')
+         if (user) {
+
+            jwt.sign({user},jwtkey,{expiresIn:"1h"},(err,token)=>{
+
+               if(err){
+
+                  resp.send('something went wrong')
+               }
+               else{
+
+                     resp.send({user,auth:token})
+               }
+            })
+
+            
+
+            
+         }
+         else {
+
+            resp.send('no user found')
+         }
+      }
+      else {
+
+         resp.send('no user found')
+      }
+
+   }
+   catch (err) {
+
+      console.log('error in login api:', err);
+
+   }
+})
+
+
+
+
+
+app.post('/transaction', verifyToken, async (req, resp) => {
     try {
         
        const newtransaction = new Transaction(req.body);
@@ -47,7 +118,7 @@ app.post('/transaction', async (req, resp) => {
  });
 
 
- app.get('/list', async (req, resp) => {
+ app.get('/list', verifyToken, async (req, resp) => {
 
     const products = await Transaction.find()
     if (products.length > 0) {
@@ -60,7 +131,7 @@ app.post('/transaction', async (req, resp) => {
  })
 
 
- app.delete('/delete/:id', async (req, resp) => {
+ app.delete('/delete/:id', verifyToken, async (req, resp) => {
 
     // resp.send('api in progress...');
     const result = await Transaction.deleteOne({ _id: req.params.id })
@@ -70,7 +141,7 @@ app.post('/transaction', async (req, resp) => {
  })
 
 
- app.get('/income-sum', async (req, res) => {
+ app.get('/income-sum', verifyToken, async (req, res) => {
     try {
       // Calculate the sum of all amounts where transactionType is 'income'
       const result = await Transaction.aggregate([
@@ -98,7 +169,7 @@ app.post('/transaction', async (req, resp) => {
 
 
 
-  app.get('/expense-sum', async (req, res) => {
+  app.get('/expense-sum', verifyToken, async (req, res) => {
     try {
       // Calculate the sum of all amounts where transactionType is 'expense'
       const result = await Transaction.aggregate([
@@ -123,7 +194,24 @@ app.post('/transaction', async (req, resp) => {
 
 
 
+function verifyToken(req, resp, next) {
+   let token = req.headers['authorization'];
+   if(token) {
 
+      token = token.split(' ')[1]; 
+      jwt.verify(token, jwtkey, (err, valid) => {
+         if(err) {
+            resp.status(401).send({ message: " your session has been expired. please login again" });
+         } else {
+            next();
+         }
+      });
+   }
+   else {
+      resp.status(403).send({ message: "please add token with header" });
+   }
+
+}
 
 
 

@@ -1,0 +1,195 @@
+
+
+
+.logindiv {
+ 
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Center horizontally within the column */
+    justify-content: center; /* Center vertically if space allows */
+    padding: 2.5rem; /* Responsive padding */
+    /* width: 100%;  */
+    /* max-width: 400px;  */
+    /* height: 100%; */
+    border-radius: 12px; /* Nicely rounded corners */
+    box-shadow: 0 0 10px 2px brown; /* Softer, deeper shadow */
+    row-gap: 1.5rem; /* Responsive spacing between elements */
+    box-sizing: border-box; /* Include padding in width/height */
+    /* padding-bottom: 20px; */
+    /* margin-bottom: 20px; */
+  
+    
+}
+
+/* Heading for the login form */
+.logheadign {
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.logheadign h2 { /* Targeting the h2 inside logheadign for styling */
+    color: #2c3e50; /* Dark blue-grey for heading text */
+    font-size: 2.2rem; /* Responsive font size */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle text shadow */
+}
+
+/* Input field styles (applying to both h1 and h2 which are likely input placeholders) */
+/* Assuming loginh1 and loginh2 are intended to be input fields or elements containing input fields */
+.loginh1,
+.loginh2 {
+    width: 100%; /* Take full width of parent */
+    padding: 0.8rem 1rem; /* Vertical and horizontal padding */
+    /* height: 3rem;  */
+    border: 1px solid #ced4da; /* Light grey border */
+    border-radius: 8px; /* Rounded input corners */
+    background-color: #f8f9fa; /* Off-white background */
+    font-size: 1.1rem; /* Responsive font size for input text */
+    color: #495057; 
+    box-sizing: border-box; /* Include padding in width */
+    text-align: center; /* Center placeholder text */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.loginh1::placeholder,
+.loginh2::placeholder{
+    color: brown;
+}
+.loginh1:focus,
+.loginh2:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue glow on focus */
+    outline: none; /* Remove default outline */
+}
+
+
+/* Login Button Styles */
+.loginbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width button */
+    padding: 0.8rem 1.5rem; /* Responsive padding */
+    /* height: 3.5rem;  */
+    background-color: #007bff; 
+    background-color: brown; 
+    color: white;
+    font-size: 1.2rem; /* Responsive font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px; /* Rounded button corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle button shadow */
+}
+
+
+.loginbutton:hover {
+    /* background-color: #0056b3;  */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Enhanced shadow on hover */
+}
+
+.loginbutton:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* Pressed shadow */
+}
+
+/* Link for account (e.g., "Don't have an account?") */
+#account-link {
+    list-style: none; /* Remove bullet point */
+    margin-top: 1rem; /* Space above the link */
+    font-size: 0.95rem; /* Slightly smaller text for secondary info */
+}
+
+#account-link a {
+    color: #007bff; /* Match button color for consistency */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+#account-link a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive adjustments for smaller screens (e.g., mobile) */
+@media (min-width: 1441px) {
+
+     .logindiv {
+
+        width: 40%;
+        padding: 10vh 0;
+        gap: 3vh;
+    }
+   .loginh1,
+    .loginh2,
+    .loginbutton {
+        font-size: 3rem; 
+        width: 30vw;
+        height: 8vh;
+        /* height: 2.8rem;  */
+        /* padding: 0.7rem 0.8rem; */
+    }
+
+    .logheadign {
+
+        font-size: 2vw;
+    }
+    #account-link{
+         font-size: 1vw;
+    }
+}
+@media (max-width: 1440px) {
+
+
+    .logindiv {
+
+        width: fit-content;
+        /* padding: 10vh 0; */
+    }
+   .loginh1,
+    .loginh2,
+    .loginbutton {
+        font-size: 1rem; 
+        width: 30vw;
+        height: 8vh;
+        /* height: 2.8rem;  */
+        padding:0 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .logindiv {
+        /* padding: 1.5rem;  */
+        border-radius: 0; /* Remove border-radius on very small screens for full width effect */
+        box-shadow: none; /* Remove shadow on very small screens for cleaner look */
+        max-width: none;
+        /* height: 90vh; */
+        padding: 10vh 4vw;
+         border: 2px solid black; 
+        width: fit-content; 
+        border-radius: 15px;
+    }
+
+    .logheadign h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    .loginh1,
+    .loginh2,
+    .loginbutton {
+        font-size: 1rem; /* Slightly smaller text for inputs and buttons */
+        height: 3.5rem; /* Adjust height */
+        /* padding: 0.7rem 0.8rem; */
+        width: 85vw; 
+    }
+    /* .loginh1::placeholder,
+.loginh2::placeholder{
+    color: brown;
+} */
+
+    #account-link {
+        font-size: 1rem; /* Adjust link text size */
+    }
+}
