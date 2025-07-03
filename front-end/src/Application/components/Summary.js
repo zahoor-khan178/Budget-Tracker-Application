@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
 import '../Css/Summary.css';
 
 import { Bar } from 'react-chartjs-2';
@@ -14,14 +15,56 @@ const Summary = () => {
   const [error, setError] = useState(null);
   const [chartOptions, setChartOptions] = useState({});
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     const fetchData = async () => {
+
+      const token = JSON.parse(localStorage.getItem('token'));
+      const user = JSON.parse(localStorage.getItem('user'));
+
+      if (!token || !user) {
+        window.alert("Your session has expired or you are not logged in. Please log in again.");
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login', { state: { from: location.pathname } });
+        return;
+      }
+
+
       try {
         const incomeResponse = await fetch('http://localhost:11000/income-sum');
+
+        if (!incomeResponse.ok) {
+          const errorData = await incomeResponse.json();
+          if (window.location.pathname !== '/login') {
+            window.alert(errorData.message || `HTTP error! Status: ${incomeResponse.status}`);
+          }
+
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+
+          navigate('/login', { state: { from: location.pathname } });
+          return;
+        }
+
         const incomeData = await incomeResponse.json();
         setTotalIncome(incomeData.totalIncome);
 
         const expenseResponse = await fetch('http://localhost:11000/expense-sum');
+        if (!expenseResponse.ok) {
+          const errorData = await expenseResponse.json();
+          if (window.location.pathname !== '/login') {
+            window.alert(errorData.message || `HTTP error! Status: ${expenseResponse.status}`);
+          }
+
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+
+          navigate('/login', { state: { from: location.pathname } });
+          return;
+        }
         const expenseData = await expenseResponse.json();
         setTotalExpense(expenseData.totalExpense);
 
@@ -51,7 +94,7 @@ const Summary = () => {
       const isMobile310 = window.innerWidth <= 310;
       const isMobile245 = window.innerWidth <= 245;
 
-      const currentFontSize = isMobile245 ? mobile245FontSize : (isMobile310 ? mobile310FontSize : (isMobile ? mobileFontSize : (isMobile1024 ? mobile1024FontSize : (isMobile1440 ? mobile1440FontSize : baseFontSize2560 )) ));
+      const currentFontSize = isMobile245 ? mobile245FontSize : (isMobile310 ? mobile310FontSize : (isMobile ? mobileFontSize : (isMobile1024 ? mobile1024FontSize : (isMobile1440 ? mobile1440FontSize : baseFontSize2560))));
 
       const newOptions = {
         responsive: true,
@@ -65,7 +108,7 @@ const Summary = () => {
             },
           },
           tooltip: {
-            
+
             bodyFont: {
               size: currentFontSize,
             },
