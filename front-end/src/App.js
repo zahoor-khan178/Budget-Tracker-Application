@@ -9,7 +9,7 @@ import TransactionsForm from './Application/components/TransactionsForm';
 import Transaclist from './Application/components/Transclist';
 import Summary from './Application/components/Summary';
 
-// import Toggle from './Application/components/Toggle';
+import Toggle from './Application/components/Toggle';
 import Signup from './Application/components/Signup';
 import Login from './Application/components/Login';
 import Nav2 from './Application/components/Nav2';
@@ -52,8 +52,8 @@ function MainLayout() {
         <div id="body">
 
 
-           { !shouldShowNavAndFooter && <Nav2 /> }
-            {/* {shouldShowNavAndFooter ? <Nav /> : <Nav2 /> } */}
+           {/* { !shouldShowNavAndFooter && <Nav2 /> } */}
+            {shouldShowNavAndFooter ? <Toggle /> : <Nav2 /> }
             
             <div className="maindiv">
                 <Routes>

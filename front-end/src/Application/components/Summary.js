@@ -34,7 +34,15 @@ const Summary = () => {
 
 
       try {
-        const incomeResponse = await fetch('http://localhost:11000/income-sum');
+        const incomeResponse = await fetch('http://localhost:11000/income-sum',
+          {
+            headers:{
+
+              'Content-Type': 'application/json',
+              authorization: `bearer ${token}`
+            }
+          }
+        );
 
         if (!incomeResponse.ok) {
           const errorData = await incomeResponse.json();
@@ -52,7 +60,14 @@ const Summary = () => {
         const incomeData = await incomeResponse.json();
         setTotalIncome(incomeData.totalIncome);
 
-        const expenseResponse = await fetch('http://localhost:11000/expense-sum');
+        const expenseResponse = await fetch('http://localhost:11000/expense-sum',
+          {
+            headers:{
+
+              'Content-Type': 'application/json',
+              authorization: `bearer ${token}`
+            }
+          });
         if (!expenseResponse.ok) {
           const errorData = await expenseResponse.json();
           if (window.location.pathname !== '/login') {

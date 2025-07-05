@@ -126,7 +126,7 @@ app.post('/transaction', verifyToken, async (req, resp) => {
        resp.send(products);
     } else {
  
-       resp.send({ result: "no record found" })
+       resp.send({ result: "no record found in the list" })
     }
  })
 

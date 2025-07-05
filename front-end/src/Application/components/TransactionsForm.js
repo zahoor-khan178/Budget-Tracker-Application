@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
 import '../Css/Tform.css';
 
 
@@ -9,6 +10,10 @@ const TransactionForm = () => {
   const [transactionType, setTransactionType] = useState('income');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+
+  const navigate = useNavigate();
+    const location = useLocation();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -32,6 +37,10 @@ const TransactionForm = () => {
   };
 
   const handleSubmit = async (e) => {
+
+        const token = JSON.parse(localStorage.getItem('token'));
+      const user = JSON.parse(localStorage.getItem('user'));
+
     e.preventDefault();
 
     const formErrors = {};
@@ -44,11 +53,21 @@ const TransactionForm = () => {
 
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
-    } else {
-      try {
+    } 
+    else if (!token || !user) {
+        window.alert("Your session has expired or you are not logged in. Please log in again.");
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login', { state: { from: location.pathname } });
+        return;
+      }
+    
+      else {
+
+     try {
         setIsLoading(true);
 
-        const response = await fetch('http://localhost:11000/transaction', {
+        const Response = await fetch('http://localhost:11000/transaction', {
           method: "POST",
           body: JSON.stringify({
             title,
@@ -57,15 +76,30 @@ const TransactionForm = () => {
             transactionType
         }),
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            authorization: `bearer ${token}`
           }
         });
 
-        if (!response.ok) {
-          throw new Error('Failed to submit transaction');
+
+         if (!Response.ok) {
+          const errorData = await Response.json();
+          if (window.location.pathname !== '/login') {
+            window.alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
+          }
+
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+
+          navigate('/login', { state: { from: location.pathname } });
+          return;
         }
 
-        const data = await response.json();
+        // if (!response.ok) {
+        //   throw new Error('Failed to submit transaction');
+        // }
+
+        const data = await Response.json();
         alert('Transaction submitted successfully');
         console.log(data);
 

@@ -41,6 +41,23 @@
     background-color: #0056b3;
   }
 
+  #logout {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    font-size: 20px;
+    display: block;
+    /* text-align: center; */
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: #ff4d4d;  */
+  }
+
+
+   #logout:hover {
+        background-color: #ff4d4d;
+        color: white;
+     }
 
 
 
@@ -177,6 +194,13 @@
     .sidebar-link:active {
         background-color: none;
     }
+
+    
+     #logout{
+
+        margin-top: 20vh;
+     }
+    
 }
 
 @media screen and (max-width: 1024px) and (min-width:769px) {
@@ -212,6 +236,12 @@
     .sidebar-link:active {
         background-color: none;
     }
+
+    #logout{
+        margin-top: 20vh;
+    }
+
+
 }
 
 @media screen and (max-width: 768px) {
@@ -246,6 +276,11 @@
     .sidebar-link:active {
         background-color: none;
     }
+
+      #logout{
+        color: black;
+        margin-top: 30vh;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -279,5 +314,10 @@
 
     .sidebar-link:active {
         background-color: none;
+    }
+
+    #logout{
+        color: black;
+        font-size: 6vw;
     }
 }
