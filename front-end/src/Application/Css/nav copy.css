@@ -5,7 +5,10 @@
 
 .navbar2 {
   display: flex;
-  background-color: brown;
+  /* background-color: brown; */
+    background-color: #534d4d;
+    /* background-color: #beb5b5; */
+    /* background-color: rgb(62, 95, 13); */
   width: 100vw;
   height: 10vh;
   position: relative;
@@ -19,6 +22,7 @@
 .link2 {
   text-decoration: none;
   color: white;
+  
   font-size: 1vw;
   display: inline-block;
   text-align: center;
@@ -31,7 +35,7 @@
 }
 
 .link2:hover {
-  background-color: rgb(218, 75, 75);
+  background-color: black;
 }
 
 /* .linkdesc {
@@ -55,6 +59,20 @@
 
 
 
+@media screen and (max-width:1440px) {
+  
+  .link2 {
+
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width:768px) {
+  
+  .link2 {
+
+    font-size: 2vw;
+  }
+}
 @media screen and (max-width:450px) {
   
   .link2 {

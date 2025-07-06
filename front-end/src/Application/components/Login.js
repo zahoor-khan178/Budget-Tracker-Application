@@ -1,6 +1,6 @@
-import '../Css/login.css';
+import "../Css/login.css";
 
-import  { useState} from 'react';
+import { useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 const Login = () => {
@@ -8,8 +8,6 @@ const Login = () => {
     const [password, setpassword] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-
-    
 
     const change = (event) => {
         setemail(event.target.value);
@@ -20,15 +18,16 @@ const Login = () => {
     };
 
     const handlechange = async () => {
-
+        // IMPORTANT: Avoid using alert() in production/Canvas environments.
+        // Use a custom modal or message display for user feedback.
         if (!email) {
-
-            alert('email field is empty.')
+            console.error('Email field is empty.');
+            // You might want to display an error message in the UI here
             return;
         }
         if (!password) {
-
-            alert('password field is empty.')
+            console.error('Password field is empty.');
+            // You might want to display an error message in the UI here
             return;
         }
         try {
@@ -41,20 +40,19 @@ const Login = () => {
             });
 
             const result = await response.json();
-          
 
-           
-            if (result.auth) { 
+            if (result.auth) {
                 localStorage.setItem('user', JSON.stringify(result.user));
                 localStorage.setItem('token', JSON.stringify(result.auth));
-               const from = location.state?.from || '/';
+                const from = location.state?.from || '/';
                 navigate(from, { replace: true });
             } else {
                 console.log('Invalid login:', result);
-                
+                // Display invalid login message to the user
             }
         } catch (err) {
-            console.log('Error while fetching login data:', err);
+            console.error('Error while fetching login data:', err);
+            // Display a generic error message to the user
         }
     };
 
@@ -64,7 +62,7 @@ const Login = () => {
             <input className='loginh1' type="text" placeholder='Enter email' onChange={change} value={email} />
             <input className='loginh2' type="password" placeholder='Enter password' onChange={changep} value={password} />
             <button className="loginbutton" type='button' onClick={handlechange}>Login</button>
-            <li id='account-link'><Link to='/sign' style={{textDecoration:'none',color:'blue'}}>create new account</Link></li>
+            <li id='account-link'><Link to='/sign' >create new account</Link></li>
         </div>
     );
 };

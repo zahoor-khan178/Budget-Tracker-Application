@@ -124,6 +124,11 @@
     .sidebar-link:active {
         background-color: none;
     }
+     #logout{
+
+        margin-top: 20vh;
+        font-size: 3rem;
+     }
 }
 
 @media screen and (max-width:2560px ) and (min-width:1440px) {
@@ -159,6 +164,11 @@
     .sidebar-link:active {
         background-color: none;
     }
+      #logout{
+
+        margin-top: 20vh;
+        font-size: 3rem;
+     }
 }
 
 @media screen and (max-width:1440px ) and (min-width:1024px) {

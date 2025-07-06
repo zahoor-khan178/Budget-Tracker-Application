@@ -1,195 +1,209 @@
-
-
-
 .logindiv {
- 
-    background-color: #ffffff; 
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column; 
-    align-items: center; /* Center horizontally within the column */
-    justify-content: center; /* Center vertically if space allows */
-    padding: 2.5rem; /* Responsive padding */
-    /* width: 100%;  */
-    /* max-width: 400px;  */
-    /* height: 100%; */
-    border-radius: 12px; /* Nicely rounded corners */
-    box-shadow: 0 0 10px 2px brown; /* Softer, deeper shadow */
-    row-gap: 1.5rem; /* Responsive spacing between elements */
-    box-sizing: border-box; /* Include padding in width/height */
-    /* padding-bottom: 20px; */
-    /* margin-bottom: 20px; */
-  
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 2px rgba(83, 77, 77, 0.5);
+    row-gap: 1.5rem;
+    box-sizing: border-box;
+    width: 40vw;
+    max-width: 450px;
+    height: auto;
+    margin: 10vh auto;
 }
 
-/* Heading for the login form */
 .logheadign {
-    margin-bottom: 1rem; /* Space below the heading */
+    margin-bottom: 1rem;
 }
 
-.logheadign h2 { /* Targeting the h2 inside logheadign for styling */
-    color: #2c3e50; /* Dark blue-grey for heading text */
-    font-size: 2.2rem; /* Responsive font size */
+.logheadign h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Input field styles (applying to both h1 and h2 which are likely input placeholders) */
-/* Assuming loginh1 and loginh2 are intended to be input fields or elements containing input fields */
+.loginh1,
+.loginh2,
+.loginbutton {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: black;
+    box-sizing: border-box;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    margin: 0;
+    display: block;
+}
+
 .loginh1,
 .loginh2 {
-    width: 100%; /* Take full width of parent */
-    padding: 0.8rem 1rem; /* Vertical and horizontal padding */
-    /* height: 3rem;  */
-    border: 1px solid #ced4da; /* Light grey border */
-    border-radius: 8px; /* Rounded input corners */
-    background-color: #f8f9fa; /* Off-white background */
-    font-size: 1.1rem; /* Responsive font size for input text */
-    color: #495057; 
-    box-sizing: border-box; /* Include padding in width */
-    text-align: center; /* Center placeholder text */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    background-color: #f8f9fa;
+    border: 1px solid green;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    line-height: normal;
+}
+
+.loginbutton {
+    background-color: #007bff;
+    background-color: rgb(128, 172, 62);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 
 .loginh1::placeholder,
-.loginh2::placeholder{
-    color: brown;
+.loginh2::placeholder {
+    color: #888;
+    opacity: 0.8;
 }
+
 .loginh1:focus,
 .loginh2:focus {
-    border-color: #007bff; /* Blue border on focus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue glow on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
 }
-
-
-/* Login Button Styles */
-.loginbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width button */
-    padding: 0.8rem 1.5rem; /* Responsive padding */
-    /* height: 3.5rem;  */
-    background-color: #007bff; 
-    background-color: brown; 
-    color: white;
-    font-size: 1.2rem; /* Responsive font size */
-    font-weight: bold;
-    border: none;
-    border-radius: 8px; /* Rounded button corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle button shadow */
-}
-
 
 .loginbutton:hover {
-    /* background-color: #0056b3;  */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
 
 .loginbutton:active {
-    transform: translateY(0); /* Reset on click */
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* Pressed shadow */
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Link for account (e.g., "Don't have an account?") */
 #account-link {
-    list-style: none; /* Remove bullet point */
-    margin-top: 1rem; /* Space above the link */
-    font-size: 0.95rem; /* Slightly smaller text for secondary info */
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 #account-link a {
-    color: #007bff; /* Match button color for consistency */
-    text-decoration: none; /* Remove underline */
+    color: #007bff;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #account-link a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline; /* Underline on hover */
+    color: #0056b3;
+    text-decoration: underline;
 }
 
-/* Responsive adjustments for smaller screens (e.g., mobile) */
 @media (min-width: 1441px) {
-
-     .logindiv {
-
-        width: 40%;
-        padding: 10vh 0;
-        gap: 3vh;
-    }
-   .loginh1,
-    .loginh2,
-    .loginbutton {
-        font-size: 3rem; 
-        width: 30vw;
-        height: 8vh;
-        /* height: 2.8rem;  */
-        /* padding: 0.7rem 0.8rem; */
-    }
-
-    .logheadign {
-
-        font-size: 2vw;
-    }
-    #account-link{
-         font-size: 1vw;
-    }
-}
-@media (max-width: 1440px) {
-
-
     .logindiv {
-
-        width: fit-content;
-        /* padding: 10vh 0; */
+        width: 30vw;
+        padding: 2% 2%;
+        margin-top: 20vh;
     }
-   .loginh1,
+    .logheadign h2 {
+        font-size: 3.5rem;
+    }
+    .loginh1,
     .loginh2,
     .loginbutton {
-        font-size: 1rem; 
-        width: 30vw;
-        height: 8vh;
-        /* height: 2.8rem;  */
-        padding:0 0;
+        font-size: 1rem;
+        width: 100%;
+        height: 4.5rem;
+        padding: 1rem 1.5rem;
+    }
+    #account-link {
+        font-size: 1.2rem;
     }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 769px) and (max-width: 1440px) {
     .logindiv {
-        /* padding: 1.5rem;  */
-        border-radius: 0; /* Remove border-radius on very small screens for full width effect */
-        box-shadow: none; /* Remove shadow on very small screens for cleaner look */
+        width: 40vw;
+        max-width: 550px;
+        margin-top: 10vh;
+        padding: 3rem;
+    }
+    .logheadign h2 {
+        font-size: 2.5rem;
+    }
+    .loginh1,
+     .loginh2{
+        font-size: 1.2rem;
+        width: 100%;
+        height: 2.5rem;
+    }
+   
+    .loginbutton {
+        font-size: 1.2rem;
+        width: 100%;
+        height: 3rem;
+    }
+    #account-link {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 768px) {
+    .logindiv {
+        width: 80vw;
         max-width: none;
-        /* height: 90vh; */
-        padding: 10vh 4vw;
-         border: 2px solid black; 
-        width: fit-content; 
+        padding: 2rem 1.5rem;
         border-radius: 15px;
+        box-shadow: 0 0 8px 1px rgba(165, 42, 42, 0.4);
+        margin: 20vh auto 5vh auto;
     }
 
     .logheadign h2 {
-        font-size: 1.8rem; /* Adjust heading size */
+        font-size: 2rem;
     }
 
     .loginh1,
     .loginh2,
     .loginbutton {
-        font-size: 1rem; /* Slightly smaller text for inputs and buttons */
-        height: 3.5rem; /* Adjust height */
-        /* padding: 0.7rem 0.8rem; */
-        width: 85vw; 
+        font-size: 1rem;
+        height: 3.2rem;
+        width: 100%;
     }
-    /* .loginh1::placeholder,
-.loginh2::placeholder{
-    color: brown;
-} */
 
     #account-link {
-        font-size: 1rem; /* Adjust link text size */
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .logindiv {
+        width: 90vw;
+        padding: 2rem 1rem;
+        border-radius: 10px;
+        box-shadow: none;
+        border: 1px solid black;
+        margin-top: 15vh;
+        justify-content: center;
+        height: auto;
+    }
+
+    .logheadign h2 {
+        font-size: 1.8rem;
+    }
+
+    .loginh1,
+    .loginh2,
+    .loginbutton {
+        font-size: 0.95rem;
+        height: 3rem;
+        width: 100%;
+    }
+
+    #account-link {
+        font-size: 0.85rem;
     }
 }
