@@ -1,6 +1,6 @@
 # Budget Tracker Application
 
-This is a full-stack budget tracker application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to track their income and expenses, providing a clear overview of their financial situation.
+This is a full-stack budget tracker application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to track their income and expenses, providing a clear overview of their financial situation.  This project leverages JWTs for secure authentication and authorization.
 
 ## Features
 
