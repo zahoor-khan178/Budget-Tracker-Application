@@ -13,6 +13,7 @@ import Toggle from './Application/components/Toggle';
 import Signup from './Application/components/Signup';
 import Login from './Application/components/Login';
 import Nav2 from './Application/components/Nav2';
+import Update from './Application/components/Udate';
 
 
 
@@ -72,6 +73,7 @@ function MainLayout() {
                         
                         <Route path="/transaction" element={<TransactionsForm />} />
                         <Route path="/view-transaction" element={<Transaclist />} />
+                        <Route path="/up/:id" element={<Update/>}></Route>
                     </Route>
 
                     {/* Catch-all for undefined routes (optional, but good for UX) */}

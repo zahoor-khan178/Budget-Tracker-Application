@@ -56,6 +56,23 @@
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
+  .update-btn {
+    /* background-color: #dc3545; */
+    color: #fff;
+    border: none;
+    /* padding: 10px 15px; */
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  #update-link{
+
+  text-decoration: none;
+  /* list-style: none; */
+  color: white;
+  }
   
   .delete-btn:hover {
     background-color: #c82333;
@@ -163,6 +180,20 @@
     font-size: 1.5vw;
     transition: background-color 0.3s ease-in-out;
   }
+
+   .update-btn{
+
+        /* background-color: #dc3545; */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 4px;
+  }
   .delete-btn:hover {
     background-color: #c82333;
   }
@@ -256,6 +287,19 @@
   .delete-btn:hover {
     background-color: #c82333;
   }
+    .update-btn{
+
+        /* background-color: #dc3545; */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 4px;
+  }
   .error-message {
     color: red;
     font-size: 1rem;
@@ -346,6 +390,12 @@
   }
   .delete-btn:hover {
     background-color: #c82333;
+  }
+
+  .update-btn{
+
+    padding: 6.5px 12px;
+    margin-left: 4px;
   }
   .error-message {
     color: red;
@@ -438,6 +488,12 @@
   .delete-btn:hover {
     background-color: #c82333;
   }
+
+  .update-btn{
+
+    padding: 6.5px 12px;
+    margin-left: 3px;
+  }
   .error-message {
     color: red;
     font-size: 1rem;
@@ -526,6 +582,11 @@
   .delete-btn:hover {
     background-color: #c82333;
   }
+   .update-btn{
+
+    padding: 6.5px 12px;
+    margin-left: 3px;
+  }
   .error-message {
     color: red;
     font-size: 1rem;
@@ -613,6 +674,11 @@
   }
   .delete-btn:hover {
     background-color: #c82333;
+  }
+   .update-btn{
+
+    padding: 6.5px 12px;
+    margin-left: 3px;
   }
   .error-message {
     color: red;

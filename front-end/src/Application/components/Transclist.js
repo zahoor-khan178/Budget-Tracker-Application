@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import '../Css/Tlist.css';
 
 // Assuming jwtkey is defined somewhere accessible, e.g., in a config file or as an environment variable
@@ -145,6 +145,7 @@ const Transaclist = () => {
                             >
                                 Delete
                             </button>
+                            <button className="update-btn"><Link to={`/up/${transaction._id}`} id="update-link">Update</Link></button>
                         </li>
                     ))
                 ) : (

@@ -31,7 +31,7 @@ const Nav = ({ onClose }) => {
         <li>
           <Link to="/view-transaction" className="sidebar-link" onClick={() => handleNavLinkClick("/view-transaction")}>View Transactions</Link>
         </li>
-       <li><Link style={{ }}  onClick={logout} id='logout'>Logout</Link></li>
+       <li><Link style={{ }}  onClick={logout} id='logout'>Log Out</Link></li>
       </ul>
     </div>
   );

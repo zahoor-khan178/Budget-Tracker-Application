@@ -26,7 +26,7 @@ const Nav2 = () => {
            
 
 
-                <li><Link to="/login" className='link2'>Login</Link></li>
+                <li><Link to="/login" className='link2'>Log In</Link></li>
                 <li><Link to="/sign" className='link2'>Sign Up</Link></li>
                 
                 

@@ -190,6 +190,19 @@ app.post('/transaction', verifyToken, async (req, resp) => {
   });
   
 
+  app.get('/update/fetchdata/:id', verifyToken, async (req, resp)=>{
+
+   const result= await Transaction.findOne({_id: req.params.id});
+   resp.send(result);
+   
+})
+  app.put('/update/:id', async (req, resp)=>{
+
+   const result= await Transaction.updateOne({_id: req.params.id},{$set: req.body});
+   resp.send(result);
+   
+})
+
 
 
 
