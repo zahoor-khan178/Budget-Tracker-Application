@@ -64,8 +64,9 @@
 
 .loginh1::placeholder,
 .loginh2::placeholder {
-    color: #888;
+    color: black;
     opacity: 0.8;
+    font-size: 1vw;
 }
 
 .loginh1:focus,
