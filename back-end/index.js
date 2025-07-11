@@ -196,7 +196,7 @@ app.post('/transaction', verifyToken, async (req, resp) => {
    resp.send(result);
    
 })
-  app.put('/update/:id', async (req, resp)=>{
+  app.put('/update/:id', verifyToken, async (req, resp)=>{
 
    const result= await Transaction.updateOne({_id: req.params.id},{$set: req.body});
    resp.send(result);

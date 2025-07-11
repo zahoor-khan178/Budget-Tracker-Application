@@ -1,21 +1,23 @@
-import { useState, useEffect, useCallback } from 'react'; // Import useCallback
+
+import '../Css/update.css';
+
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 const Update = () => {
-    const [title, setTitle] = useState(''); // Initialize with empty string, not ' '
-    const [amount, setAmount] = useState(''); // Initialize with empty string, not ' '
-    const [category, setCategory] = useState(''); // Initialize with empty string, not ' '
+    const [title, setTitle] = useState('');
+    const [amount, setAmount] = useState('');
+    const [category, setCategory] = useState('');
     const [transactionType, setTransactionType] = useState('');
-    const [error, setError] = useState(false); // Only set if there's an actual validation error on submit
+
 
     const navigate = useNavigate();
     const location = useLocation();
     const params = useParams();
 
-    // Wrap getdata in useCallback to prevent infinite loop warnings if it were a dependency
-    // And ensure its dependencies are correct
+    // getdata is already wrapped in useCallback, so its reference is stable
     const getdata = useCallback(async () => {
-        setError(false); // Reset error state before fetching
+        
         const token = JSON.parse(localStorage.getItem('token'));
         const user = JSON.parse(localStorage.getItem('user'));
 
@@ -23,7 +25,6 @@ const Update = () => {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            // Correctly navigate using the function:
             navigate('/login', { state: { from: location.pathname } });
             return;
         }
@@ -39,94 +40,156 @@ const Update = () => {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                window.alert(errorData.message || `HTTP error! Status: ${response.status}`);
+                if(location.pathname!=='/login')
+                {
+
+                    window.alert(errorData.message || `HTTP error! Status: ${response.status}`);
+                }
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                // Correctly navigate using the function:
                 navigate('/login', { state: { from: location.pathname } });
                 return;
             }
 
             const data = await response.json();
             setTitle(data.title);
-            setAmount(data.amount); // Corrected variable name: setAmount
-            setCategory(data.category); // Corrected variable name: setCategory
+            setAmount(data.amount);
+            setCategory(data.category);
             setTransactionType(data.transactionType);
 
-        } catch (err) { // Catch specific 'err' for clarity, not the 'error' state variable
-            console.error("Error fetching data:", err); // Log the actual error
+        } catch (err) {
+            console.error("Error fetching data:", err);
             window.alert("An error occurred while fetching the transaction data.");
         }
-    }, [params.id, navigate, location.pathname]); // Dependencies for useCallback: params.id, navigate, location.pathname
+    }, [params.id, navigate, location.pathname]);
 
-    // Use useEffect to call getdata ONLY when the component mounts
-    // or when its dependencies (like params.id) change.
     useEffect(() => {
         getdata();
-    }, [getdata]); // Add getdata to dependencies as it's wrapped in useCallback
+    }, [getdata]); 
+
+    const handleSubmit = useCallback(async (e) => { // Remember to pass 'e' (event object)
+        e.preventDefault(); // Prevent default form submission
 
 
-    // Move initial validation/error setting to a function called on form submission
-    // Or conditionally render error messages based on state *after* initial load.
-    // This `if` block should NOT be directly in the render body.
-    // `error` state should typically be set based on form submission validation.
-    // For now, let's just remove this problematic if block.
-    // You can re-introduce validation on a submit handler.
+        
 
+        
+
+        const token = JSON.parse(localStorage.getItem('token'));
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (!token || !user) {
+            window.alert("Your session has expired or you are not logged in. Please log in again.");
+            navigate('/login', { state: { from: location.pathname } });
+            return;
+        }
+
+        try {
+            
+            const response = await fetch(`http://localhost:11000/update/${params.id}`, // <-- Changed endpoint
+                {
+                    method: 'PUT', // <-- Changed method
+                    body: JSON.stringify({
+                        title,
+                        amount: parseFloat(amount), // Convert amount to a number
+                        category,
+                        transactionType,
+                        userId: user._id // Assuming user._id is needed by your backend
+                    }),
+                    headers: {
+                        'Content-Type': "application/json",
+                        'Authorization': `bearer ${token}` // <-- Corrected spelling
+                    }
+                });
+
+            if (!response.ok) {
+                const errordata = await response.json();
+                 if(location.pathname!=='/login')
+                {
+
+                    window.alert(errordata.message || `HTTP error! Status: ${response.status}`);
+                }
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                navigate('/login', { state: { from: location.pathname } }); // Use absolute path
+                return;
+            }
+
+            alert('Record is updated successfully');
+            navigate('/view-transaction'); // Navigate to another page after success
+
+        } catch (err) {
+            console.error("Error updating data:", err); // Log for update process
+            window.alert("An error occurred while updating the transaction data."); // Alert for update process
+        }
+    }, [params.id, navigate, location.pathname, title, amount, category, transactionType]); // <-- 'getdata()' REMOVED from dependencies
 
     return (
         <div className="update-container">
-            <h2>Update Transaction</h2>
-            <form>
-                <div>
-                    <label htmlFor="">Title:</label>
+            <h2 id='heading'>Update Transaction</h2>
+            <form onSubmit={handleSubmit}> {/* Attach handleSubmit to the form */}
+        
+                    {/* <label htmlFor="title">Title:</label> */}
                     <input type="text"
+                        id="title"
                         placeholder="Enter title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         required
                     />
-                    {/* Only show error if submission attempted AND field is empty */}
-                    {error && !title && <span style={{ color: 'red' }}>title is required</span>}
-                </div>
-                <div>
-                    <label htmlFor="">Amount:</label>
+                    { !title.trim() && <span style={{ color: 'red' }}>Title is required</span>}
+            
+            
+                    {/* <label htmlFor="amount">Amount:</label> */}
                     <input type="number"
+                        id="amount"
                         placeholder="Enter amount"
                         value={amount}
-                        onChange={(e) => setAmount(e.target.value)} // Corrected setAmount
-                        required
+                        onChange={(e) => setAmount(e.target.value)}
+                        
                     />
-                    {error && !amount && <span style={{ color: 'red' }}>amount is required</span>}
-                </div>
-                <div>
-                    <label htmlFor="">Category:</label>
+                    {!amount.toString().trim() && <span style={{ color: 'red' }}>Amount is required</span>}
+                
+    
+                    {/* <label htmlFor="category">Category:</label> */}
                     <input type="text"
+                        id="category"
                         placeholder="Enter category"
                         value={category}
-                        onChange={(e) => setCategory(e.target.value)} // Corrected setCategory
-                        required
+                        onChange={(e) => setCategory(e.target.value)}
+                    
                     />
-                </div>
-                <label htmlFor="">Transaction Type:</label>
+            
+               
+                   <div id='transactiontype-div'>
+                <label >Transaction Type:</label>
                 <div>
-                    <label htmlFor="">Income</label>
+                    <label htmlFor="income">Income</label>
                     <input type="radio"
+                        id="income"
                         value='income'
                         checked={transactionType === 'income'}
                         onChange={(e) => setTransactionType(e.target.value)}
+                        name="transactionType" // Crucial for radio group
+                    
                     />
                 </div>
                 <div>
-                    <label htmlFor="">Expense</label>
+                    <label htmlFor="expense">Expense</label>
                     <input type="radio"
+                        id="expense"
                         value='expense'
                         checked={transactionType === 'expense'}
                         onChange={(e) => setTransactionType(e.target.value)}
+                        name="transactionType" // Crucial for radio group
+                        required
                     />
                 </div>
-                {/* Add an update button here */}
-                {/* <button type="submit" onClick={handleUpdate}>Update Transaction</button> */}
+                </div>
+              
+                { !transactionType && <span style={{ color: 'red' }}>Transaction type is required</span>}
+
+                <button type="submit">Update Transaction</button>
             </form>
         </div>
     );

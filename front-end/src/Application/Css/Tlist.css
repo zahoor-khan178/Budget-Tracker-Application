@@ -694,4 +694,25 @@
   }
 }
 
+@media  screen and (max-width:400px) {
+
+  .transaction-item{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .update-btn{
+
+    padding: 6.5px 12px;
+   
+    font-size: 10px;
+  }
+
+
+  
+}
+
   

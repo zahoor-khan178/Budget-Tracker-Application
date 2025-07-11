@@ -1,0 +1,219 @@
+
+.update-container{
+
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    box-shadow: 0 0 8px 2px black;
+    width: 70vw;
+
+}
+
+#transactiontype-div{
+
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type='text'],
+input[type='number']
+{
+  
+    border: 1px solid green;
+  
+  
+}
+
+/* form>div{
+
+    background-color: red;
+      width: 100%;
+} */
+
+
+@media screen and (max-width:320px)
+{
+
+    .update-container{
+
+        width: 90vw;
+        margin-top: 15vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+    }
+
+    #heading{
+
+        font-size: 5vw;
+    }
+}
+
+
+@media screen and (max-width:480px)
+{
+
+    .update-container{
+
+        width: 80vw;
+        margin-top: 15vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+       
+    }
+
+    #heading{
+
+        font-size: 5vw;
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width:768px)
+{
+
+    .update-container{
+
+        width: 50vw;
+        margin-top: 15vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+       
+    }
+
+    #heading{
+
+        font-size: 3vw;
+    }
+
+    input[type='text'],
+input[type='number'],label
+{
+  
+font-size: 1.5vw;
+  
+  
+}
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width:1024px) and (min-width:769px)
+{
+
+    .update-container{
+
+        width: 50vw;
+        margin-top: 10vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+        margin-left: 30vw;
+       
+    }
+
+    #heading{
+
+        font-size: 3vw;
+    }
+
+    input[type='text'],
+input[type='number'],label
+{
+  
+font-size: 1.5vw;
+  
+  
+}
+
+
+
+
+
+}
+
+
+@media screen and (max-width:1440px) and (min-width:1025px)
+{
+
+    .update-container{
+
+        width: 40vw;
+        margin-top: 10vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+        margin-left: 25vw;
+       
+    }
+
+    #heading{
+
+        font-size: 2vw;
+    }
+
+    input[type='text'],
+input[type='number'],label
+{
+  
+font-size: 1vw;
+  
+  
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width:2560px) and (min-width:1441px)
+{
+
+    .update-container{
+
+        width: 40vw;
+        margin-top: 10vh;
+        padding: 6vh 0;
+        border-radius: 10px;
+        margin-left: 25vw;
+       
+    }
+
+    #heading{
+
+        font-size: 2vw;
+    }
+
+    input[type='text'],
+input[type='number'],label
+{
+  
+font-size: 1vw;
+  
+  
+}
+
+
+
+
+
+}
