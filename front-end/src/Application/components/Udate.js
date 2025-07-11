@@ -28,6 +28,7 @@ const Update = () => {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
             localStorage.removeItem('token');
             localStorage.removeItem('user');
+            
             navigate('/login', { state: { from: location.pathname } });
             return;
         }
@@ -43,13 +44,20 @@ const Update = () => {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                if (location.pathname !== '/login') {
-                    window.alert(errorData.message || `HTTP error! Status: ${response.status}`);
-                }
-                localStorage.removeItem('token');
-                localStorage.removeItem('user');
-                navigate('/login', { state: { from: location.pathname } });
-                return;
+                if (window.location.pathname !== '/login') {
+                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
+                    }
+
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    navigate('/login', { state: { from: location.pathname } });
+                    return;
+
+                
+
+
+                    
+                
             }
 
             const data = await response.json();
@@ -140,9 +148,9 @@ const Update = () => {
 
             if (!response.ok) {
                 const errordata = await response.json();
-                if (location.pathname !== '/login') { // Only alert if not redirecting immediately
-                    window.alert(errordata.message || `HTTP error! Status: ${response.status}`);
-                }
+               if (window.location.pathname !== '/login') {
+                        alert(errordata.message || `HTTP error! Status: ${errordata.status}`);
+                    }
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
                 navigate('/login', { state: { from: location.pathname } });

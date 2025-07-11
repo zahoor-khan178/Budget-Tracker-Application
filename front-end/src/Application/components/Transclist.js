@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback} from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import '../Css/Tlist.css';
 
@@ -18,13 +18,9 @@ const Transaclist = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => {
-        getdata();
-        // Add token and user to dependency array if they can change during component lifecycle
-        // For localStorage, they typically don't change without a page reload, so [] is often fine.
-    }, []);
+    
 
-    const getdata = async () => {
+    const getdata = useCallback(async () => {
         // This block is for initial data fetch and session check
         if (!token || !user) {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
@@ -44,7 +40,9 @@ const Transaclist = () => {
 
             if (!Response.ok) {
                 const errorData = await Response.json(); // Await parsing of error data
-                window.alert(errorData.message || `HTTP error! Status: ${Response.status}`);
+               if (window.location.pathname !== '/login') {
+                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
+                    }
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
                 navigate('/login', { state: { from: location.pathname } });
@@ -60,7 +58,13 @@ const Transaclist = () => {
             setError(error);
             setLoading(false);
         }
-    };
+    },[ token, user, navigate, location.pathname ]);
+
+    useEffect(() => {
+        getdata();
+        // Add token and user to dependency array if they can change during component lifecycle
+        // For localStorage, they typically don't change without a page reload, so [] is often fine.
+    }, [getdata]);
 
     // Corrected deleteTransaction function
     const deleteTransaction = async (id) => { // Made async
@@ -93,14 +97,15 @@ const Transaclist = () => {
             if (!Response.ok) {
                 // If response is not OK, try to parse error data
                 const errorData = await Response.json(); // Await parsing
-                window.alert(errorData.message || `Failed to delete transaction. HTTP error! Status: ${Response.status}`);
-
+                if (window.location.pathname !== '/login') {
+                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
+                    }
                 // If it's an authentication error (401/403), redirect to login
-                if (Response.status === 401 || Response.status === 403) {
+                
                     localStorage.removeItem('token');
                     localStorage.removeItem('user');
                     navigate('/login', { state: { from: location.pathname } });
-                }
+            
                 return; // Stop execution after handling error
             }
 
@@ -117,7 +122,7 @@ const Transaclist = () => {
             console.error('Error deleting transaction:', error); // Log the actual error
             window.alert('Error deleting transaction: ' + error.message);
         }
-    };
+    }; 
 
     // Render loading, error, or the transaction list
     if (loading) {
@@ -131,6 +136,7 @@ const Transaclist = () => {
     return (
         <div className="transaclist-container">
             <h2>Transaction List</h2>
+            <input type="search" placeholder="search here" id="search-box"/>
             <ul className="transaction-list">
                 {transactions.length > 0 ? (
                     transactions.map((transaction) => ( // Removed index if not used, or use it if needed

@@ -1,6 +1,10 @@
 
 
+ /* #parent-div{
 
+   box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+ } */
 
 
 
@@ -17,7 +21,7 @@
     padding: 6vh 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 10px 2px black;
     width: 30vw;
     height:auto;
     display: flex;
@@ -95,7 +99,7 @@ span{
     padding: 10vh 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 10px 2px black;
     width: 30vw;
     height:auto;
     display: flex;
@@ -173,7 +177,7 @@ span{
     padding: 10vh 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 2px black;
     width: 30vw;
     height:auto;
     display: flex;
@@ -252,7 +256,7 @@ span{
     padding: 4vh 0;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 10px 2px black;
     width: 35vw;
     height:auto;
     display: flex;

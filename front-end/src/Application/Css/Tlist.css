@@ -57,7 +57,7 @@
     transition: background-color 0.3s ease-in-out;
   }
   .update-btn {
-    /* background-color: #dc3545; */
+    /* background-color: blue; */
     color: #fff;
     border: none;
     /* padding: 10px 15px; */
@@ -91,6 +91,7 @@
     color: #007bff;
     margin-top: 20px;
   }
+
 
 
 
@@ -408,6 +409,14 @@
     font-size: 1.2rem;
     color: #007bff;
     margin-top: 20px;
+  }
+
+    #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
   }
 }
 
