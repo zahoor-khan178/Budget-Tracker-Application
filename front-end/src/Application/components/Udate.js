@@ -35,7 +35,7 @@ const Update = () => {
 
         try {
             const response = await fetch(`http://localhost:11000/update/fetchdata/${params.id}`, {
-                method: 'get',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     authorization: `bearer ${token}`

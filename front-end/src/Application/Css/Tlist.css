@@ -210,6 +210,22 @@
     color: #007bff;
     margin-top: 20px;
   }
+
+    #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+    height: 6vh;
+    width: 18vw;
+    padding: 1px 5px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
+  }
 }
 
 @media screen and (max-width: 2560px) and (min-width:1440px) {
@@ -312,6 +328,23 @@
     font-size: 1.2rem;
     color: #007bff;
     margin-top: 20px;
+  }
+
+
+    #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+    height: 6vh;
+    width: 20vw;
+    padding: 1px 5px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
   }
 }
 
@@ -417,6 +450,14 @@
     text-align: center;
     align-content: center;
     margin-bottom: 30px;
+    height: 6vh;
+    width: 22vw;
+    padding: 1px 3px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
   }
 }
 
@@ -515,6 +556,22 @@
     color: #007bff;
     margin-top: 20px;
   }
+
+   #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+    height: 6vh;
+    width: 28vw;
+    padding: 1px 5px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -608,6 +665,22 @@
     color: #007bff;
     margin-top: 20px;
   }
+
+    #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+    height: 6vh;
+    width: 28vw;
+    padding: 1px 5px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -700,6 +773,21 @@
     font-size: 1.2rem;
     color: #007bff;
     margin-top: 20px;
+  }
+    #search-box{
+
+    
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+    height: 6vh;
+    width: 40vw;
+    padding: 1px 5px;
+    border-radius: 5px;
+    /* outline: none; */
+    border: 1px solid  black;
+  
+    
   }
 }
 

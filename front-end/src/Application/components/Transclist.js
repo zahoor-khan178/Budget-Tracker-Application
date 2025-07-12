@@ -1,80 +1,75 @@
-import { useState, useEffect, useCallback} from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import '../Css/Tlist.css';
 
-// Assuming jwtkey is defined somewhere accessible, e.g., in a config file or as an environment variable
-// const jwtkey = process.env.JWT_SECRET; // Example if using environment variables
-
 const Transaclist = () => {
     const [transactions, setTransactions] = useState([]);
+    const [searchkey, setsearchkey] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    // Fetch token and user once at the top of the component
-    // This ensures they are always up-to-date from localStorage
-    const token = JSON.parse(localStorage.getItem('token'));
-    const user = JSON.parse(localStorage.getItem('user'));
 
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Memoize these values if they are truly static for the component's lifetime
+    // Otherwise, refetching them within functions is safer if they can change.
+    // For now, let's keep them here as you had them, assuming they don't change frequently.
     
-
     const getdata = useCallback(async () => {
-        // This block is for initial data fetch and session check
+
+        const token = JSON.parse(localStorage.getItem('token'));
+        const user = JSON.parse(localStorage.getItem('user'));
+        
         if (!token || !user) {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
             localStorage.removeItem('token');
             localStorage.removeItem('user');
             navigate('/login', { state: { from: location.pathname } });
-            setLoading(false); // Ensure loading state is turned off
+            setLoading(false);
             return;
         }
 
         try {
             const Response = await fetch('http://localhost:11000/list', {
                 headers: {
-                    authorization: `bearer ${token}` // Correct spelling
+                    authorization: `bearer ${token}`
                 }
             });
 
             if (!Response.ok) {
-                const errorData = await Response.json(); // Await parsing of error data
-               if (window.location.pathname !== '/login') {
-                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
-                    }
+                const errorData = await Response.json();
+                if (location.pathname !== '/login') { // Use location.pathname, not window.location.pathname
+                    alert(errorData.message || `HTTP error! Status: ${Response.status}`);
+                }
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
                 navigate('/login', { state: { from: location.pathname } });
-                setLoading(false); // Ensure loading state is turned off
+                setLoading(false);
                 return;
             }
 
             const data = await Response.json();
+            console.log('getdata data:',data);
             setTransactions(data);
             setLoading(false);
         } catch (error) {
-            console.error("Error fetching data:", error); // Log the actual error
+            console.error("Error fetching data:", error);
             setError(error);
             setLoading(false);
         }
-    },[ token, user, navigate, location.pathname ]);
+    }, [ navigate, location.pathname, setTransactions]); // Dependencies for useCallback
 
     useEffect(() => {
+        // Initial data fetch when the component mounts
         getdata();
-        // Add token and user to dependency array if they can change during component lifecycle
-        // For localStorage, they typically don't change without a page reload, so [] is often fine.
     }, [getdata]);
 
-    // Corrected deleteTransaction function
-    const deleteTransaction = async (id) => { // Made async
+    const deleteTransaction = async (id) => {
         const confirming = window.confirm('Are you sure you want to delete this transaction?');
         if (!confirming) {
             return;
         }
 
-        // Re-check token before making the request, in case it expired since component loaded
-        // This is good practice for functions that might be called much later
         const currentToken = JSON.parse(localStorage.getItem('token'));
         const currentUser = JSON.parse(localStorage.getItem('user'));
 
@@ -83,50 +78,105 @@ const Transaclist = () => {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
             navigate('/login', { state: { from: location.pathname } });
-            return; // Exit if no token
+            return;
         }
 
         try {
             const Response = await fetch(`http://localhost:11000/delete/${id}`, {
                 method: 'DELETE',
                 headers: {
-                    authorization: `bearer ${currentToken}` // Correct spelling and use currentToken
+                    authorization: `bearer ${currentToken}`
                 }
             });
 
             if (!Response.ok) {
-                // If response is not OK, try to parse error data
-                const errorData = await Response.json(); // Await parsing
-                if (window.location.pathname !== '/login') {
-                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
-                    }
-                // If it's an authentication error (401/403), redirect to login
-                
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('user');
-                    navigate('/login', { state: { from: location.pathname } });
-            
-                return; // Stop execution after handling error
+                const errorData = await Response.json();
+                if (location.pathname !== '/login') {
+                    alert(errorData.message || `HTTP error! Status: ${Response.status}`);
+                }
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                navigate('/login', { state: { from: location.pathname } });
+                return;
             }
 
-            // If Response.ok is true, it means the deletion was successful on the backend
-            // Now update the frontend state
             setTransactions((prevTransactions) =>
                 prevTransactions.filter((transaction) => transaction._id !== id)
             );
-            // Optionally, show a success message
-            // window.alert('Transaction deleted successfully!');
 
         } catch (error) {
-            // Catch network errors or issues with fetch itself
-            console.error('Error deleting transaction:', error); // Log the actual error
+            console.error('Error deleting transaction:', error);
             window.alert('Error deleting transaction: ' + error.message);
         }
-    }; 
+    };
 
-    // Render loading, error, or the transaction list
+    const searchdata = async (event) => {
+        const key = event.target.value;
+        setsearchkey(key); // Update the input field's value
+
+        // If the search key becomes empty, re-fetch all data
+        if (!key.trim()) {
+            getdata();
+            return;
+        }
+
+        const currentToken = JSON.parse(localStorage.getItem('token'));
+        const currentUser = JSON.parse(localStorage.getItem('user'));
+
+        if (!currentToken || !currentUser) {
+            window.alert("Your session has expired or you are not logged in. Please log in again.");
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            navigate('/login', { state: { from: location.pathname } });
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:11000/search/${key}`, {
+                method: 'GET',
+                   headers: {
+                authorization: `bearer ${currentToken}`  
+                
+            }
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                if (location.pathname !== '/login') {
+                    window.alert(errorData.message || `HTTP status: ${response.status}`);
+                }
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                navigate('/login', { state: { from: location.pathname } });
+                setTransactions([]); // Clear transactions on error/re-auth
+                return;
+            }
+
+            const data = await response.json(); // Parse the JSON data
+
+       
+
+           
+            if (Array.isArray(data)) {
+                setTransactions(data); // If it's an array, directly set it
+                     console.log("Search response data:", transactions);
+            } else if (data && data.message && data.message.includes("No matching transactions found.")) {
+                setTransactions([]); // If it's the "no results" message, clear the list
+            } else {
+               
+                console.warn('Unexpected response format from search API:', data);
+                setTransactions([]); // Default to empty array for safety
+            }
+
+        } catch (error) {
+            console.error('Searching error:', error);
+            alert('Failed to search record. Please try again.');
+            setTransactions([]); // Clear transactions on network or parsing error
+        }
+    };
+
     if (loading) {
-        return <div className="loading-message">Loading...</div>; // Corrected class name as per your previous code
+        return <div className="loading-message">Loading...</div>;
     }
 
     if (error) {
@@ -136,10 +186,16 @@ const Transaclist = () => {
     return (
         <div className="transaclist-container">
             <h2>Transaction List</h2>
-            <input type="search" placeholder="search here" id="search-box"/>
+            <input
+                type="search"
+                placeholder="search here"
+                id="search-box"
+                onChange={searchdata}
+                value={searchkey} // Ensures input is controlled by state
+            />
             <ul className="transaction-list">
                 {transactions.length > 0 ? (
-                    transactions.map((transaction) => ( // Removed index if not used, or use it if needed
+                    transactions.map((transaction) => (
                         <li className="transaction-item" key={transaction._id}>
                             <span><strong>Title:</strong> {transaction.title}</span>
                             <span><strong>Amount:</strong> ${transaction.amount}</span>
