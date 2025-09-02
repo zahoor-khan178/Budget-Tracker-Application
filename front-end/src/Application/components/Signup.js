@@ -31,8 +31,10 @@ const Signup = () => {
             return;
         }
 
+        const API_URL = process.env.REACT_APP_API_URL;
+
         try {
-            let result = await fetch('http://localhost:11000/register', {
+            let result = await fetch(`${API_URL}/register`, {
                 method: 'post',
                 body: JSON.stringify({ name, email, password }),
                 headers: { 'Content-Type': 'application/json' } // Corrected header casing

@@ -33,8 +33,11 @@ const Summary = () => {
       }
 
 
+      const API_URL = process.env.REACT_APP_API_URL;
+
+
       try {
-        const incomeResponse = await fetch('http://localhost:11000/income-sum',
+        const incomeResponse = await fetch(`${API_URL}/income-sum`,         
           {
             headers:{
 
@@ -60,7 +63,7 @@ const Summary = () => {
         const incomeData = await incomeResponse.json();
         setTotalIncome(incomeData.totalIncome);
 
-        const expenseResponse = await fetch('http://localhost:11000/expense-sum',
+        const expenseResponse = await fetch(`${API_URL}/expense-sum`,       
           {
             headers:{
 

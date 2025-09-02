@@ -29,8 +29,11 @@ const Transaclist = () => {
             return;
         }
 
+
+        const API_URL = process.env.REACT_APP_API_URL;
+
         try {
-            const Response = await fetch('http://localhost:11000/list', {
+            const Response = await fetch(`${API_URL}/list`, {
                 headers: {
                     authorization: `bearer ${token}`
                 }
@@ -82,7 +85,7 @@ const Transaclist = () => {
         }
 
         try {
-            const Response = await fetch(`http://localhost:11000/delete/${id}`, {
+            const Response = await fetch(`${API_URL}/delete/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${currentToken}`
@@ -132,7 +135,7 @@ const Transaclist = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:11000/search/${key}`, {
+            const response = await fetch(`${API_URL}/search/${key}`, {
                 method: 'GET',
                    headers: {
                 authorization: `bearer ${currentToken}`  

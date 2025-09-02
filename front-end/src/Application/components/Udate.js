@@ -129,8 +129,13 @@ const Update = () => {
             return;
         }
 
+
+        const API_URL = process.env.REACT_APP_API_URL;
+
+
+
         try {
-            const response = await fetch(`http://localhost:11000/update/${params.id}`,
+            const response = await fetch(`${API_URL}/${params.id}`,
                 {
                     method: 'PUT',
                     body: JSON.stringify({

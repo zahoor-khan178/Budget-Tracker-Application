@@ -64,10 +64,12 @@ const TransactionForm = () => {
     
       else {
 
+        const API_URL = process.env.REACT_APP_API_URL;
+
      try {
         setIsLoading(true);
 
-        const Response = await fetch('http://localhost:11000/transaction', {
+        const Response = await fetch(`${API_URL}/transaction`, {
           method: "POST",
           body: JSON.stringify({
             title,
