@@ -6,7 +6,9 @@ const express = require('express');
 const cors = require('cors');
 // const transaction = require('./model/transaction');
 const jwt = require('jsonwebtoken');
-const jwtkey = "BUDGET";
+
+
+const jwtkey = process.env.JWT_SECRET || "book";
 
 
 
@@ -284,15 +286,14 @@ function verifyToken(req, resp, next) {
 
 
 
-app.listen((11000), async => {
+// ================= SERVER ================= //
 
-   try {
+// Use PORT from env (for deployment), fallback to 9000 for local dev
+const PORT = process.env.PORT || 11000;
 
-      console.log("server is running on port 11000")
-   }
-   catch {
+// Only listen when running locally, not when importing (Vercel uses exports)
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+}
 
-      console.log("server is not started")
-
-   }
-});
+module.exports = app; // For Vercel

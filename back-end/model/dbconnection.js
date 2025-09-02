@@ -6,7 +6,7 @@ const mongoose=require('mongoose');
 
 const dbconnection=()=>{
 
-mongoose.connect("mongodb://localhost:27017/Budget-tracker")
+mongoose.connect("mongodb+srv://zk:admin@cluster0.ofz7kpq.mongodb.net/Budget-Tracker-App")
 .then(()=>{
 
     console.log('db connected successfuly.');
