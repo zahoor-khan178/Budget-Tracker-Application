@@ -20,7 +20,6 @@ const Summary = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-
       const token = JSON.parse(localStorage.getItem('token'));
       const user = JSON.parse(localStorage.getItem('user'));
 
@@ -32,20 +31,15 @@ const Summary = () => {
         return;
       }
 
-
       const API_URL = process.env.REACT_APP_API_URL;
 
-
       try {
-        const incomeResponse = await fetch(`${API_URL}/income-sum`,         
-          {
-            headers:{
-
-              'Content-Type': 'application/json',
-              authorization: `bearer ${token}`
-            }
+        const incomeResponse = await fetch(`${API_URL}/income-sum`, {
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: `bearer ${token}`
           }
-        );
+        });
 
         if (!incomeResponse.ok) {
           const errorData = await incomeResponse.json();
@@ -55,7 +49,6 @@ const Summary = () => {
 
           localStorage.removeItem('token');
           localStorage.removeItem('user');
-
           navigate('/login', { state: { from: location.pathname } });
           return;
         }
@@ -63,14 +56,13 @@ const Summary = () => {
         const incomeData = await incomeResponse.json();
         setTotalIncome(incomeData.totalIncome);
 
-        const expenseResponse = await fetch(`${API_URL}/expense-sum`,       
-          {
-            headers:{
+        const expenseResponse = await fetch(`${API_URL}/expense-sum`, {
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: `bearer ${token}`
+          }
+        });
 
-              'Content-Type': 'application/json',
-              authorization: `bearer ${token}`
-            }
-          });
         if (!expenseResponse.ok) {
           const errorData = await expenseResponse.json();
           if (window.location.pathname !== '/login') {
@@ -79,15 +71,14 @@ const Summary = () => {
 
           localStorage.removeItem('token');
           localStorage.removeItem('user');
-
           navigate('/login', { state: { from: location.pathname } });
           return;
         }
+
         const expenseData = await expenseResponse.json();
         setTotalExpense(expenseData.totalExpense);
 
         setTotalBalance(incomeData.totalIncome - expenseData.totalExpense);
-
         setLoading(false);
       } catch (error) {
         setError('Error fetching data');
@@ -96,7 +87,7 @@ const Summary = () => {
     };
 
     fetchData();
-  }, []);
+  }, [navigate, location.pathname]); // ✅ added missing dependencies
 
   useEffect(() => {
     const updateChartOptions = () => {
@@ -112,7 +103,17 @@ const Summary = () => {
       const isMobile310 = window.innerWidth <= 310;
       const isMobile245 = window.innerWidth <= 245;
 
-      const currentFontSize = isMobile245 ? mobile245FontSize : (isMobile310 ? mobile310FontSize : (isMobile ? mobileFontSize : (isMobile1024 ? mobile1024FontSize : (isMobile1440 ? mobile1440FontSize : baseFontSize2560))));
+      const currentFontSize = isMobile245
+        ? mobile245FontSize
+        : isMobile310
+        ? mobile310FontSize
+        : isMobile
+        ? mobileFontSize
+        : isMobile1024
+        ? mobile1024FontSize
+        : isMobile1440
+        ? mobile1440FontSize
+        : baseFontSize2560;
 
       const newOptions = {
         responsive: true,
@@ -126,26 +127,15 @@ const Summary = () => {
             },
           },
           tooltip: {
-
-            bodyFont: {
-              size: currentFontSize,
-            },
-            titleFont: {
-              size: currentFontSize,
-            },
-            footerFont: {
-              size: currentFontSize,
-            },
+            bodyFont: { size: currentFontSize },
+            titleFont: { size: currentFontSize },
+            footerFont: { size: currentFontSize },
             padding: 12,
             callbacks: {
               label: (context) => {
-                const label = `$${context.raw.toFixed()}`;
-                return label;
+                return `$${context.raw.toFixed()}`;
               },
             },
-            labelFont: {
-              size: currentFontSize,
-            }
           },
         },
         scales: {
