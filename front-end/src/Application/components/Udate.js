@@ -16,6 +16,9 @@ const Update = () => {
     const [transactionTypeError, setTransactionTypeError] = useState('');
 
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
+
     const navigate = useNavigate();
     const location = useLocation();
     const params = useParams();
@@ -34,7 +37,7 @@ const Update = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:11000/update/fetchdata/${params.id}`, {
+            const response = await fetch(`${API_URL}/${params.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +73,7 @@ const Update = () => {
             console.error("Error fetching data:", err);
             window.alert("An error occurred while fetching the transaction data.");
         }
-    }, [params.id, navigate, location.pathname]);
+    }, [API_URL, params.id, navigate, location.pathname]);
 
     useEffect(() => {
         getdata();
@@ -130,7 +133,7 @@ const Update = () => {
         }
 
 
-        const API_URL = process.env.REACT_APP_API_URL;
+        
 
 
 
@@ -169,7 +172,7 @@ const Update = () => {
             console.error("Error updating data:", err);
             window.alert("An error occurred while updating the transaction data.");
         }
-    }, [params.id, navigate, location.pathname, title, amount, category, transactionType]);
+    }, [API_URL, params.id, navigate, location.pathname, title, amount, category, transactionType]);
 
     return (
         <div className="update-container">

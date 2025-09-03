@@ -262,7 +262,7 @@ function verifyToken(req, resp, next) {
       token = token.split(' ')[1];
       jwt.verify(token, jwtkey, (err, valid) => {
          if (err) {
-            resp.status(401).send({ message: " your session has been expired. please login again" });
+            resp.status(401).send({ message: " your session has expired. please login again" });
          } else {
             next();
          }
