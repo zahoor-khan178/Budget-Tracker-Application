@@ -1,22 +1,20 @@
+const mongoose = require('mongoose');
 
+const dbconnection = async () => {
+  try {
+    // Read connection string from environment variable
+    const MONGO_URI = process.env.MONGO_URI 
+      || "mongodb://127.0.0.1:27017/Budget-Tracker-App"; // fallback to local
 
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-
-const mongoose=require('mongoose');
-
-const dbconnection=()=>{
-
-mongoose.connect("mongodb+srv://zk:admin@cluster0.ofz7kpq.mongodb.net/Budget-Tracker-App")
-.then(()=>{
-
-    console.log('db connected successfuly.');
-    
-})
-.catch(()=>{
-
-    console.log('error while connecting to db.')
-})
-}
+    console.log(` Connected to MongoDB: ${MONGO_URI}`);
+  } catch (err) {
+    console.error(" Error while connecting to DB:", err.message);
+  }
+};
 
 dbconnection();
-

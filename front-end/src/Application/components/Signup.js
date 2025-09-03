@@ -46,6 +46,7 @@ const Signup = () => {
             if (result.auth ) { // Assuming 'auth' property indicates success from your API
                 localStorage.setItem('user', JSON.stringify(result.result));
                 localStorage.setItem('token', JSON.stringify(result.auth));
+                    alert('Registration successful!');
                 navigate("/");
             } else {
                 // Handle registration failure (e.g., user already exists)

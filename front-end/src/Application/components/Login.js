@@ -49,13 +49,14 @@ const Login = () => {
                 localStorage.setItem('user', JSON.stringify(result.user));
                 localStorage.setItem('token', JSON.stringify(result.auth));
                 const from = location.state?.from || '/';
+                alert('Login successful!');
                 navigate(from, { replace: true });
             } else {
-                console.log('Invalid login:', result);
+                alert('Invalid login:', result);
                 // Display invalid login message to the user
             }
         } catch (err) {
-            console.error('Error while fetching login data:', err);
+            alert('Error while fetching login data:', err);
             // Display a generic error message to the user
         }
     };
