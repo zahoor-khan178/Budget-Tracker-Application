@@ -138,7 +138,7 @@ const Update = () => {
 
 
         try {
-            const response = await fetch(`${API_URL}/${params.id}`,
+            const response = await fetch(`${API_URL}/update/${params.id}`,
                 {
                     method: 'PUT',
                     body: JSON.stringify({
