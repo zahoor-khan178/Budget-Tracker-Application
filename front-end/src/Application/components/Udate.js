@@ -37,7 +37,7 @@ const Update = () => {
         }
 
         try {
-            const response = await fetch(`${API_URL}/${params.id}`, {
+            const response = await fetch(`${API_URL}/update/fetchdata/${params.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
