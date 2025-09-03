@@ -1,19 +1,29 @@
 const mongoose = require('mongoose');
+require('dotenv').config(); 
 
 const dbconnection = async () => {
+  const atlasURI = process.env.MONGO_URI;
+  const localURI = "mongodb://127.0.0.1:27017/Budget-Tracker-App";
+
   try {
-    // Read connection string from environment variable
-    const MONGO_URI = process.env.MONGO_URI 
-      || "mongodb://127.0.0.1:27017/Budget-Tracker-App"; // fallback to local
-
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    console.log(` Connected to MongoDB: ${MONGO_URI}`);
+    if (atlasURI) {
+      console.log(" Trying to connect to MongoDB Atlas...");
+      await mongoose.connect(atlasURI);
+      console.log(" Connected to MongoDB Atlas");
+    } else {
+      console.log(" No Atlas URI found, using local MongoDB...");
+      await mongoose.connect(localURI);
+      console.log(" Connected to local MongoDB");
+    }
   } catch (err) {
-    console.error(" Error while connecting to DB:", err.message);
+    console.error(" Atlas connection failed:", err.message);
+    console.log(" Falling back to local MongoDB...");
+    try {
+      await mongoose.connect(localURI);
+      console.log(" Connected to local MongoDB");
+    } catch (localErr) {
+      console.error(" Local MongoDB connection failed:", localErr.message);
+    }
   }
 };
 
