@@ -89,11 +89,87 @@ button{
 
 
 
-@media screen and (min-width:480px) and (min-width:0px) {
+
+
+
+
+
+@media screen and (max-width:480px) and (min-width:0px) {
+
+
+  .transaction-form{
+
+    width: 95vw;
+    margin-top: 20vw;
+    row-gap: 5vw;
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 4vw;
+   
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 2vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 4vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input, button{
+
+      font-size: 4vw;
+      width: 80vw;
+      height: 10vw;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 80vw;
+    font-size: 4vw;
+
+
+  }
+
+
+  #container-radio>div{
+
+    font-size: 4vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 4vw;
+
+
+
+  }
 
   #radio-input{
-    width: 0.5vw;
-    height: 0.5vw;
+    width: 2vw;
+    height: 2vw;
   }
 
 
