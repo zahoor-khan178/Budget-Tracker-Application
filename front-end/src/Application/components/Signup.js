@@ -59,11 +59,11 @@ const Signup = () => {
     };
 
     return (
-        <div className="signup-container"> {/* Changed class name */}
-            <form className="signup-form" onSubmit={(e) => e.preventDefault()}> {/* Added onSubmit to prevent default form submission */}
-                <h2>Create Account</h2> {/* Changed to h2, more common for forms */}
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
+        // <div className="signup-container"> 
+            <form className="signup-form" onSubmit={(e) => e.preventDefault()}> 
+                <h2 className='create-account'>Create Account</h2> 
+                {/* <div className="form-group"> */}
+                    {/* <label htmlFor="name">Name</label> */}
                     <input
                         type="text"
                         id="name"
@@ -73,9 +73,9 @@ const Signup = () => {
                         value={name}
                         required // Added HTML5 validation
                     />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                {/* </div> */}
+                {/* <div className="form-group"> */}
+                    {/* <label htmlFor="email">Email</label> */}
                     <input
                         type="email" // Changed type to email for better validation
                         id="email"
@@ -85,9 +85,9 @@ const Signup = () => {
                         value={email}
                         required
                     />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                {/* </div> */}
+                {/* <div className="form-group"> */}
+                    {/* <label htmlFor="password">Password</label> */}
                     <input
                         type="password" // Changed type to password for security
                         id="password"
@@ -97,12 +97,12 @@ const Signup = () => {
                         value={password}
                         required
                     />
-                </div>
-                <button type='submit' className='signup-button' onClick={handleSignup}>
+                {/* </div> */}
+                <button type='submit' className='signup-button form-input' onClick={handleSignup}>
                     Sign Up
                 </button>
             </form>
-        </div>
+        //  </div>
     );
 }
 

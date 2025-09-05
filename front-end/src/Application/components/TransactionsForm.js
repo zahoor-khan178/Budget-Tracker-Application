@@ -120,9 +120,9 @@ const TransactionForm = () => {
   };
 
   return (
-    <div id='parent-div'>
-      <h2>Transaction Form</h2>
-      <form onSubmit={handleSubmit}>
+    // <div id='parent-div'>
+      <form  className='transaction-form' onSubmit={handleSubmit}>
+      <h2 className='transaction-form-heading'>Transaction Form</h2>
 
         <div>
           <label>Title:</label>
@@ -161,33 +161,36 @@ const TransactionForm = () => {
 
         <div id='container-radio'>
           <label>Transaction Type:</label>
-          <label className='radio'>
+
+          <div className='radio'>
             <input
               type="radio"
+               id='radio-input'
               name="transactionType"
               value="income"
               checked={transactionType === 'income'}
               onChange={handleTransactionTypeChange}
             />
             Income
-          </label>
-          <label className='radio'>
+          </div>
+          <div className='radio'>
             <input
               type="radio"
+              id='radio-input'
               name="transactionType"
               value="expense"
               checked={transactionType === 'expense'}
               onChange={handleTransactionTypeChange}
             />
             Expense
-          </label>
+          </div>
         </div>
 
         <button type="submit" disabled={isLoading}>
           {isLoading ? 'Submitting...' : 'Submit'}
         </button>
       </form>
-    </div>
+    // </div>
   );
 };
 

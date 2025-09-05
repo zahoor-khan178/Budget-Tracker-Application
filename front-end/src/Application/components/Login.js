@@ -64,10 +64,16 @@ const Login = () => {
     return (
         <div className='logindiv'>
             <h2 className='logheadign'>Login</h2>
-            <input className='loginh1' type="text" placeholder='Enter email' onChange={change} value={email} />
+
+            <div className='logininputdiv'>
+
+
+      
+            <input className='loginh2 ' id="text_input" type="email" placeholder='Enter Email' onChange={change} value={email} />
             <input className='loginh2' type="password" placeholder='Enter password' onChange={changep} value={password} />
-            <button className="loginbutton" type='button' onClick={handlechange}>Login</button>
-            <li id='account-link'><Link to='/sign' >create new account</Link></li>
+            </div>
+            <button className="loginbutton loginh2" type='button' onClick={handlechange}>Login</button>
+            <li className='account-link'><Link to='/sign' >create new account</Link></li>
         </div>
     );
 };
