@@ -99,7 +99,7 @@ button{
 
   .transaction-form{
 
-    width: 95vw;
+    width: 90vw;
     margin-top: 20vw;
     row-gap: 8vw;
 
@@ -108,7 +108,7 @@ button{
 
   .transaction-form-heading{
 
-    font-size: 4.5vw;
+    font-size: 5vw;
    
 
 
@@ -148,6 +148,10 @@ button{
     font-size: 3.5vw;
 
 
+  }
+  #container-radio>label{
+
+    font-size: 3.5vw;
   }
 
 

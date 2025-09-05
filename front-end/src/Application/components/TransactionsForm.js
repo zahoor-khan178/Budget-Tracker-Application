@@ -160,7 +160,7 @@ const TransactionForm = () => {
 
 
         <div id='container-radio'>
-          <label>Transaction Type:</label>
+          <label >Transaction Type:</label>
 
           <div className='radio'>
             <input
