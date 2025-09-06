@@ -132,7 +132,7 @@ button{
   }
 
 
-  .transaction-form>div>input, button{
+  .transaction-form>div>input,.submit-button{
 
       font-size: 4.5vw;
       width: 80vw;
@@ -174,6 +174,498 @@ button{
   #radio-input{
     width: 2vw;
     height: 2vw;
+  }
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width:768px) and (min-width:481px) {
+
+
+  .transaction-form{
+
+    width: 80vw;
+    margin-top: 20vw;
+    row-gap: 8vw;
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 5vw;
+   
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 2vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 4vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input,.submit-button{
+
+      font-size: 4vw;
+      width: 70vw;
+      height: 10vw;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 80vw;
+    font-size: 3.5vw;
+
+
+  }
+  #container-radio>label{
+
+    font-size: 3.5vw;
+  }
+
+
+  #container-radio>div{
+
+    font-size: 3.5vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 4.5vw;
+
+
+
+  }
+
+  #radio-input{
+    width: 2vw;
+    height: 2vw;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1024px) and (min-width:769px) {
+
+
+  .transaction-form{
+
+    width: 40vw;
+    margin-top:0vw;
+    row-gap: 2vw;
+    padding: 2vw 0;
+    /* margin-right: -25vw; */
+    height: fit-content;
+  
+  
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 2.5vw;
+    margin-top: 0;
+   
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 0.5vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 1.5vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input,.submit-button{
+
+      font-size: 1.5vw;
+      width: 35vw;
+      height: 4vw;
+      border-radius: 5px;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 35vw;
+    
+    column-gap: 0vw;
+
+
+  }
+  #container-radio>label{
+
+    font-size: 1.5vw;
+  }
+
+
+  #container-radio>div{
+
+    font-size: 1.5vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 2vw;
+    margin-bottom: 0;
+
+
+
+  }
+
+  #radio-input{
+    width: 2vw;
+    height: 2vw;
+  }
+
+
+}
+
+
+
+@media screen and (max-width:1440px) and (min-width:1025px) {
+
+
+  .transaction-form{
+
+    width: 35vw;
+    margin-top:0vw;
+    row-gap: 2vw;
+    padding: 2vw 0;
+    /* margin-right: -25vw; */
+    height: fit-content;
+    border: 1px solid black;
+  
+  
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 2vw;
+    margin-top: 0;
+   /* border: 1px solid black; */
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 0.5vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 1vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input,.submit-button{
+
+      font-size: 1vw;
+      width: 30vw;
+      height: 3vw;
+      border-radius: 5px;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 35vw;
+    
+    column-gap: 0vw;
+
+
+  }
+  #container-radio>label{
+
+    font-size: 1vw;
+  }
+
+
+  #container-radio>div{
+
+    font-size: 1vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 1vw;
+    margin-bottom: 0;
+
+
+
+  }
+
+  #radio-input{
+    width: 1vw;
+    height: 1vw;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:2560px) and (min-width:1441px) {
+
+
+  .transaction-form{
+
+    width: 35vw;
+    margin-top:0vw;
+    row-gap: 2vw;
+    padding: 2vw 0;
+    /* margin-right: -25vw; */
+    height: fit-content;
+  
+  
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 2vw;
+    margin-top: 0;
+   /* border: 1px solid black; */
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 0.5vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 1vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input,.submit-button{
+
+      font-size: 1vw;
+      width: 30vw;
+      height: 3vw;
+      border-radius: 5px;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 35vw;
+    
+    column-gap: 0vw;
+
+
+  }
+  #container-radio>label{
+
+    font-size: 1vw;
+  }
+
+
+  #container-radio>div{
+
+    font-size: 1vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 1vw;
+    margin-bottom: 0;
+
+
+
+  }
+
+  #radio-input{
+    width: 1vw;
+    height: 1vw;
+  }
+
+
+}
+
+
+
+
+@media screen and (min-width:2561px)  {
+
+
+  .transaction-form{
+
+    width: 35vw;
+    margin-top:0vw;
+    row-gap: 2vw;
+    padding: 2vw 0;
+    /* margin-right: -25vw; */
+    height: fit-content;
+  
+  
+
+  }
+
+
+  .transaction-form-heading{
+
+    font-size: 2vw;
+    margin-top: 0;
+   /* border: 1px solid black; */
+
+
+  }
+
+
+  .transaction-form>div{
+
+    row-gap: 0.5vw;
+
+
+  }
+
+
+  .transaction-form>div>label{
+
+    font-size: 1vw;
+
+
+
+  }
+
+
+  .transaction-form>div>input,.submit-button{
+
+      font-size: 1vw;
+      width: 30vw;
+      height: 3vw;
+      border-radius: 5px;
+      
+
+
+  }
+
+  #container-radio{
+
+    width: 35vw;
+    
+    column-gap: 0vw;
+
+
+  }
+  #container-radio>label{
+
+    font-size: 1vw;
+  }
+
+
+  #container-radio>div{
+
+    font-size: 1vw;
+
+
+  }
+
+
+  button{
+
+    font-size: 1vw;
+    margin-bottom: 0;
+
+
+
+  }
+
+  #radio-input{
+    width: 1vw;
+    height: 1vw;
   }
 
 

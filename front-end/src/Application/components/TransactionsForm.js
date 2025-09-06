@@ -186,7 +186,7 @@ const TransactionForm = () => {
           </div>
         </div>
 
-        <button type="submit" disabled={isLoading}>
+        <button type="submit"  className="submit-button" disabled={isLoading}>
           {isLoading ? 'Submitting...' : 'Submit'}
         </button>
       </form>

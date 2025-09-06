@@ -175,11 +175,12 @@ const Update = () => {
     }, [API_URL, params.id, navigate, location.pathname, title, amount, category, transactionType]);
 
     return (
-        <div className="update-container">
-            <h2 id='heading'>Update Transaction</h2>
-            <form onSubmit={handleSubmit}>
+        
+        <form onSubmit={handleSubmit} className='update-form'>
+                <h2 id='heading'>Update Transaction</h2>
                 <input type="text"
                     id="title"
+                    className='input-field'
                     placeholder="Enter title"
                     value={title}
                     onChange={(e) => {
@@ -192,6 +193,7 @@ const Update = () => {
 
                 <input type="number"
                     id="amount"
+                       className='input-field'
                     placeholder="Enter amount"
                     value={amount}
                     min="0"
@@ -205,6 +207,7 @@ const Update = () => {
 
                 <input type="text"
                     id="category"
+                       className='input-field'
                     placeholder="Enter category"
                     value={category}
                     onChange={(e) => {
@@ -246,9 +249,9 @@ const Update = () => {
                 </div>
                 {transactionTypeError && <span style={{ color: 'red' }}>{transactionTypeError}</span>}
 
-                <button type="submit">Update Transaction</button>
+                <button type="submit"    className='input-field'>Update Transaction</button>
             </form>
-        </div>
+       
     );
 }
 

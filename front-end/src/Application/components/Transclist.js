@@ -187,7 +187,7 @@ const Transaclist = () => {
 
   return (
     <div className="transaclist-container">
-      <h2>Transaction List</h2>
+      <h2 className="transaction-list-heading">Transaction List</h2>
       <input
         type="search"
         placeholder="search here"
@@ -199,6 +199,7 @@ const Transaclist = () => {
         {transactions.length > 0 ? (
           transactions.map((transaction) => (
             <li className="transaction-item" key={transaction._id}>
+              <div className="transaction-details">
               <span>
                 <strong>Title:</strong> {transaction.title}
               </span>
@@ -212,6 +213,9 @@ const Transaclist = () => {
                 <strong>Transaction Type:</strong>{" "}
                 {transaction.transactionType}
               </span>
+              </div>
+
+              <div className="button-group">
               <button
                 className="delete-btn"
                 onClick={() => deleteTransaction(transaction._id)}
@@ -223,6 +227,7 @@ const Transaclist = () => {
                   Update
                 </Link>
               </button>
+              </div>
             </li>
           ))
         ) : (

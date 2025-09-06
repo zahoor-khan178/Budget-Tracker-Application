@@ -1,141 +1,118 @@
 
-.update-container{
+.update-form{
 
-    background-color: white;
+    border:2px solid green; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: fit-content;
-    box-shadow: 0 0 8px 2px black;
-    width: 70vw;
-
+    justify-content: center;
+    width: 40%;
+    background-color: white;
 }
+
+.input-field{
+
+    border: 2px solid rgb(128, 172, 62);
+    width: 20vw;
+    height: 5vh;
+    margin: 1vh;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
 
 #transactiontype-div{
 
-    /* background-color: blueviolet; */
+    /* border: 1px solid black; */
+    width: 20vw;
+    height: 5vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
+    
+
 }
 
-input[type='text'],
-input[type='number']
-{
+
+
+
+
+
+
+
+
+@media screen and (max-width:480px) and (min-width:0px) {
+
+    .update-form{
   
-    border: 1px solid green;
+      width: 90vw;
+      row-gap: 3vw;
+      padding: 3vw 0;
+      border-radius: 10px;
+    }
+
   
   
-}
-
-/* form>div{
-
-    background-color: red;
-      width: 100%;
-} */
-
-
-@media screen and (max-width:320px)
-{
-
-    .update-container{
-
-        width: 90vw;
-        margin-top: 15vh;
-        padding: 6vh 0;
-        border-radius: 10px;
+    .input-field{
+  
+      width: 80vw;
+         height: 10vw;
+      font-size: 3.5vw;
+    }
+  
+    #transactiontype-div{
+  
+      width: 70vw;
+      font-size: 3.5vw;
+      column-gap: 8vw;
     }
 
-    #heading{
+    button{
 
-        font-size: 5vw;
+        border-radius: 5px;
     }
+  
 }
 
 
-@media screen and (max-width:480px)
-{
 
-    .update-container{
 
-        width: 80vw;
-        margin-top: 15vh;
-        padding: 6vh 0;
-        border-radius: 10px;
-       
+
+
+
+@media screen and (max-width:768px) and (min-width:481px) {
+
+    .update-form{
+  
+      width: 70vw;
+      row-gap: 3vw;
+      padding: 3vw 0;
+      border-radius: 10px;
     }
 
-    #heading{
-
-        font-size: 5vw;
-    }
-
-
-
-
-}
-
-
-@media screen and (max-width:768px)
-{
-
-    .update-container{
-
-        width: 50vw;
-        margin-top: 15vh;
-        padding: 6vh 0;
-        border-radius: 10px;
-       
-    }
-
-    #heading{
-
+      #heading{
         font-size: 3vw;
     }
-
-    input[type='text'],
-input[type='number'],label
-{
   
-font-size: 1.5vw;
+    .input-field{
   
+      width: 60vw;
+         height: 6vw;
+      font-size: 2.5vw;
+    }
   
-}
-
-
-
-
-
-}
-
-
-
-@media screen and (max-width:1024px) and (min-width:769px)
-{
-
-    .update-container{
-
-        width: 50vw;
-        margin-top: 10vh;
-        padding: 6vh 0;
-        border-radius: 10px;
-        margin-left: 30vw;
-       
+    #transactiontype-div{
+  
+      width: 70vw;
+      font-size: 2.5vw;
+      column-gap: 6vw;
     }
 
-    #heading{
+    button{
 
-        font-size: 3vw;
+        border-radius: 5px;
     }
-
-    input[type='text'],
-input[type='number'],label
-{
-  
-font-size: 1.5vw;
-  
   
 }
 
@@ -143,77 +120,159 @@ font-size: 1.5vw;
 
 
 
+
+@media screen and (max-width:1024px) and (min-width:769px) {
+
+    .update-form{
+  
+      width: 45vw;
+      row-gap: 2vw;
+      padding: 3vw 0;
+      border-radius: 10px;
+    }
+
+      #heading{
+        font-size: 2.3vw;
+    }
+  
+    .input-field{
+  
+      width: 35vw;
+         height: 4vw;
+      font-size: 1.8vw;
+    }
+  
+    #transactiontype-div{
+  
+      width: 35vw;
+      font-size: 1.8vw;
+      column-gap: 3vw;
+    }
+
+    button{
+
+        border-radius: 5px;
+    }
+  
 }
 
 
-@media screen and (max-width:1440px) and (min-width:1025px)
-{
 
-    .update-container{
 
-        width: 40vw;
-        margin-top: 10vh;
-        padding: 6vh 0;
-        border-radius: 10px;
-        margin-left: 25vw;
-       
+
+
+@media screen and (max-width:1440px) and (min-width:1025px) {
+
+    .update-form{
+  
+      width: 35vw;
+      row-gap: 1vw;
+      padding: 3vw 0;
+      border-radius: 10px;
     }
 
-    #heading{
-
+      #heading{
         font-size: 2vw;
     }
-
-    input[type='text'],
-input[type='number'],label
-{
   
-font-size: 1vw;
+    .input-field{
   
+      width: 30vw;
+         height: 3vw;
+      font-size: 1vw;
+    }
   
-}
-
-
-
-
-
-}
-
-
-
-
-
-
-
-@media screen and (max-width:2560px) and (min-width:1441px)
-{
-
-    .update-container{
-
-        width: 40vw;
-        margin-top: 10vh;
-        padding: 6vh 0;
-        border-radius: 10px;
-        margin-left: 25vw;
-       
+    #transactiontype-div{
+  
+      width: 25vw;
+      font-size: 1vw;
+      column-gap: 3vw;
     }
 
-    #heading{
+    button{
 
+        border-radius: 5px;
+    }
+  
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:2560px) and (min-width:1441px) {
+
+    .update-form{
+  
+      width: 30vw;
+      row-gap: 1vw;
+      padding: 3vw 0;
+      border-radius: 10px;
+    }
+
+      #heading{
         font-size: 2vw;
     }
+  
+    .input-field{
+  
+      width: 25vw;
+         height: 3vw;
+      font-size: 1vw;
+    }
+  
+    #transactiontype-div{
+  
+      width: 25vw;
+      font-size: 1vw;
+      column-gap: 3vw;
+    }
 
-    input[type='text'],
-input[type='number'],label
-{
-  
-font-size: 1vw;
-  
+    button{
+
+        border-radius: 5px;
+    }
   
 }
 
 
 
 
+@media screen and (min-width:2561px)  {
 
+    .update-form{
+  
+      width: 30vw;
+      row-gap: 1vw;
+      padding: 3vw 0;
+      border-radius: 10px;
+    }
+
+      #heading{
+        font-size: 2vw;
+    }
+  
+    .input-field{
+  
+      width: 25vw;
+         height: 3vw;
+      font-size: 1vw;
+    }
+  
+    #transactiontype-div{
+  
+      width: 25vw;
+      font-size: 1vw;
+      column-gap: 3vw;
+    }
+
+    button{
+
+        border-radius: 5px;
+    }
+  
 }

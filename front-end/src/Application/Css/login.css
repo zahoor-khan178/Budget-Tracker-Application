@@ -201,7 +201,13 @@
    }
 
    .logheadign{
-    font-size: 2.5vw;
+    font-size: 2vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{
