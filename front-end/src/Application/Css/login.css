@@ -93,6 +93,13 @@
 
    .logheadign{
     font-size: 6vw;
+    margin-bottom: 4vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{
@@ -127,6 +134,13 @@
 
    .logheadign{
     font-size: 4vw;
+    margin-bottom: 2vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{
@@ -166,7 +180,13 @@
 
    .logheadign{
     font-size: 2.5vw;
-    /* margin-top: 6vh; */
+   margin-bottom: 2vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{
@@ -193,7 +213,7 @@
 {
    .logindiv{
 
-    width: 30vw;
+    width: 35vw;
     border-radius: 10px;
     margin-top: 15vh;
        height: fit-content;
@@ -202,6 +222,7 @@
 
    .logheadign{
     font-size: 2vw;
+    margin-bottom: 2vw;
    }
 
    .logininputdiv{
@@ -212,7 +233,7 @@
 
    .loginh2,#text_input{
 
-    width: 25vw;
+    width: 30vw;
     font-size: 1.2vw;
     height: 3vw;
       border-radius: 5px;
@@ -241,6 +262,13 @@
 
    .logheadign{
     font-size: 2.5vw;
+    margin-bottom: 2vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{
@@ -276,6 +304,13 @@
 
    .logheadign{
     font-size: 2.5vw;
+    margin-bottom: 2vw;
+   }
+
+   .logininputdiv{
+
+
+      row-gap: 2vh;
    }
 
    .loginh2,#text_input{

@@ -188,7 +188,7 @@ const Update = () => {
                         setTitleError(''); // Clear error on change
                     }}
                 />
-                {titleError && <span style={{ color: 'red' }}>{titleError}</span>}
+                {titleError && <span id="error-message" estyle={{ color: 'red' }}>{titleError}</span>}
 
 
                 <input type="number"
@@ -202,7 +202,7 @@ const Update = () => {
                         setAmountError(''); // Clear error on change
                     }}
                 />
-                {amountError && <span style={{ color: 'red' }}>{amountError}</span>}
+                {amountError && <span id="error-message" style={{ color: 'red' }}>{amountError}</span>}
 
 
                 <input type="text"

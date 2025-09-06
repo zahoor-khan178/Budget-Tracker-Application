@@ -48,8 +48,13 @@
   
       width: 90vw;
       row-gap: 3vw;
-      padding: 3vw 0;
+      padding: 4vw 0;
       border-radius: 10px;
+    }
+
+
+     #heading{
+        font-size: 4vw;
     }
 
   
@@ -59,6 +64,14 @@
       width: 80vw;
          height: 10vw;
       font-size: 3.5vw;
+    }
+
+      #error-message{
+
+        font-size: 3vw;
+        margin-top: -3vw;
+        color: red;
+       
     }
   
     #transactiontype-div{
@@ -101,6 +114,15 @@
          height: 6vw;
       font-size: 2.5vw;
     }
+
+
+     #error-message{
+
+        font-size: 2vw;
+        margin-top: -2vw;
+        color: red;
+       
+    }
   
     #transactiontype-div{
   
@@ -141,6 +163,14 @@
          height: 4vw;
       font-size: 1.8vw;
     }
+
+      #error-message{
+
+        font-size: 1.5vw;
+        margin-top: -2vw;
+        color: red;
+       
+    }
   
     #transactiontype-div{
   
@@ -166,7 +196,7 @@
     .update-form{
   
       width: 35vw;
-      row-gap: 1vw;
+      row-gap: 2vw;
       padding: 3vw 0;
       border-radius: 10px;
     }
@@ -180,6 +210,14 @@
       width: 30vw;
          height: 3vw;
       font-size: 1vw;
+    }
+
+    #error-message{
+
+        font-size: 1vw;
+        margin-top: -2vw;
+        color: red;
+       
     }
   
     #transactiontype-div{
@@ -224,6 +262,14 @@
          height: 3vw;
       font-size: 1vw;
     }
+
+      #error-message{
+
+        font-size: 1vw;
+        margin-top: -1vw;
+        color: red;
+       
+    }
   
     #transactiontype-div{
   
@@ -261,6 +307,14 @@
       width: 25vw;
          height: 3vw;
       font-size: 1vw;
+    }
+
+      #error-message{
+
+        font-size: 1vw;
+        margin-top: -1vw;
+        color: red;
+       
     }
   
     #transactiontype-div{

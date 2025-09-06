@@ -383,9 +383,9 @@ button{
 
     width: 35vw;
     margin-top:0vw;
-    row-gap: 2vw;
+    row-gap: 2.3vw;
     padding: 2vw 0;
-    /* margin-right: -25vw; */
+  
     height: fit-content;
     border: 1px solid black;
   
@@ -425,7 +425,7 @@ button{
 
       font-size: 1vw;
       width: 30vw;
-      height: 3vw;
+      height: 3.5vw;
       border-radius: 5px;
       
 

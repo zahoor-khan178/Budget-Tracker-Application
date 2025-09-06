@@ -106,7 +106,8 @@ font-size: 5vw;
 
     .create-account{
 
-font-size: 4vw;
+font-size: 3vw;
+margin-bottom: 2vw;
     }
 
     .form-input,#name{
@@ -138,6 +139,7 @@ font-size: 4vw;
     .create-account{
 
 font-size: 3vw;
+margin-bottom: 2vw;
     }
 
     .form-input,#name{
@@ -168,6 +170,7 @@ font-size: 3vw;
     .create-account{
 
 font-size: 2vw;
+margin-bottom: 2vw;
     }
 
     .form-input,#name{
@@ -201,6 +204,7 @@ font-size: 2vw;
     .create-account{
 
 font-size: 2vw;
+margin-bottom: 2vw;
     }
 
     .form-input,#name{
@@ -232,6 +236,7 @@ font-size: 2vw;
     .create-account{
 
 font-size: 2vw;
+margin-bottom: 2vw;
     }
 
     .form-input,#name{
