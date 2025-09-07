@@ -62,5 +62,5 @@ This is a full-stack budget tracker application built using the MERN stack (Mong
 ## Live Demo
 
 You can try the live application here:  
-👉 [Live Demo Link](https://budget-tracker-application-bb2h.vercel.app))
+👉 [Live Demo Link](https://budget-tracker-application-bb2h.vercel.app)
 
