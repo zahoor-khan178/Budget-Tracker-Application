@@ -60,7 +60,7 @@ span{
   display: flex;
   flex-direction: row;
   column-gap: 1vw;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
 }
@@ -157,6 +157,7 @@ margin-top: 20vw;
   background-color: white;
   column-gap: 3vw;
   height: fit-content;
+  padding-left: 2vw;
  }
   
   button{
@@ -261,6 +262,8 @@ margin-top: 20vw;
   background-color: white;
   column-gap: 3vw;
   height: fit-content;
+  padding-left: 2vw;
+  column-gap: 1vw;
  }
   
   button{
@@ -366,12 +369,14 @@ margin-top: 0vw;
   column-gap: 3vw;
   height: fit-content;
   padding-bottom: 1vw;
+  padding-left: 1vw;
+  column-gap: 1vw;
  }
   
   button{
   
-      width: 12vw;
-      height: 4vw;
+      width: 10vw;
+      height: 3.5vw;
       font-size: 3vw;
       color: white;
       border: none;
@@ -474,6 +479,11 @@ margin-top: 0vw;
   column-gap: 2vw;
   height: fit-content;
   padding-bottom: 1vw;
+
+  padding-left: 1vw;
+  column-gap: 1vw;
+ 
+  
  }
   
   button{
@@ -484,6 +494,7 @@ margin-top: 0vw;
       color: white;
       border: none;
       
+      
      
   }
 
@@ -493,6 +504,8 @@ margin-top: 0vw;
     color: white;
     background-color: red;
     font-size: 1vw;
+    
+      
     
 
   }
@@ -584,6 +597,8 @@ margin-top: 0vw;
   column-gap: 2vw;
   height: fit-content;
   padding-bottom: 1vw;
+   padding-left: 1vw;
+  column-gap: 1vw;
  }
   
   button{
@@ -691,6 +706,8 @@ margin-top: 0vw;
   column-gap: 2vw;
   height: fit-content;
   padding-bottom: 1vw;
+   padding-left: 1vw;
+  column-gap: 1vw;
  }
   
   button{
