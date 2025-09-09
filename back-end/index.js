@@ -28,40 +28,66 @@ app.use(cors());
 
 app.post('/register', async (req, resp) => {
    try {
-      const user = new User(req.body);
+      const { email, password } = req.body;
+
+  
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+         return resp.status(400).send({ message: "Email already exists. Please please use a different email." });
+      }
+
+   
+      const existingPassword = await User.findOne({ password });
+      if (existingPassword) {
+         return resp.status(400).send({ message: "This password is already used. Please choose a different one." });
+      }
+
+    
+      let user = new User(req.body);
       let result = await user.save();
       result = result.toObject();
       delete result.password;
 
-
+    
       jwt.sign({ result }, jwtkey, { expiresIn: "1h" }, (err, token) => {
-
          if (err) {
-
-            resp.send('problem in token')
+            resp.status(500).send({ message: "Problem in generating token" });
+         } else {
+            resp.send({ result, auth: token });
          }
-         else {
-
-            resp.send({ result, auth: token })
-         }
-      })
-
+      });
 
    } catch (error) {
       console.log('Error in signup API:', error);
+      resp.status(500).send({ message: "Internal Server Error" });
    }
-
 });
+
 
 
 app.post('/login', async (req, resp) => {
 
    try {
 
+
+       const { email, password } = req.body;
+
+  
+      const existingUser = await User.findOne({ email });
+      const existingPassword = await User.findOne({ password });
+
+      
+      if (!existingUser || !existingPassword) {
+         return resp.status(400).send({ message: "Incorrect Email or Password." });
+      }
+
+   
+     
+
       if (req.body.email && req.body.password) {
 
 
-               //   .select('-title')           both are the correct ways to excludes fields
+             
          const user = await User.findOne(req.body).select({_id:0})
          if (user) {
 
@@ -86,11 +112,7 @@ app.post('/login', async (req, resp) => {
             resp.send('no user found')
          }
       }
-      else {
-
-         resp.send('no user found')
-      }
-
+     
    }
    catch (err) {
 

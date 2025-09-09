@@ -42,6 +42,12 @@ const Signup = () => {
 
             result = await result.json();
 
+            if(result.message){
+
+                alert(result.message);
+                return;
+            }
+
             // Store user data if registration is successful and data is returned
             if (result.auth ) { // Assuming 'auth' property indicates success from your API
                 localStorage.setItem('user', JSON.stringify(result.result));

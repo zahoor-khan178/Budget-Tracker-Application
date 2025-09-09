@@ -18,18 +18,12 @@ const Login = () => {
     };
 
     const handlechange = async () => {
-        // IMPORTANT: Avoid using alert() in production/Canvas environments.
-        // Use a custom modal or message display for user feedback.
-        if (!email) {
-            console.error('Email field is empty.');
-            // You might want to display an error message in the UI here
+       
+        if (!email || !password) {
+            alert('All fields are required.');
             return;
         }
-        if (!password) {
-            console.error('Password field is empty.');
-            // You might want to display an error message in the UI here
-            return;
-        }
+      
 
         const API_URL = process.env.REACT_APP_API_URL;
 
@@ -44,6 +38,12 @@ const Login = () => {
             });
 
             const result = await response.json();
+
+            if(result.message)
+            {
+                alert(result.message);
+                return;
+            }
 
             if (result.auth) {
                 localStorage.setItem('user', JSON.stringify(result.user));
