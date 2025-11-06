@@ -31,6 +31,12 @@ const Signup = () => {
             return;
         }
 
+        if(password.length !==8)
+        {
+            alert('Password must be exactly 8 characters long.');
+            return;
+        }
+
         const API_URL = process.env.REACT_APP_API_URL;
 
         try {
@@ -101,6 +107,8 @@ const Signup = () => {
                         className='form-input'
                         onChange={handlePasswordChange}
                         value={password}
+                        pattern='.{8}'
+                        title='Password must be exectly 8 characters long'
                         required
                     />
                 {/* </div> */}
