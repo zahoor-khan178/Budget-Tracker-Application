@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Humberger from './Humberger';
 import Nav from './Nav';
 
 const Toggle = () => {
   const [visible, setvisible] = useState(false);
+  const hasrun = useRef(false);
 
   const visibility = () => {
     setvisible(!visible);
@@ -16,6 +17,8 @@ const Toggle = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    if (hasrun.current) return;
+    hasrun.current = true;
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };

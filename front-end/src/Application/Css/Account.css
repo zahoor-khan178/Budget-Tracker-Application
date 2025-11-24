@@ -1,0 +1,401 @@
+.account-page {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #534d4d;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+
+
+
+
+
+
+}
+
+.account-buttons {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+
+
+}
+
+
+h1 {
+
+    color: white;
+}
+
+
+.account-buttons>.delete {
+
+    font-size: 1vw;
+    background-color: red;
+}
+
+.account-buttons>.cancel {
+
+
+    background-color: blue;
+    color: white;
+}
+
+.account-buttons>button {
+
+    border: 1px solid white;
+}
+
+.user-data {
+
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.name,
+.email {
+
+
+    background-color: green;
+    color: white;
+}
+
+
+
+@media screen and (max-width:480px) {
+
+    .account-page {
+
+        height: 50%;
+        width: 90vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    .account-heading{
+        font-size: 5vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 3vw;
+
+    }
+    .account-buttons>.cancel {
+
+        font-size: 3vw;
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+    }
+
+    .user-data {
+        gap: 5vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+        font-size: 3vw;
+    }
+
+}
+
+
+@media screen and (max-width:768px) and (min-width:481px) {
+
+    .account-page {
+
+        height: 60%;
+        width: 50vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    .account-heading{
+        font-size: 3vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 1.5vw;
+
+    }
+    .account-buttons>.cancel {
+
+        font-size: 1.5vw;
+        
+       
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+        width: fit-content;
+        padding: 0 3vw;
+        
+    }
+
+    .user-data {
+        gap: 3vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+        font-size: 2vw;
+    }
+
+}
+
+
+@media screen and (max-width:1024px) and (min-width:769px) {
+
+    .account-page {
+
+        height: 60%;
+        width: 50vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    .account-heading{
+        font-size: 3vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 2vw;
+
+    }
+    .account-buttons>.cancel {
+
+        font-size: 2vw;
+        
+       
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+        width: fit-content;
+        padding: 0 3vw;
+        
+    }
+
+    .user-data {
+        gap: 3vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+        font-size: 2vw;
+    }
+
+}
+
+
+@media screen and (max-width:1440px) and (min-width:1025px) {
+
+    .account-page {
+
+        height: 50vh;
+        width: 50vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 1vw;
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+    }
+
+    .user-data {
+        gap: 1vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:2560px) and (min-width:1441px) {
+
+    .account-page {
+
+        height: 50vh;
+        width: 50vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 1vw;
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+    }
+
+    .user-data {
+        gap: 1vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+    }
+
+}
+
+
+@media screen and (min-width:2561px) {
+
+    .account-page {
+
+        height: 50vh;
+        width: 50vw;
+        padding: 2vw 0;
+    }
+
+    .account-buttons {
+
+        width: 100%;
+        padding: 0 4vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+
+    }
+
+    .account-buttons>.delete {
+
+        font-size: 1vw;
+
+    }
+
+
+
+    .account-buttons>button {
+
+        border: 1px solid white;
+    }
+
+    .user-data {
+        gap: 1vw;
+    }
+
+
+    .name,
+    .email {
+
+        border: 1px solid white;
+        padding: 0.5vw 2vw;
+        border-radius: 5px;
+    }
+
+}

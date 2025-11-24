@@ -1,5 +1,4 @@
-
-.signup-form{
+.signup-form {
 
     border: 2px solid black;
     background-color: white;
@@ -16,12 +15,15 @@
 
 }
 
-.create-account{
+
+
+.create-account {
 
     font-size: 2vw;
 }
 
-.form-input,#name{
+.form-input,
+#name {
 
     width: 70%;
     height: 2vw;
@@ -35,23 +37,36 @@
     font-size: 1.2vw;
 }
 
-.signup-button{
+.signup-button {
 
     border: 2px solid rgb(128, 172, 62);
     width: 70%;
     height: 5vh;
     font-size: 1vw;
     margin-top: 2vh;
-    display: flex;              /* Make button a flex container */
-    align-items: center;        /* Vertically center */
-    justify-content: center;    /* Horizontally center */
+    display: flex;
+    /* Make button a flex container */
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    /* Horizontally center */
     cursor: pointer;
     background-color: rgb(128, 172, 62);
-    color: white;               /* optional: better contrast */
+    color: white;
+    /* optional: better contrast */
 }
 
 
+.loading {
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+
+}
 
 
 
@@ -63,7 +78,7 @@
 
 @media screen and (max-width:480px) {
 
-    .signup-form{
+    .signup-form {
 
         width: 90%;
         margin-top: 25vw;
@@ -72,12 +87,13 @@
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 5vw;
+        font-size: 5vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 13vw;
@@ -85,17 +101,22 @@ font-size: 5vw;
 
     }
 
+    .loading {
 
- 
-  
-  }
-  
-  
+      
+        font-size: 5vw;
+    }
+
+
+
+}
+
+
 
 
 @media screen and (max-width:768px) and (min-width:481px) {
 
-    .signup-form{
+    .signup-form {
 
         width: 60%;
         margin-top: 15vw;
@@ -104,13 +125,14 @@ font-size: 5vw;
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 3vw;
-margin-bottom: 2vw;
+        font-size: 3vw;
+        margin-bottom: 2vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 5vw;
@@ -118,16 +140,19 @@ margin-bottom: 2vw;
 
     }
 
+    .loading {
 
- 
-  
-  }
-  
-  
+        font-size: 3vw;
+    }
+
+
+}
+
+
 
 @media screen and (max-width:1024px) and (min-width:769px) {
 
-    .signup-form{
+    .signup-form {
 
         width: 45%;
         margin-top: 10vw;
@@ -136,13 +161,14 @@ margin-bottom: 2vw;
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 3vw;
-margin-bottom: 2vw;
+        font-size: 3vw;
+        margin-bottom: 2vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 5vw;
@@ -150,30 +176,35 @@ margin-bottom: 2vw;
 
     }
 
+    .loading {
 
- 
-  
-  }
-  
-  
+        
+        font-size: 2vw;
+    }
+
+
+}
+
+
 @media screen and (max-width:1440px) and (min-width:1025px) {
 
-    .signup-form{
+    .signup-form {
 
-        width: 35%;
-        margin-top: 5vw;
+        width: 30%;
+        margin-top: 3vw;
         padding: 2vw 0;
         row-gap: 0vw;
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 2vw;
-margin-bottom: 2vw;
+        font-size: 2vw;
+        margin-bottom: 2vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 3.5vw;
@@ -183,16 +214,23 @@ margin-bottom: 2vw;
     }
 
 
- 
-  
-  }
-  
-  
+    .loading {
+
+        
+        font-size: 1.5vw;
+    }
+
+
+
+
+}
+
+
 
 
 @media screen and (max-width:2560px) and (min-width:1441px) {
 
-    .signup-form{
+    .signup-form {
 
         width: 35%;
         margin-top: 5vw;
@@ -201,13 +239,14 @@ margin-bottom: 2vw;
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 2vw;
-margin-bottom: 2vw;
+        font-size: 2vw;
+        margin-bottom: 2vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 3.5vw;
@@ -216,15 +255,21 @@ margin-bottom: 2vw;
     }
 
 
- 
-  
-  }
-  
-  
 
-@media screen and (min-width:2561px)  {
+    .loading {
 
-    .signup-form{
+       
+        font-size: 1vw;
+    }
+
+
+}
+
+
+
+@media screen and (min-width:2561px) {
+
+    .signup-form {
 
         width: 35%;
         margin-top: 5vw;
@@ -233,13 +278,14 @@ margin-bottom: 2vw;
 
     }
 
-    .create-account{
+    .create-account {
 
-font-size: 2vw;
-margin-bottom: 2vw;
+        font-size: 2vw;
+        margin-bottom: 2vw;
     }
 
-    .form-input,#name{
+    .form-input,
+    #name {
 
         width: 90%;
         height: 3.5vw;
@@ -248,9 +294,10 @@ margin-bottom: 2vw;
     }
 
 
- 
-  
-  } 
-  
-  
+    .loading {
 
+       
+        font-size: 1vw;
+    }
+
+}

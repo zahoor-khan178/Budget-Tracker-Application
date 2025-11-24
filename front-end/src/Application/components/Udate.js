@@ -1,6 +1,6 @@
 import '../Css/update.css';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 const Update = () => {
@@ -8,11 +8,12 @@ const Update = () => {
     const [amount, setAmount] = useState('');
     const [category, setCategory] = useState('');
     const [transactionType, setTransactionType] = useState('');
+    const hasrun = useRef(false);
 
     // State for validation errors
     const [titleError, setTitleError] = useState('');
     const [amountError, setAmountError] = useState('');
-  
+
     const [transactionTypeError, setTransactionTypeError] = useState('');
 
 
@@ -31,8 +32,10 @@ const Update = () => {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            
-            navigate('/login', { state: { from: location.pathname } });
+              localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+
+            navigate('/login', { state: { from: location.pathname } }, { replace: true });
             return;
         }
 
@@ -45,25 +48,23 @@ const Update = () => {
                 },
             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                if (window.location.pathname !== '/login') {
-                        alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
-                    }
-
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('user');
-                    navigate('/login', { state: { from: location.pathname } });
-                    return;
-
-                
-
-
-                    
-                
+            if (response.status === 401 || response.status === 403) {
+                alert("Your session has expired. Please login again.");
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                  localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+                navigate('/login', { state: { from: location.pathname } }, { replace: true });
+                return;
             }
 
             const data = await response.json();
+            if (!response.ok) {
+                alert(data.message || `HTTP error! Status: ${data.status}`);
+                return;
+ }
+
+            
             setTitle(data.title);
             setAmount(data.amount.toString()); // Convert amount to string for input value
             setCategory(data.category);
@@ -76,6 +77,8 @@ const Update = () => {
     }, [API_URL, params.id, navigate, location.pathname]);
 
     useEffect(() => {
+        if (hasrun.current) return;
+        hasrun.current = true;
         getdata();
     }, [getdata]);
 
@@ -88,7 +91,7 @@ const Update = () => {
         // Reset errors
         setTitleError('');
         setAmountError('');
-      
+
         setTransactionTypeError('');
 
         // Validate Title
@@ -108,7 +111,7 @@ const Update = () => {
         }
 
         // Validate Category
-      
+
 
         // Validate Transaction Type
         if (!transactionType) {
@@ -128,12 +131,12 @@ const Update = () => {
 
         if (!token || !user) {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
-            navigate('/login', { state: { from: location.pathname } });
+            navigate('/login', { state: { from: location.pathname } }, { replace: true });
             return;
         }
 
 
-        
+
 
 
 
@@ -154,14 +157,21 @@ const Update = () => {
                     }
                 });
 
-            if (!response.ok) {
-                const errordata = await response.json();
-               if (window.location.pathname !== '/login') {
-                        alert(errordata.message || `HTTP error! Status: ${errordata.status}`);
-                    }
+                if (response.status === 401 || response.status === 403) {
+                alert("Your session has expired. Please login again.");
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                navigate('/login', { state: { from: location.pathname } });
+                  localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+                navigate('/login', { state: { from: location.pathname } }, { replace: true });
+                return;
+            }
+
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.message || `HTTP error! Status: ${data.status}`);
                 return;
             }
 
@@ -175,83 +185,83 @@ const Update = () => {
     }, [API_URL, params.id, navigate, location.pathname, title, amount, category, transactionType]);
 
     return (
-        
+
         <form onSubmit={handleSubmit} className='update-form'>
-                <h2 id='heading'>Update Transaction</h2>
-                <input type="text"
-                    id="title"
-                    className='input-field'
-                    placeholder="Enter title"
-                    value={title}
-                    onChange={(e) => {
-                        setTitle(e.target.value);
-                        setTitleError(''); // Clear error on change
-                    }}
-                />
-                {titleError && <span id="error-message" estyle={{ color: 'red' }}>{titleError}</span>}
+            <h2 id='heading'>Update Transaction</h2>
+            <input type="text"
+                id="title"
+                className='input-field'
+                placeholder="Enter title"
+                value={title}
+                onChange={(e) => {
+                    setTitle(e.target.value);
+                    setTitleError(''); // Clear error on change
+                }}
+            />
+            {titleError && <span id="error-message" estyle={{ color: 'red' }}>{titleError}</span>}
 
 
-                <input type="number"
-                    id="amount"
-                       className='input-field'
-                    placeholder="Enter amount"
-                    value={amount}
-                    min="0"
-                    onChange={(e) => {
-                        setAmount(e.target.value);
-                        setAmountError(''); // Clear error on change
-                    }}
-                />
-                {amountError && <span id="error-message" style={{ color: 'red' }}>{amountError}</span>}
+            <input type="number"
+                id="amount"
+                className='input-field'
+                placeholder="Enter amount"
+                value={amount}
+                min="0"
+                onChange={(e) => {
+                    setAmount(e.target.value);
+                    setAmountError(''); // Clear error on change
+                }}
+            />
+            {amountError && <span id="error-message" style={{ color: 'red' }}>{amountError}</span>}
 
 
-                <input type="text"
-                    id="category"
-                       className='input-field'
-                    placeholder="Enter category"
-                    value={category}
-                    onChange={(e) => {
-                        setCategory(e.target.value);
-                        
-                    }}
-                />
-                {/* {categoryError && <span style={{ color: 'red' }}>{categoryError}</span>} */}
+            <input type="text"
+                id="category"
+                className='input-field'
+                placeholder="Enter category"
+                value={category}
+                onChange={(e) => {
+                    setCategory(e.target.value);
+
+                }}
+            />
+            {/* {categoryError && <span style={{ color: 'red' }}>{categoryError}</span>} */}
 
 
-                <div id='transactiontype-div'>
-                    <label>Transaction Type:</label>
-                    <div>
-                        <label htmlFor="income">Income</label>
-                        <input type="radio"
-                            id="income"
-                            value='income'
-                            checked={transactionType === 'income'}
-                            onChange={(e) => {
-                                setTransactionType(e.target.value);
-                                setTransactionTypeError(''); // Clear error on change
-                            }}
-                            name="transactionType"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="expense">Expense</label>
-                        <input type="radio"
-                            id="expense"
-                            value='expense'
-                            checked={transactionType === 'expense'}
-                            onChange={(e) => {
-                                setTransactionType(e.target.value);
-                                setTransactionTypeError(''); // Clear error on change
-                            }}
-                            name="transactionType"
-                        />
-                    </div>
+            <div id='transactiontype-div'>
+                <label>Transaction Type:</label>
+                <div>
+                    <label htmlFor="income">Income</label>
+                    <input type="radio"
+                        id="income"
+                        value='income'
+                        checked={transactionType === 'income'}
+                        onChange={(e) => {
+                            setTransactionType(e.target.value);
+                            setTransactionTypeError(''); // Clear error on change
+                        }}
+                        name="transactionType"
+                    />
                 </div>
-                {transactionTypeError && <span style={{ color: 'red' }}>{transactionTypeError}</span>}
+                <div>
+                    <label htmlFor="expense">Expense</label>
+                    <input type="radio"
+                        id="expense"
+                        value='expense'
+                        checked={transactionType === 'expense'}
+                        onChange={(e) => {
+                            setTransactionType(e.target.value);
+                            setTransactionTypeError(''); // Clear error on change
+                        }}
+                        name="transactionType"
+                    />
+                </div>
+            </div>
+            {transactionTypeError && <span style={{ color: 'red' }}>{transactionTypeError}</span>}
 
-                <button type="submit"    className='input-field'>Update Transaction</button>
-            </form>
-       
+            <button type="submit" className='input-field'>Update Transaction</button>
+        </form>
+
     );
 }
 

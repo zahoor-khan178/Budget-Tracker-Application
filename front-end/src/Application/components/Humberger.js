@@ -7,8 +7,11 @@ const Hum = ({ onClick, isnavvisible }) => {
   const line1 = useRef(null);
   const line2 = useRef(null);
   const line3 = useRef(null);
+  const hasrun = useRef(false);
 
 useEffect(() => {
+  if (hasrun.current) return;
+  hasrun.current = true;
   const handle_animation = () => {
     if (element.current) {
       if (isnavvisible) {

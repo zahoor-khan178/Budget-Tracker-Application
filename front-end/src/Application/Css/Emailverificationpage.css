@@ -1,0 +1,328 @@
+.email-verification-page {
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.heading{
+
+    color: black;
+}
+
+.paragraph {
+
+    text-align: center;
+    
+}
+
+.paragraph>strong {
+
+    color: rgb(0, 155, 0);
+    
+
+}
+
+h3 {
+
+    color: blueviolet;
+    
+}
+
+/* button {
+    font-size: 1.2vw;
+} */
+
+.loading {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+
+
+}
+
+
+@media screen and (max-width:480px) {
+
+      .email-verification-page {
+
+        height: 80vh;
+        width: 90vw;
+        row-gap: 4vh;
+        border-radius: 10px;
+    }
+
+    h1{
+        font-size: 8vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 4vw;
+    padding: 0 1.5vw;
+}
+
+strong {
+
+    
+    font-size: 4vw;
+
+}
+
+h3 {
+
+    
+    font-size: 6vw;
+}
+
+button {
+
+    width: 30vw;
+    height: 6vh;
+    font-size: 4vw;
+}
+
+    
+    .loading {
+
+        /* margin-top: 50vw; */
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:481px) {
+
+
+          .email-verification-page {
+
+        height: 80vh;
+        width: 90vw;
+        row-gap: 4vh;
+        border-radius: 10px;
+    }
+
+    h1{
+        font-size: 5vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 3vw;
+    padding: 0 2vw;
+}
+
+strong {
+
+    
+    font-size: 4vw;
+
+}
+
+h3 {
+
+    
+    font-size: 4vw;
+}
+
+button {
+
+    width: 30vw;
+    height: 7vh;
+    font-size: 3vw;
+}
+    .loading {
+
+        /* margin-top: 40vw; */
+    }
+}
+
+
+@media screen and (max-width:1024px) and (min-width:769px) {
+
+    
+          .email-verification-page {
+
+        height: 80vh;
+        width: 90vw;
+        row-gap: 4vh;
+        border-radius: 10px;
+    }
+
+    h1{
+        font-size: 5vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 3vw;
+    padding: 0 2vw;
+}
+
+strong {
+
+    
+    font-size: 4vw;
+
+}
+
+h3 {
+
+    
+    font-size: 4vw;
+}
+
+button {
+
+    width: 30vw;
+    height: 7vh;
+    font-size: 3vw;
+}
+    .loading {
+
+        /* margin-top: 30vw; */
+    }
+}
+
+
+@media screen and (max-width:1440px) and (min-width:1025px) {
+
+    .email-verification-page {
+
+        height: 90vh;
+        width: 80vw;
+        row-gap: 2vw;
+    }
+
+     h1{
+        font-size: 3vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 1.5vw;
+}
+
+strong {
+
+    
+    font-size: 1.5vw;
+
+}
+
+h3 {
+
+    
+    font-size: 1.8vw;
+}
+
+button {
+    font-size: 1.2vw;
+}
+
+    .loading {
+
+        /* margin-top: 20vw; */
+    }
+}
+
+
+@media screen and (max-width:2560px) and (min-width:1441px) {
+
+    .email-verification-page {
+
+        height: 90vh;
+        width: 80vw;
+        row-gap: 2vw;
+    }
+
+    h1{
+        font-size: 3vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 1.5vw;
+}
+
+strong {
+
+    
+    font-size: 1.5vw;
+
+}
+
+h3 {
+
+    
+    font-size: 1.8vw;
+}
+
+button {
+    font-size: 1.2vw;
+}
+
+    .loading {
+
+        /* margin-top: 15vw; */
+    }
+
+
+}
+
+
+@media screen and (min-width:2561px) {
+
+
+     .email-verification-page {
+
+        height: 90vh;
+        width: 80vw;
+        row-gap: 2vw;
+    }
+
+    h1{
+        font-size: 3vw;
+    }
+
+    .paragraph {
+
+    
+    font-size: 1.5vw;
+}
+
+strong {
+
+    
+    font-size: 1.5vw;
+
+}
+
+h3 {
+
+    
+    font-size: 1.8vw;
+}
+
+button {
+    font-size: 1.2vw;
+}
+    .loading {
+
+        /* margin-top: 15vw; */
+    }
+}

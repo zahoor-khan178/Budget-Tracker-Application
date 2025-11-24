@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import "../Css/Tlist.css";
 
@@ -7,6 +7,7 @@ const Transaclist = () => {
   const [searchkey, setsearchkey] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const hasrun = useRef(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,6 +24,8 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
+        localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
       navigate("/login", { state: { from: location.pathname } });
       setLoading(false);
       return;
@@ -35,19 +38,25 @@ const Transaclist = () => {
         },
       });
 
-      if (!Response.ok) {
-        const errorData = await Response.json();
-        if (location.pathname !== "/login") {
-          alert(errorData.message || `HTTP error! Status: ${Response.status}`);
-        }
+      if (Response.status === 401 || Response.status === 403) {
+        alert("Your session has expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        navigate("/login", { state: { from: location.pathname } });
-        setLoading(false);
+          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+        navigate("/login", { state: { from: location.pathname } }, { replace: true });
         return;
       }
 
       const data = await Response.json();
+
+
+      if (!Response.ok) {
+        alert(data.message, "error in backend");
+        return;
+      }
+
+
       console.log("Fetched transactions:", data);
       setTransactions(data);
       setLoading(false);
@@ -59,6 +68,8 @@ const Transaclist = () => {
   }, [API_URL, navigate, location.pathname]);
 
   useEffect(() => {
+    if (hasrun.current) return;
+    hasrun.current = true;
     getdata();
   }, [getdata]);
 
@@ -77,7 +88,9 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      navigate("/login", { state: { from: location.pathname } });
+        localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+      navigate("/login", { state: { from: location.pathname } }, { replace: true });
       return;
     }
 
@@ -88,15 +101,18 @@ const Transaclist = () => {
           authorization: `bearer ${currentToken}`,
         },
       });
-
-      if (!Response.ok) {
-        const errorData = await Response.json();
-        if (location.pathname !== "/login") {
-          alert(errorData.message || `HTTP error! Status: ${Response.status}`);
-        }
+      if (Response.status === 401 || Response.status === 403) {
+        alert("Your session has expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        navigate("/login", { state: { from: location.pathname } });
+        navigate("/login", { state: { from: location.pathname } }, { replace: true });
+        return;
+      }
+      const errorData = await Response.json();
+      if (!Response.ok) {
+
+        alert(errorData.message || `HTTP error! Status: ${Response.status}`);
+
         return;
       }
 
@@ -127,7 +143,9 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      navigate("/login", { state: { from: location.pathname } });
+        localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+      navigate("/login", { state: { from: location.pathname } }, { replace: true });
       return;
     }
 
@@ -139,19 +157,25 @@ const Transaclist = () => {
         },
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        if (location.pathname !== "/login") {
-          window.alert(errorData.message || `HTTP status: ${response.status}`);
-        }
+      if (response.status === 401 || response.status === 403) {
+        alert("Your session has expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        navigate("/login", { state: { from: location.pathname } });
+          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+        navigate("/login", { state: { from: location.pathname } }, { replace: true });
         setTransactions([]);
         return;
       }
 
       const data = await response.json();
+      // const errorData = await response.json();
+      if (!response.ok) {
+
+        alert(data.message || `HTTP error! Status: ${response.status}`);
+        return;
+      }
+
 
       if (Array.isArray(data)) {
         setTransactions(data);
@@ -200,38 +224,38 @@ const Transaclist = () => {
           transactions.map((transaction) => (
             <li className="transaction-item" key={transaction._id}>
               <div className="transaction-details">
-              <span>
-                <strong>Title:</strong> {transaction.title}
-              </span>
-              <span>
-                <strong>Amount:</strong> ${transaction.amount}
-              </span>
-              <span>
-                <strong>Category:</strong> {transaction.category}
-              </span>
-              <span>
-                <strong>Transaction Type:</strong>{" "}
-                {transaction.transactionType}
-              </span>
+                <span>
+                  <strong>Title:</strong> {transaction.title}
+                </span>
+                <span>
+                  <strong>Amount:</strong> ${transaction.amount}
+                </span>
+                <span>
+                  <strong>Category:</strong> {transaction.category}
+                </span>
+                <span>
+                  <strong>Transaction Type:</strong>{" "}
+                  {transaction.transactionType}
+                </span>
               </div>
 
               <div className="button-group">
-              <button
-                className="delete-btn"
-                onClick={() => deleteTransaction(transaction._id)}
-              >
-                Delete
-              </button>
-              <button className="update-btn">
-                <Link to={`/up/${transaction._id}`} id="update-link">
-                  Update
-                </Link>
-              </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteTransaction(transaction._id)}
+                >
+                  Delete
+                </button>
+                <button className="update-btn">
+                  <Link to={`/up/${transaction._id}`} id="update-link">
+                    Update
+                  </Link>
+                </button>
               </div>
             </li>
           ))
         ) : (
-          <li>No transactions available</li>
+          <li className="no-transactions">No transactions available</li>
         )}
       </ul>
     </div>

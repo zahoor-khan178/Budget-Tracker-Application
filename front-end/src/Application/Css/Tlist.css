@@ -1,5 +1,4 @@
-
-.transaclist-container{
+.transaclist-container {
 
 
   border: 2px solid black;
@@ -18,22 +17,22 @@
 }
 
 
-.transaction-list{
+.transaction-list {
 
-   border: 1px solid blue;
-    width: fit-content;
-    list-style: none;
-    padding: 1vw ;
-    font-size: 1.5vw;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  border: 1px solid blue;
+  width: fit-content;
+  list-style: none;
+  padding: 1vw;
+  font-size: 1.5vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.transaction-details{
+.transaction-details {
 
   border: 1px solid black;
   border-bottom: none;
@@ -43,17 +42,17 @@
 
 
   /* padding: 3vw; */
-  
+
 }
 
-span{
+span {
 
   /* border: 1px solid red; */
   text-align: start;
   align-content: center;
 }
 
-.button-group{
+.button-group {
 
   border: 1px solid black;
   border-top: none;
@@ -66,29 +65,33 @@ span{
 }
 
 
-button{
+button {
 
-    border: 2px solid rgb(128, 172, 62);
-   
-    width: 4vw;
-    height: 5vh;
-    font-size: 1vw;
-    margin-top: 2vh;
-    display: flex;              /* Make button a flex container */
-    align-items: center;        /* Vertically center */
-    justify-content: center;    /* Horizontally center */
-    cursor: pointer;
-    background-color: rgb(128, 172, 62);
-    color: white;               /* optional: better contrast */
+  border: 2px solid rgb(128, 172, 62);
+
+  width: 4vw;
+  height: 5vh;
+  font-size: 1vw;
+  margin-top: 2vh;
+  display: flex;
+  /* Make button a flex container */
+  align-items: center;
+  /* Vertically center */
+  justify-content: center;
+  /* Horizontally center */
+  cursor: pointer;
+  background-color: rgb(128, 172, 62);
+  color: white;
+  /* optional: better contrast */
 }
 
 
 
-#update-link{
+#update-link {
 
 
-    text-decoration: none;
-    
+  text-decoration: none;
+
 }
 
 
@@ -100,39 +103,38 @@ button{
 
 
 
-  
 @media screen and (max-width:480px) and (min-width:0px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: 90vw;
     row-gap: 3vw;
-margin-top: 20vw;
+    margin-top: 20vw;
     border-radius: 10px;
     padding-bottom: 6vw;
   }
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 5vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 3vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 3vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 60vw;
     height: 6vw;
     font-size: 4vw;
@@ -140,65 +142,71 @@ margin-top: 20vw;
     margin-bottom: 4vw;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 3vw;
   }
 
-  span{
+  span {
 
     width: 60vw;
   }
 
- .button-group{
+  .button-group {
 
-  /* padding-top: 2vw; */
-  background-color: white;
-  column-gap: 3vw;
-  height: fit-content;
-  padding-left: 2vw;
- }
-  
-  button{
-  
-      width: 20vw;
-      height: 8vw;
-      font-size: 3vw;
-      color: white;
-      border: none;
-      /* margin-top: 2vh; */
-     
+    /* padding-top: 2vw; */
+    background-color: white;
+    column-gap: 3vw;
+    height: fit-content;
+    padding-left: 2vw;
   }
 
-  .delete-btn{
+  button {
+
+    width: 20vw;
+    height: 8vw;
+    font-size: 3vw;
+    color: white;
+    border: none;
+    /* margin-top: 2vh; */
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 3.5vw;
-    
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 3.5vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 3.5vw;
+
   }
-  
-  
-  
+
+  .no-transactions {
+
+    font-size: 5vw;
+
+  }
+
+
+
 }
 
 
@@ -207,36 +215,36 @@ margin-top: 20vw;
 
 @media screen and (max-width:768px) and (min-width:481px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: 80vw;
     row-gap: 3vw;
-margin-top: 20vw;
+    margin-top: 20vw;
     border-radius: 10px;
     padding-bottom: 6vw;
   }
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 5vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 3vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 3vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 60vw;
     height: 6vw;
     font-size: 3vw;
@@ -244,67 +252,74 @@ margin-top: 20vw;
     margin-bottom: 4vw;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 2vw;
   }
 
-  span{
+  span {
 
     width: 50vw;
     font-size: 3vw;
   }
 
- .button-group{
+  .button-group {
 
- 
-  background-color: white;
-  column-gap: 3vw;
-  height: fit-content;
-  padding-left: 2vw;
-  column-gap: 1vw;
- }
-  
-  button{
-  
-      width: 14vw;
-      height: 5vw;
-      font-size: 3vw;
-      color: white;
-      border: none;
-      
-     
+
+    background-color: white;
+    column-gap: 3vw;
+    height: fit-content;
+    padding-left: 2vw;
+    column-gap: 1vw;
   }
 
-  .delete-btn{
+  button {
+
+    width: 14vw;
+    height: 5vw;
+    font-size: 3vw;
+    color: white;
+    border: none;
+
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 2vw;
-    
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 2vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 2vw;
+
   }
-  
-  
-  
+
+
+  .no-transactions {
+
+    font-size: 3vw;
+
+  }
+
+
+
 }
 
 
@@ -312,36 +327,36 @@ margin-top: 20vw;
 
 @media screen and (max-width:1024px) and (min-width:769px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: fit-content;
     row-gap: 3vw;
-margin-top: 0vw;
+    margin-top: 0vw;
     border-radius: 10px;
     padding: 6vw 2vw;
   }
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 3vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 2vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 2vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 35vw;
     height: 4vw;
     font-size: 2vw;
@@ -349,69 +364,76 @@ margin-top: 0vw;
     margin-bottom: 4vw;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 2vw;
     padding-bottom: 0;
   }
 
-  span{
+  span {
 
     width: 30vw;
     font-size: 2vw;
   }
 
- .button-group{
+  .button-group {
 
- 
-  background-color: white;
-  column-gap: 3vw;
-  height: fit-content;
-  padding-bottom: 1vw;
-  padding-left: 1vw;
-  column-gap: 1vw;
- }
-  
-  button{
-  
-      width: 10vw;
-      height: 3.5vw;
-      font-size: 3vw;
-      color: white;
-      border: none;
-      
-     
+
+    background-color: white;
+    column-gap: 3vw;
+    height: fit-content;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    column-gap: 1vw;
   }
 
-  .delete-btn{
+  button {
+
+    width: 10vw;
+    height: 3.5vw;
+    font-size: 3vw;
+    color: white;
+    border: none;
+
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 1.6vw;
-    
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 1.6vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 1.6vw;
+
   }
-  
-  
-  
+
+  .no-transactions {
+
+    font-size: 2vw;
+
+  }
+
+
+
+
 }
 
 
@@ -419,11 +441,11 @@ margin-top: 0vw;
 
 @media screen and (max-width:1440px) and (min-width:1025px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: fit-content;
     row-gap: 3vw;
-margin-top: 0vw;
+    margin-top: 0vw;
     border-radius: 10px;
     padding: 6vw 2vw;
     padding-top: 2vw;
@@ -431,25 +453,25 @@ margin-top: 0vw;
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 2vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 2vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 2vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 30vw;
     height: 3vw;
     font-size: 1.5vw;
@@ -457,77 +479,84 @@ margin-top: 0vw;
     margin-bottom: 4vw;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 2vw;
     padding-bottom: 0;
   }
 
-  span{
+  span {
 
     width: 25vw;
     font-size: 1.5vw;
     height: 2vw;
-    
+
   }
 
- .button-group{
+  .button-group {
 
- 
-  background-color: white;
-  column-gap: 2vw;
-  height: fit-content;
-  padding-bottom: 1vw;
 
-  padding-left: 1vw;
-  column-gap: 1vw;
- 
-  
- }
-  
-  button{
-  
-      width: 8vw;
-      height: 2.5vw;
-      
-      color: white;
-      border: none;
-      
-      
-     
+    background-color: white;
+    column-gap: 2vw;
+    height: fit-content;
+    padding-bottom: 1vw;
+
+    padding-left: 1vw;
+    column-gap: 1vw;
+
+
   }
 
-  .delete-btn{
+  button {
+
+    width: 8vw;
+    height: 2.5vw;
+
+    color: white;
+    border: none;
+
+
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 1vw;
-    
-      
-    
+
+
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 1vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 1vw;
+
   }
-  
-  
-  
+
+  .no-transactions {
+
+    font-size: 1.5vw;
+
+  }
+
+
+
+
 }
 
 
@@ -536,11 +565,11 @@ margin-top: 0vw;
 
 @media screen and (max-width:2560px) and (min-width:1441px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: fit-content;
     row-gap: 3vw;
-margin-top: 0vw;
+    margin-top: 0vw;
     border-radius: 10px;
     padding: 6vw 2vw;
     padding-top: 2vw;
@@ -548,25 +577,25 @@ margin-top: 0vw;
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 2vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 2vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 2vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 30vw;
     height: 3vw;
     font-size: 1.5vw;
@@ -575,81 +604,86 @@ margin-top: 0vw;
     border: 2px solid black;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 2vw;
     padding-bottom: 0;
   }
 
-  span{
+  span {
 
     width: 25vw;
     font-size: 1.5vw;
     height: 2vw;
-    
+
   }
 
- .button-group{
+  .button-group {
 
- 
-  background-color: white;
-  column-gap: 2vw;
-  height: fit-content;
-  padding-bottom: 1vw;
-   padding-left: 1vw;
-  column-gap: 1vw;
- }
-  
-  button{
-  
-      width: 8vw;
-      height: 2.5vw;
-      
-      color: white;
-      border: none;
-      
-     
+
+    background-color: white;
+    column-gap: 2vw;
+    height: fit-content;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    column-gap: 1vw;
   }
 
-  .delete-btn{
+  button {
+
+    width: 8vw;
+    height: 2.5vw;
+
+    color: white;
+    border: none;
+
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 1vw;
-    
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 1vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 1vw;
+
   }
-  
-  
-  
+
+  .no-transactions {
+
+    font-size: 1.5vw;
+
+  }
+
+
 }
 
 
-@media screen and (min-width:2561px)  {
+@media screen and (min-width:2561px) {
 
-  .transaclist-container{
-  
+  .transaclist-container {
+
     width: fit-content;
     row-gap: 3vw;
-margin-top: 0vw;
+    margin-top: 0vw;
     border-radius: 10px;
     padding: 6vw 2vw;
     padding-top: 2vw;
@@ -657,25 +691,25 @@ margin-top: 0vw;
 
 
 
-  .transaction-list-heading{
+  .transaction-list-heading {
 
     font-size: 2vw;
-    
-  }
-  
-  
-  .transaction-list{
-  
-     width: fit-content;
-     font-size: 4vw;
-     padding: 2vw ;
-     border-radius: 10px;
-     background-color: rgb(248, 243, 243);
-      row-gap: 3vw;
-  
+
   }
 
-  #search-box{
+
+  .transaction-list {
+
+    width: fit-content;
+    font-size: 4vw;
+    padding: 2vw;
+    border-radius: 10px;
+    background-color: rgb(248, 243, 243);
+    row-gap: 3vw;
+
+  }
+
+  #search-box {
     width: 30vw;
     height: 3vw;
     font-size: 1.5vw;
@@ -684,69 +718,75 @@ margin-top: 0vw;
     border: 2px solid black;
   }
 
-  .transaction-details{
+  .transaction-details {
 
     background-color: white;
     padding: 2vw;
     padding-bottom: 0;
   }
 
-  span{
+  span {
 
     width: 25vw;
     font-size: 1.5vw;
     height: 2vw;
-    
+
   }
 
- .button-group{
+  .button-group {
 
- 
-  background-color: white;
-  column-gap: 2vw;
-  height: fit-content;
-  padding-bottom: 1vw;
-   padding-left: 1vw;
-  column-gap: 1vw;
- }
-  
-  button{
-  
-      width: 8vw;
-      height: 2.5vw;
-      
-      color: white;
-      border: none;
-      
-     
+
+    background-color: white;
+    column-gap: 2vw;
+    height: fit-content;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    column-gap: 1vw;
   }
 
-  .delete-btn{
+  button {
+
+    width: 8vw;
+    height: 2.5vw;
+
+    color: white;
+    border: none;
+
+
+  }
+
+  .delete-btn {
 
 
     color: white;
     background-color: red;
     font-size: 1vw;
-    
+
 
   }
 
 
-  .update-btn{
+  .update-btn {
 
-    
-    background-color:rgb(3, 179, 3);
+
+    background-color: rgb(3, 179, 3);
   }
-  
-  #update-link{
-  
-  
-      font-size: 3vw;
-      color: white;
-       font-size: 1vw;
-      
+
+  #update-link {
+
+
+    font-size: 3vw;
+    color: white;
+    font-size: 1vw;
+
   }
-  
-  
-  
+
+  .no-transactions {
+
+    font-size: 1.5vw;
+
+  }
+
+
+
 }

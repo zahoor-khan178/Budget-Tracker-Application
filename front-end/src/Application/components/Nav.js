@@ -15,6 +15,8 @@ const Nav = ({ onClose }) => {
   const logout=()=>{
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+      localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
     navigate('/login'); 
     window.location.reload();
   }
@@ -31,6 +33,10 @@ const Nav = ({ onClose }) => {
         <li>
           <Link to="/view-transaction" className="sidebar-link" onClick={() => handleNavLinkClick("/view-transaction")}>View Transactions</Link>
         </li>
+        <li>
+          <Link to="/Account" className="sidebar-link" onClick={() => handleNavLinkClick("/Account")}>Account</Link>
+        </li>
+     
        <li><Link style={{ }}  onClick={logout} id='logout'>Log Out</Link></li>
       </ul>
     </div>

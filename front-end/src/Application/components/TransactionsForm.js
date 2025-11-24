@@ -58,7 +58,9 @@ const TransactionForm = () => {
         window.alert("Your session has expired or you are not logged in. Please log in again.");
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        navigate('/login', { state: { from: location.pathname } });
+          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+        navigate('/login', { state: { from: location.pathname } }, { replace: true });
         return;
       }
     
@@ -83,25 +85,28 @@ const TransactionForm = () => {
           }
         });
 
+        if (Response.status === 401 || Response.status === 403) {
+          alert("Your session has expired. Please login again.");
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+            localStorage.removeItem('user.email');
+        localStorage.removeItem('user.name');
+          navigate("/login", { state: { from: location.pathname } }, { replace: true });
+          return
+        }
+
+
+        const data = await Response.json();
+
 
          if (!Response.ok) {
-          const errorData = await Response.json();
-          if (window.location.pathname !== '/login') {
-            window.alert(errorData.message || `HTTP error! Status: ${errorData.status}`);
-          }
-
-          localStorage.removeItem('token');
-          localStorage.removeItem('user');
-
-          navigate('/login', { state: { from: location.pathname } });
+          alert(data.message || `HTTP error! Status: ${data.status}`);
           return;
         }
 
-        // if (!response.ok) {
-        //   throw new Error('Failed to submit transaction');
-        // }
+        
 
-        const data = await Response.json();
+        
         alert('Transaction submitted successfully');
         console.log(data);
 
@@ -125,7 +130,7 @@ const TransactionForm = () => {
       <h2 className='transaction-form-heading'>Transaction Form</h2>
 
         <div>
-          <label>Title:</label>
+          <label>Title<sup>*</sup></label>
           <input
             type="text"
             value={title}
@@ -137,7 +142,7 @@ const TransactionForm = () => {
 
 
         <div>
-          <label>Amount:</label>
+          <label>Amount<sup>*</sup></label>
           <input
             type="number"
             value={amount}
@@ -149,7 +154,7 @@ const TransactionForm = () => {
         </div>
 
         <div>
-          <label>Category:</label>
+          <label>Category</label>
           <input
             type="text"
             value={category}
@@ -160,7 +165,7 @@ const TransactionForm = () => {
 
 
         <div id='container-radio'>
-          <label >Transaction Type:</label>
+          <label >Transaction Type</label>
 
           <div className='radio'>
             <input
