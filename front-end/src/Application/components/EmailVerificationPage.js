@@ -122,7 +122,7 @@ const EmailVerificationPage = () => {
                 user_email: email,
                 message:
                     "Please click the link below to verify your account:\n\n" +
-                    `http://localhost:3000/verify-email?token=${token}`
+                    `https://budget-tracker-application-bb2h.vercel.app/verify-email?token=${token}`
             };
 
 
