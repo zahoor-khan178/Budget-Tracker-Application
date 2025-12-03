@@ -69,9 +69,9 @@ button {
 
   border: 2px solid rgb(128, 172, 62);
 
-  width: 4vw;
-  height: 5vh;
-  font-size: 1vw;
+  /* width: 4vw; */
+  /* height: 5vh;
+  font-size: 1vw; */
   margin-top: 2vh;
   display: flex;
   /* Make button a flex container */
@@ -159,13 +159,13 @@ button {
     background-color: white;
     column-gap: 3vw;
     height: fit-content;
-    padding-left: 2vw;
+    padding: 0 2vw;
   }
 
   button {
 
     width: 20vw;
-    height: 8vw;
+    height: 6vw;
     font-size: 3vw;
     color: white;
     border: none;
@@ -270,17 +270,18 @@ button {
     background-color: white;
     column-gap: 3vw;
     height: fit-content;
-    padding-left: 2vw;
+    padding: 0 2vw;
     column-gap: 1vw;
   }
 
-  button {
+  .delete-btn, .update-btn {
 
-    width: 14vw;
+    width: 40%;
     height: 5vw;
     font-size: 3vw;
     color: white;
     border: none;
+    
 
 
   }
@@ -377,20 +378,24 @@ button {
     font-size: 2vw;
   }
 
+    span>strong{
+    font-size: 2.5vw;
+  }
+
   .button-group {
 
 
     background-color: white;
     column-gap: 3vw;
     height: fit-content;
-    padding-bottom: 1vw;
-    padding-left: 1vw;
+   
+    padding: 1vw 1vw;
     column-gap: 1vw;
   }
 
-  button {
+  .update-btn, .delete-btn {
 
-    width: 10vw;
+    width: 40%;
     height: 3.5vw;
     font-size: 3vw;
     color: white;
@@ -493,6 +498,7 @@ button {
     height: 2vw;
 
   }
+
 
   .button-group {
 
