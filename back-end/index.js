@@ -36,13 +36,13 @@ app.use(express.json());  // convert incoming JSON requests to JS objects
 // GET / POST / PUT / DELETE requests to my backend, and the backend will 
 // accept cookies or tokens from that frontend.”
 app.use(cors({
-   origin: "http://localhost:3000",
+   origin: process.env.FRONTEND_URL,
    methods: ["GET", "POST", "PUT", "DELETE"],
    credentials: true
 }));
 
 
-// || "http://localhost:3000" || "http://localhost:3001",
+// || "http://localhost:3000" || "http://localhost:3001" process.env.FRONTEND_URL,
 
 app.post('/check-email', async (req, resp) => {
 

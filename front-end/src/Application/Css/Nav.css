@@ -126,7 +126,7 @@
     }
      #logout{
 
-        margin-top: 20vh;
+        margin-top: 10vw;
         font-size: 3rem;
      }
 }
@@ -166,7 +166,7 @@
     }
       #logout{
 
-        margin-top: 20vh;
+        margin-top: 10vw;
         font-size: 2rem;
      }
 }
@@ -208,7 +208,7 @@
     
      #logout{
 
-        margin-top: 20vh;
+        margin-top: 5vw;
      }
     
 }
@@ -248,7 +248,7 @@
     }
 
     #logout{
-        margin-top: 10vh;
+        margin-top: 8vw;
     }
 
 
@@ -289,7 +289,7 @@
 
       #logout{
         color: black;
-        margin-top: 20vh;
+        margin-top: 20vw;
     }
 }
 

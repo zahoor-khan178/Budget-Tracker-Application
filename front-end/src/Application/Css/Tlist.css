@@ -506,9 +506,7 @@ button {
     background-color: white;
     column-gap: 2vw;
     height: fit-content;
-    padding-bottom: 1vw;
-
-    padding-left: 1vw;
+    padding: 1vw 1vw;
     column-gap: 1vw;
 
 
@@ -632,7 +630,7 @@ button {
     column-gap: 2vw;
     height: fit-content;
     padding-bottom: 1vw;
-    padding-left: 1vw;
+    padding: 0 1vw;
     column-gap: 1vw;
   }
 
@@ -746,7 +744,7 @@ button {
     column-gap: 2vw;
     height: fit-content;
     padding-bottom: 1vw;
-    padding-left: 1vw;
+    padding: 0 1vw;
     column-gap: 1vw;
   }
 
