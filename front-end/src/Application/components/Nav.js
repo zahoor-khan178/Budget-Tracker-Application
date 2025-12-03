@@ -1,25 +1,32 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 import '../Css/Nav.css';
-
 
 const Nav = ({ onClose }) => { 
   const navigate = useNavigate();
+  const logoutRef = useRef(null);  // <<< Create ref
 
   const handleNavLinkClick = (path) => {
-    if (onClose) {
-      onClose(); 
-    }
-    navigate(path); 
+    if (onClose) onClose();
+    navigate(path);
   };
 
-  const logout=()=>{
+  const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-      localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+    localStorage.removeItem('user.email');
+    localStorage.removeItem('user.name');
+
     navigate('/login'); 
     window.location.reload();
-  }
+  };
+
+
+  useEffect(() => {
+    if (logoutRef.current) {
+      logoutRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }, []);
 
   return (
     <div className="sidebar">
@@ -36,8 +43,11 @@ const Nav = ({ onClose }) => {
         <li>
           <Link to="/Account" className="sidebar-link" onClick={() => handleNavLinkClick("/Account")}>Account</Link>
         </li>
-     
-       <li><Link style={{ }}  onClick={logout} id='logout'>Log Out</Link></li>
+
+        
+        <li>
+          <Link id="logout" onClick={logout} ref={logoutRef}>Log Out</Link>
+        </li>
       </ul>
     </div>
   );

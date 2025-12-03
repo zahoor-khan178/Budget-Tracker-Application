@@ -81,7 +81,7 @@ h1 {
 
     .account-page {
 
-        height: 50%;
+        height: 50vw;
         width: 90vw;
         padding: 2vw 0;
     }
@@ -113,10 +113,13 @@ h1 {
     .account-buttons>button {
 
         border: 1px solid white;
+        width:30vw;
+        height: 8vw;
     }
 
     .user-data {
-        gap: 5vw;
+        gap: 2vw;
+        margin-top: 2vw;
     }
 
 
@@ -136,7 +139,7 @@ h1 {
 
     .account-page {
 
-        height: 60%;
+        height: 30vw;
         width: 50vw;
         padding: 2vw 0;
     }
@@ -145,6 +148,7 @@ h1 {
 
         width: 100%;
         padding: 0 4vw;
+        margin-top: 1vw;
     }
 
     .account-heading{
@@ -170,13 +174,15 @@ h1 {
     .account-buttons>button {
 
         border: 1px solid white;
-        width: fit-content;
-        padding: 0 3vw;
+       width:15vw;
+        height: 5vw;
         
     }
 
     .user-data {
-        gap: 3vw;
+
+        margin-top: 2vw;
+        gap: 1vw;
     }
 
 
@@ -186,7 +192,7 @@ h1 {
         border: 1px solid white;
         padding: 2vw 1vw;
         border-radius: 5px;
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 
 }
@@ -196,7 +202,7 @@ h1 {
 
     .account-page {
 
-        height: 60%;
+        height: 30vw;
         width: 50vw;
         padding: 2vw 0;
     }
@@ -214,12 +220,12 @@ h1 {
 
     .account-buttons>.delete {
 
-        font-size: 2vw;
+        font-size: 1.5vw;
 
     }
     .account-buttons>.cancel {
 
-        font-size: 2vw;
+        font-size: 1.5vw;
         
        
 
@@ -230,13 +236,13 @@ h1 {
     .account-buttons>button {
 
         border: 1px solid white;
-        width: fit-content;
-        padding: 0 3vw;
+        width:15vw;
+        height: 4vw;
         
     }
 
     .user-data {
-        gap: 3vw;
+        gap: 1vw;
     }
 
 
@@ -246,7 +252,7 @@ h1 {
         border: 1px solid white;
         padding: 1vw 2.5vw;
         border-radius: 5px;
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 
 }
@@ -256,7 +262,7 @@ h1 {
 
     .account-page {
 
-        height: 50vh;
+        height: 20vw;
         width: 50vw;
         padding: 2vw 0;
     }
@@ -307,7 +313,7 @@ h1 {
 
     .account-page {
 
-        height: 50vh;
+        height: 20vw;
         width: 50vw;
         padding: 2vw 0;
     }
@@ -356,7 +362,7 @@ h1 {
 
     .account-page {
 
-        height: 50vh;
+        height: 20vw;
         width: 50vw;
         padding: 2vw 0;
     }

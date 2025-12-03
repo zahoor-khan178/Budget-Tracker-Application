@@ -1,333 +1,181 @@
+/* ===============================
+   Base Sidebar Styles (Default)
+================================= */
 
-
-/* Sidebar (Nav) Styling */
 .sidebar {
-    background-color: #333;
-    background-color: white;
-    color: black;
-    width: 250px;
-    height: 100vh;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin: 20px 0;
-  }
-  
-  .sidebar-link {
+  background-color: white;
+  color: black;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    /* transition: background-color 0.3s ease; */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 120px;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+.sidebar-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Logout Button */
+#logout {
+  margin-top: auto;
+  font-size: 20px;
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+#logout:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+
+
+/* ====================================
+    Mobile Portrait (≤ 480px)
+==================================== */
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   }
-  
-  .sidebar-link:hover {
-    background-color: #007bff;
-  } 
-  
-   .sidebar-link:active {
-    background-color: #0056b3;
+
+  .sidebar-link {
+    font-size: 4vw;
   }
 
   #logout {
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    font-size: 20px;
-    display: block;
-    /* text-align: center; */
-    padding: 10px;
-    border-radius: 5px;
-    /* background-color: #ff4d4d;  */
+    font-size: 6vw;
+    color: black;
+  }
+}
+
+
+
+/* =====================================
+   Mobile Landscape / Small Tablets
+   (481px – 768px)
+====================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .sidebar {
+    width: 50vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   }
 
+  .sidebar-link {
+    font-size: 2.5vw;
+  }
 
-   #logout:hover {
-        background-color: #ff4d4d;
-        color: white;
-     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @media screen and (min-width:2561px ) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 20vw;
-        border-top-right-radius: 5px;
-        position: fixed;
-        background-color: #333;
-    }
-
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
-
-    .sidebar-link {
-        font-size: 1.5vw;
-        color: white;
-    }
-
-    .sidebar li {
-        margin: 3vh 0;
-    }
-
-    .sidebar-link:hover {
-        background-color: #007bff;
-    }
-
-    .sidebar-link:active {
-        background-color: none;
-    }
-     #logout{
-
-        margin-top: 10vw;
-        font-size: 3rem;
-     }
+  #logout {
+    color: black;
+    font-size: 3vw;
+  }
 }
 
-@media screen and (max-width:2560px ) and (min-width:1440px) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 20vw;
-        border-top-right-radius: 5px;
-        position: fixed;
-        background-color: #333;
-    }
 
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
 
-    .sidebar-link {
-        font-size: 1.5vw;
-        color: white;
-    }
+/* =====================================
+   
+   (769px – 1024px)
+====================================== */
 
-    .sidebar li {
-        margin: 3vh 0;
-    }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 25vw;
+    background-color: #333;
+    color: white;
+  }
 
-    .sidebar-link:hover {
-        background-color: #007bff;
-    }
+  .sidebar ul {
+    margin-top: 15vh;
+  }
 
-    .sidebar-link:active {
-        background-color: none;
-    }
-      #logout{
+  .sidebar-link {
+    font-size: 1.6vw;
+    color: white;
+  }
 
-        margin-top: 10vw;
-        font-size: 2rem;
-     }
+  #logout {
+    margin-top: 10vw;
+  }
 }
 
-@media screen and (max-width:1440px ) and (min-width:1024px) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 20vw;
-        border-top-right-radius: 5px;
-        position: fixed;
-        background-color: #333;
-    }
 
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
 
-    .sidebar-link {
-        font-size: 1.5vw;
-        color: white;
-    }
+/* =====================================
 
-    .sidebar li {
-        margin: 3vh 0;
-    }
+   (1025px – 1440px)
+====================================== */
 
-    .sidebar-link:hover {
-        background-color: #007bff;
-    }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .sidebar {
+    width: 20vw;
+    background-color: #333;
+    color: white;
+  }
 
-    .sidebar-link:active {
-        background-color: none;
-    }
+  .sidebar-link {
+    font-size: 1.4vw;
+    color: white;
+  }
 
-    
-     #logout{
-
-        margin-top: 5vw;
-     }
-    
+  #logout {
+    margin-top: 10vw;
+  }
 }
 
-@media screen and (max-width: 1024px) and (min-width:769px) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 25vw;
-        border-top-right-radius: 5px;
-        position: fixed;
-        background-color: #333;
-    }
-
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
-
-    .sidebar-link {
-        font-size: 1.5vw;
-        color: white;
-    }
-
-    .sidebar li {
-        margin: 3vh 0;
-    }
-
-    .sidebar-link:hover {
-        background-color: #007bff;
-    }
-
-    .sidebar-link:active {
-        background-color: none;
-    }
-
-    #logout{
-        margin-top: 8vw;
-    }
 
 
-}
+/* =====================================
+   
+   (1441px – 2560px+)
+   
+   ====================================== */
 
-@media screen and (max-width: 768px) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 50vw;
-        box-shadow: 0 5px 20px 3px black;
-        border-top-right-radius: 5px;
-        position: fixed;
-    }
+@media (min-width: 1441px) {
+  .sidebar {
+    width: 18vw;
+    background-color: #333;
+    color: white;
+  }
 
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
+  .sidebar-link {
+    font-size: 1.2vw;
+    color: white;
+  }
 
-    .sidebar-link {
-        font-size: 2vw;
-    }
-
-    .sidebar li {
-        margin: 3vh 0;
-    }
-
-    .sidebar-link:hover {
-        background-color: white;
-    }
-
-    .sidebar-link:active {
-        background-color: none;
-    }
-
-      #logout{
-        color: black;
-        margin-top: 20vw;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .sidebar {
-        display: flex;
-        z-index: 1;
-        width: 60vw;
-        box-shadow: 0 5px 20px 3px black;
-        border-top-right-radius: 5px;
-        position: fixed;
-    }
-
-    .sidebar ul {
-        margin-top: 15vh;
-        list-style-type: none;
-        padding: 0;
-        width: 100%;
-    }
-
-    .sidebar-link {
-        font-size: 3.5vw;
-    }
-
-    .sidebar li {
-        margin: 3vh 0;
-    }
-
-    .sidebar-link:hover {
-        background-color: white;
-    }
-
-    .sidebar-link:active {
-        background-color: none;
-    }
-
-    #logout{
-        color: black;
-        font-size: 6vw;
-    }
+  #logout {
+    margin-top: 10vw;
+    font-size: 2rem;
+  }
 }
