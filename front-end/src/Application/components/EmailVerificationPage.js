@@ -155,7 +155,7 @@ const EmailVerificationPage = () => {
                     <h1 className="heading">Email Verification</h1>
                     <p className="paragraph">An Email has been sent to <strong>{email}</strong>.<br></br>
                         Please check your inbox and click the verification link to verify you email.</p>
-                    <h3>Thank You ❤</h3>
+                    <h3>Thank You</h3>
                     <button className="resend" onClick={handleresend}>Resend</button>
                 </>
             )}

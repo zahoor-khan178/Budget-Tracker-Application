@@ -44,6 +44,10 @@ app.use(cors({
 
 // || "http://localhost:3000" || "http://localhost:3001" process.env.FRONTEND_URL,
 
+
+// while updating the password first we need to check whether the email provided by the user
+// exists in the database or not. if exists then only we will allow the user to update the password.
+
 app.post('/check-email', async (req, resp) => {
 
    try {
@@ -70,6 +74,10 @@ app.post('/check-email', async (req, resp) => {
       resp.status(500).json({ message: "Internal Server Error" });
    }
 });
+
+
+
+// API to update password 
 
 app.put('/updating-password', async (req, resp) => {
 
@@ -100,6 +108,8 @@ app.put('/updating-password', async (req, resp) => {
 
 });
 
+
+// when user signs up, first we need to verify whether the email is already registered or not.
 
 app.post("/verify", async (req, resp) => {
    try {
@@ -134,6 +144,7 @@ app.post("/verify", async (req, resp) => {
    }
 });
 
+// Resend verification email API
 
 app.post("/resend-verification", async (req, resp) => {
    try {
@@ -188,7 +199,7 @@ app.post("/resend-verification", async (req, resp) => {
 
 
 
-
+// signs up / Register API
 app.post("/register", async (req, resp) => {
    try {
       const { token } = req.body;
@@ -241,6 +252,7 @@ app.post("/register", async (req, resp) => {
 
 
 
+// login api
 
 app.post('/login', async (req, resp) => {
 
@@ -525,7 +537,8 @@ function verifyToken(req, resp, next) {
             return resp.status(401).send({ message: " your session has expired. please login again" });
          }
 
-         req.user = decoded.user;  // Attach decoded user info to request object
+         req.user = decoded.user;  // attaching the decoded user to req so all protected API routes can 
+                                 // know WHICH user is making the request and access their data securely.
          next();
 
       });
