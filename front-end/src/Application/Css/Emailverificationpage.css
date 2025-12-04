@@ -12,7 +12,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.heading{
+.heading {
 
     color: black;
 }
@@ -20,20 +20,20 @@
 .paragraph {
 
     text-align: center;
-    
+
 }
 
 .paragraph>strong {
 
     color: rgb(0, 155, 0);
-    
+
 
 }
 
 h3 {
 
     color: blueviolet;
-    
+
 }
 
 /* button {
@@ -55,7 +55,7 @@ h3 {
 
 @media screen and (max-width:480px) {
 
-      .email-verification-page {
+    .email-verification-page {
 
         height: 80vh;
         width: 90vw;
@@ -63,38 +63,38 @@ h3 {
         border-radius: 10px;
     }
 
-    h1{
+    h1 {
         font-size: 8vw;
     }
 
     .paragraph {
 
-    
-    font-size: 4vw;
-    padding: 0 1.5vw;
-}
 
-strong {
+        font-size: 4vw;
+        padding: 0 1.5vw;
+    }
 
-    
-    font-size: 4vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 4vw;
 
-    
-    font-size: 6vw;
-}
+    }
 
-button {
+    h3 {
 
-    width: 30vw;
-    height: 6vh;
-    font-size: 4vw;
-}
 
-    
+        font-size: 6vw;
+    }
+
+    button {
+
+        width: 30vw;
+        height: 6vh;
+        font-size: 4vw;
+    }
+
+
     .loading {
 
         /* margin-top: 50vw; */
@@ -104,7 +104,7 @@ button {
 @media screen and (max-width:768px) and (min-width:481px) {
 
 
-          .email-verification-page {
+    .email-verification-page {
 
         height: 80vh;
         width: 90vw;
@@ -112,36 +112,37 @@ button {
         border-radius: 10px;
     }
 
-    h1{
+    h1 {
         font-size: 5vw;
     }
 
     .paragraph {
 
-    
-    font-size: 3vw;
-    padding: 0 2vw;
-}
 
-strong {
+        font-size: 3vw;
+        padding: 0 2vw;
+    }
 
-    
-    font-size: 4vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 4vw;
 
-    
-    font-size: 4vw;
-}
+    }
 
-button {
+    h3 {
 
-    width: 30vw;
-    height: 7vh;
-    font-size: 3vw;
-}
+
+        font-size: 4vw;
+    }
+
+    button {
+
+        width: 30vw;
+        height: 7vh;
+        font-size: 3vw;
+    }
+
     .loading {
 
         /* margin-top: 40vw; */
@@ -151,8 +152,8 @@ button {
 
 @media screen and (max-width:1024px) and (min-width:769px) {
 
-    
-          .email-verification-page {
+
+    .email-verification-page {
 
         height: 80vh;
         width: 90vw;
@@ -160,36 +161,37 @@ button {
         border-radius: 10px;
     }
 
-    h1{
+    h1 {
         font-size: 5vw;
     }
 
     .paragraph {
 
-    
-    font-size: 3vw;
-    padding: 0 2vw;
-}
 
-strong {
+        font-size: 3vw;
+        padding: 0 2vw;
+    }
 
-    
-    font-size: 4vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 4vw;
 
-    
-    font-size: 4vw;
-}
+    }
 
-button {
+    h3 {
 
-    width: 30vw;
-    height: 7vh;
-    font-size: 3vw;
-}
+
+        font-size: 4vw;
+    }
+
+    button {
+
+        width: 30vw;
+        height: 7vh;
+        font-size: 3vw;
+    }
+
     .loading {
 
         /* margin-top: 30vw; */
@@ -206,32 +208,32 @@ button {
         row-gap: 2vw;
     }
 
-     h1{
+    h1 {
         font-size: 3vw;
     }
 
     .paragraph {
 
-    
-    font-size: 1.5vw;
-}
 
-strong {
+        font-size: 1.5vw;
+    }
 
-    
-    font-size: 1.5vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 1.5vw;
 
-    
-    font-size: 1.8vw;
-}
+    }
 
-button {
-    font-size: 1.2vw;
-}
+    h3 {
+
+
+        font-size: 1.8vw;
+    }
+
+    button {
+        font-size: 1.2vw;
+    }
 
     .loading {
 
@@ -249,32 +251,32 @@ button {
         row-gap: 2vw;
     }
 
-    h1{
+    h1 {
         font-size: 3vw;
     }
 
     .paragraph {
 
-    
-    font-size: 1.5vw;
-}
 
-strong {
+        font-size: 1.5vw;
+    }
 
-    
-    font-size: 1.5vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 1.5vw;
 
-    
-    font-size: 1.8vw;
-}
+    }
 
-button {
-    font-size: 1.2vw;
-}
+    h3 {
+
+
+        font-size: 1.8vw;
+    }
+
+    button {
+        font-size: 1.2vw;
+    }
 
     .loading {
 
@@ -288,39 +290,40 @@ button {
 @media screen and (min-width:2561px) {
 
 
-     .email-verification-page {
+    .email-verification-page {
 
         height: 90vh;
         width: 80vw;
         row-gap: 2vw;
     }
 
-    h1{
+    h1 {
         font-size: 3vw;
     }
 
     .paragraph {
 
-    
-    font-size: 1.5vw;
-}
 
-strong {
+        font-size: 1.5vw;
+    }
 
-    
-    font-size: 1.5vw;
+    strong {
 
-}
 
-h3 {
+        font-size: 1.5vw;
 
-    
-    font-size: 1.8vw;
-}
+    }
 
-button {
-    font-size: 1.2vw;
-}
+    h3 {
+
+
+        font-size: 1.8vw;
+    }
+
+    button {
+        font-size: 1.2vw;
+    }
+
     .loading {
 
         /* margin-top: 15vw; */

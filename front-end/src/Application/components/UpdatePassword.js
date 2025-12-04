@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const UpdatePassword = () => {
 
     const [email, setemail] = useState('');
-    
+
     const navigate = useNavigate();
 
     const emailvalidation = async () => {
@@ -26,7 +26,7 @@ const UpdatePassword = () => {
 
         try {
 
-             
+
             const response = await fetch(`${REACT_APP_API_URL}/check-email`,
                 {
 
@@ -41,18 +41,18 @@ const UpdatePassword = () => {
             const result = await response.json();
 
             if (response.status === 404 || response.status === 500) {
-               
-                
+
+
                 return;
             }
 
             if (!result.email) {
-                
+
                 alert('email not provided by the backend');
                 return;
             }
 
-            
+
             navigate('/update-password2', { state: { email: result.email } });
 
 
@@ -76,10 +76,10 @@ const UpdatePassword = () => {
     });
 
 
-   
+
     return (
         <div className='updatepassword-page'>
-           
+
             <h2 className="heading">Update Password</h2>
             <input className='email-input' type='email' placeholder='Enter your email' value={email}
                 onChange={(e) => { setemail(e.target.value) }} required />

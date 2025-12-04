@@ -32,8 +32,8 @@ const Update = () => {
             window.alert("Your session has expired or you are not logged in. Please log in again.");
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-              localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+            localStorage.removeItem('user.email');
+            localStorage.removeItem('user.name');
 
             navigate('/login', { state: { from: location.pathname } }, { replace: true });
             return;
@@ -52,8 +52,8 @@ const Update = () => {
                 alert("Your session has expired. Please login again.");
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                  localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+                localStorage.removeItem('user.email');
+                localStorage.removeItem('user.name');
                 navigate('/login', { state: { from: location.pathname } }, { replace: true });
                 return;
             }
@@ -62,9 +62,9 @@ const Update = () => {
             if (!response.ok) {
                 alert(data.message || `HTTP error! Status: ${data.status}`);
                 return;
- }
+            }
 
-            
+
             setTitle(data.title);
             setAmount(data.amount.toString()); // Convert amount to string for input value
             setCategory(data.category);
@@ -157,12 +157,12 @@ const Update = () => {
                     }
                 });
 
-                if (response.status === 401 || response.status === 403) {
+            if (response.status === 401 || response.status === 403) {
                 alert("Your session has expired. Please login again.");
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                  localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+                localStorage.removeItem('user.email');
+                localStorage.removeItem('user.name');
                 navigate('/login', { state: { from: location.pathname } }, { replace: true });
                 return;
             }

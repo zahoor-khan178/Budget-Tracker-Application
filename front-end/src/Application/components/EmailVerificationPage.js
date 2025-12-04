@@ -8,16 +8,16 @@ const EmailVerificationPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [loading, setloading] = useState(true);
-    const [resend, setresend]= useState(false);
+    const [resend, setresend] = useState(false);
     const hasrun = useRef(false);
 
     const token = new URLSearchParams(location.search).get("token"); //This code extracts the value of a query parameter named token from the URL.
-    
-    
+
+
     //"?." are the optional chaining operator to avoid error if state is undefined
-        //  "location.state.from"  will throught error if form is undefined
-        // so we use "location.state?.from" instead now if form is undefined it will 
-        // return undefined instead of error
+    //  "location.state.from"  will throught error if form is undefined
+    // so we use "location.state?.from" instead now if form is undefined it will 
+    // return undefined instead of error
     const fromSignup = location.state?.from === "/sign";
     const email = location.state?.email;
 
@@ -30,7 +30,7 @@ const EmailVerificationPage = () => {
         // if someone accesses this page directly neither from the link nor from signup form, 
         // he will be automatically redirected to signup page
 
-        
+
         if (!token && !fromSignup) {
             setloading(false);
             navigate("/sign", { replace: true });
@@ -69,8 +69,8 @@ const EmailVerificationPage = () => {
                     // success → login
                     localStorage.setItem("user", JSON.stringify(result.user));
                     localStorage.setItem("token", JSON.stringify(result.auth));
-                     localStorage.setItem('user.email', result.user.email);
-                localStorage.setItem('user.name', result.user.name);
+                    localStorage.setItem('user.email', result.user.email);
+                    localStorage.setItem('user.name', result.user.name);
 
 
                     setloading(false);
@@ -97,7 +97,7 @@ const EmailVerificationPage = () => {
     };
 
 
-// if the clicks the resend button this function will be called.
+    // if the clicks the resend button this function will be called.
     const handleresend = async () => {
         try {
             setresend(true);
@@ -154,7 +154,7 @@ const EmailVerificationPage = () => {
                 <>
                     <h1 className="heading">Email Verification</h1>
                     <p className="paragraph">An Email has been sent to <strong>{email}</strong>.<br></br>
-                    Please check your inbox and click the verification link to verify you email.</p>
+                        Please check your inbox and click the verification link to verify you email.</p>
                     <h3>Thank You ❤</h3>
                     <button className="resend" onClick={handleresend}>Resend</button>
                 </>

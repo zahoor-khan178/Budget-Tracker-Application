@@ -274,14 +274,15 @@ button {
     column-gap: 1vw;
   }
 
-  .delete-btn, .update-btn {
+  .delete-btn,
+  .update-btn {
 
     width: 40%;
     height: 5vw;
     font-size: 3vw;
     color: white;
     border: none;
-    
+
 
 
   }
@@ -378,7 +379,7 @@ button {
     font-size: 2vw;
   }
 
-    span>strong{
+  span>strong {
     font-size: 2.5vw;
   }
 
@@ -388,12 +389,13 @@ button {
     background-color: white;
     column-gap: 3vw;
     height: fit-content;
-   
+
     padding: 1vw 1vw;
     column-gap: 1vw;
   }
 
-  .update-btn, .delete-btn {
+  .update-btn,
+  .delete-btn {
 
     width: 40%;
     height: 3.5vw;

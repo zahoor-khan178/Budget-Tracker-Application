@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
 import '../Css/Nav.css';
 
-const Nav = ({ onClose }) => { 
+const Nav = ({ onClose }) => {
   const navigate = useNavigate();
   const logoutRef = useRef(null);  // <<< Create ref
 
@@ -17,7 +17,7 @@ const Nav = ({ onClose }) => {
     localStorage.removeItem('user.email');
     localStorage.removeItem('user.name');
 
-    navigate('/login'); 
+    navigate('/login');
     window.location.reload();
   };
 
@@ -44,7 +44,7 @@ const Nav = ({ onClose }) => {
           <Link to="/Account" className="sidebar-link" onClick={() => handleNavLinkClick("/Account")}>Account</Link>
         </li>
 
-        
+
         <li>
           <Link id="logout" onClick={logout} ref={logoutRef}>Log Out</Link>
         </li>

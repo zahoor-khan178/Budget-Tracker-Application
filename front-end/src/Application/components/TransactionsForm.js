@@ -13,7 +13,7 @@ const TransactionForm = () => {
 
 
   const navigate = useNavigate();
-    const location = useLocation();
+  const location = useLocation();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -38,8 +38,8 @@ const TransactionForm = () => {
 
   const handleSubmit = async (e) => {
 
-        const token = JSON.parse(localStorage.getItem('token'));
-      const user = JSON.parse(localStorage.getItem('user'));
+    const token = JSON.parse(localStorage.getItem('token'));
+    const user = JSON.parse(localStorage.getItem('user'));
 
     e.preventDefault();
 
@@ -53,22 +53,22 @@ const TransactionForm = () => {
 
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
-    } 
+    }
     else if (!token || !user) {
-        window.alert("Your session has expired or you are not logged in. Please log in again.");
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-          localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
-        navigate('/login', { state: { from: location.pathname } }, { replace: true });
-        return;
-      }
-    
-      else {
+      window.alert("Your session has expired or you are not logged in. Please log in again.");
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      localStorage.removeItem('user.email');
+      localStorage.removeItem('user.name');
+      navigate('/login', { state: { from: location.pathname } }, { replace: true });
+      return;
+    }
 
-        const API_URL = process.env.REACT_APP_API_URL;
+    else {
 
-     try {
+      const API_URL = process.env.REACT_APP_API_URL;
+
+      try {
         setIsLoading(true);
 
         const Response = await fetch(`${API_URL}/transaction`, {
@@ -78,7 +78,7 @@ const TransactionForm = () => {
             amount,
             category,
             transactionType
-        }),
+          }),
           headers: {
             "Content-Type": "application/json",
             authorization: `bearer ${token}`
@@ -89,8 +89,8 @@ const TransactionForm = () => {
           alert("Your session has expired. Please login again.");
           localStorage.removeItem("token");
           localStorage.removeItem("user");
-            localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+          localStorage.removeItem('user.email');
+          localStorage.removeItem('user.name');
           navigate("/login", { state: { from: location.pathname } }, { replace: true });
           return
         }
@@ -99,14 +99,14 @@ const TransactionForm = () => {
         const data = await Response.json();
 
 
-         if (!Response.ok) {
+        if (!Response.ok) {
           alert(data.message || `HTTP error! Status: ${data.status}`);
           return;
         }
 
-        
 
-        
+
+
         alert('Transaction submitted successfully');
         console.log(data);
 
@@ -126,75 +126,75 @@ const TransactionForm = () => {
 
   return (
     // <div id='parent-div'>
-      <form  className='transaction-form' onSubmit={handleSubmit}>
+    <form className='transaction-form' onSubmit={handleSubmit}>
       <h2 className='transaction-form-heading'>Transaction Form</h2>
 
-        <div>
-          <label>Title<sup>*</sup></label>
+      <div>
+        <label>Title<sup>*</sup></label>
+        <input
+          type="text"
+          value={title}
+          onChange={handleTitleChange}
+          placeholder="Enter transaction title"
+        />
+        {errors.title && <span style={{ color: 'red' }}>{errors.title}</span>}
+      </div>
+
+
+      <div>
+        <label>Amount<sup>*</sup></label>
+        <input
+          type="number"
+          value={amount}
+          onChange={handleAmountChange}
+          placeholder="Enter amount"
+          min="0"
+        />
+        {errors.amount && <span style={{ color: 'red' }}>{errors.amount}</span>}
+      </div>
+
+      <div>
+        <label>Category</label>
+        <input
+          type="text"
+          value={category}
+          onChange={handleCategoryChange}
+          placeholder="Enter category"
+        />
+      </div>
+
+
+      <div id='container-radio'>
+        <label >Transaction Type</label>
+
+        <div className='radio'>
           <input
-            type="text"
-            value={title}
-            onChange={handleTitleChange}
-            placeholder="Enter transaction title"
+            type="radio"
+            id='radio-input'
+            name="transactionType"
+            value="income"
+            checked={transactionType === 'income'}
+            onChange={handleTransactionTypeChange}
           />
-          {errors.title && <span style={{ color: 'red' }}>{errors.title}</span>}
+          Income
         </div>
-
-
-        <div>
-          <label>Amount<sup>*</sup></label>
+        <div className='radio'>
           <input
-            type="number"
-            value={amount}
-            onChange={handleAmountChange}
-            placeholder="Enter amount"
-            min="0"
+            type="radio"
+            id='radio-input'
+            name="transactionType"
+            value="expense"
+            checked={transactionType === 'expense'}
+            onChange={handleTransactionTypeChange}
           />
-          {errors.amount && <span style={{ color: 'red' }}>{errors.amount}</span>}
+          Expense
         </div>
+      </div>
 
-        <div>
-          <label>Category</label>
-          <input
-            type="text"
-            value={category}
-            onChange={handleCategoryChange}
-            placeholder="Enter category"
-          />
-        </div>
-
-
-        <div id='container-radio'>
-          <label >Transaction Type</label>
-
-          <div className='radio'>
-            <input
-              type="radio"
-               id='radio-input'
-              name="transactionType"
-              value="income"
-              checked={transactionType === 'income'}
-              onChange={handleTransactionTypeChange}
-            />
-            Income
-          </div>
-          <div className='radio'>
-            <input
-              type="radio"
-              id='radio-input'
-              name="transactionType"
-              value="expense"
-              checked={transactionType === 'expense'}
-              onChange={handleTransactionTypeChange}
-            />
-            Expense
-          </div>
-        </div>
-
-        <button type="submit"  className="submit-button" disabled={isLoading}>
-          {isLoading ? 'Submitting...' : 'Submit'}
-        </button>
-      </form>
+      <button type="submit" className="submit-button" disabled={isLoading}>
+        {isLoading ? 'Submitting...' : 'Submit'}
+      </button>
+    </form>
     // </div>
   );
 };

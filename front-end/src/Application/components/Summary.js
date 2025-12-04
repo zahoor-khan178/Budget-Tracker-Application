@@ -32,7 +32,7 @@ const Summary = () => {
         window.alert("Your session has expired or you are not logged in. Please log in again.");
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.email');
         localStorage.removeItem('user.name');
         navigate('/login', { state: { from: location.pathname } });
         return;
@@ -53,9 +53,9 @@ const Summary = () => {
           alert("Your session has expired. Please login again.");
           localStorage.removeItem("token");
           localStorage.removeItem("user");
-            localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
-          navigate("/login",{replace:true});
+          localStorage.removeItem('user.email');
+          localStorage.removeItem('user.name');
+          navigate("/login", { replace: true });
           return;
         }
 
@@ -89,9 +89,9 @@ const Summary = () => {
           alert("Your session has expired. Please login again.");
           localStorage.removeItem("token");
           localStorage.removeItem("user");
-            localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
-          navigate("/login",{replace:true});
+          localStorage.removeItem('user.email');
+          localStorage.removeItem('user.name');
+          navigate("/login", { replace: true });
           return;
         }
 

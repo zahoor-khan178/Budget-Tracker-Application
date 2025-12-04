@@ -1,75 +1,80 @@
+.logindiv {
 
-.logindiv{
-
-    border: 2px solid black;
-    margin: auto;
-    height: 50vh;
-    width: 30vw;
-    margin-top: calc(50vh - 25vh);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-     text-decoration: none;
+   border: 2px solid black;
+   margin: auto;
+   height: 50vh;
+   width: 30vw;
+   margin-top: calc(50vh - 25vh);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+   text-decoration: none;
 
 }
 
-.logheadign{
+.logheadign {
 
-    /* border: 2px solid red; */
+   /* border: 2px solid red; */
 }
 
-.logininputdiv{
+.logininputdiv {
 
-    /* border: 2px solid blue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center
-}
-.loginh2,#text_input{
-
-    border: 2px solid rgb(128, 172, 62);
-    width: 20vw;
-    height: 5vh;
-    margin: 1vh;
-    font-size: 1.5vw;
-    text-align: center;
+   /* border: 2px solid blue; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center
 }
 
-.update-link{
+.loginh2,
+#text_input {
+
+   border: 2px solid rgb(128, 172, 62);
+   width: 20vw;
+   height: 5vh;
+   margin: 1vh;
+   font-size: 1.5vw;
+   text-align: center;
+}
+
+.update-link {
 
    position: relative;
-   
+
 }
 
 .loginbutton {
-    border: 2px solid rgb(128, 172, 62);
-    width: 20vw;
-    height: 5vh;
-    font-size: 1vw;
-    margin-top: 2vh;
-    display: flex;              /* Make button a flex container */
-    align-items: center;        /* Vertically center */
-    justify-content: center;    /* Horizontally center */
-    cursor: pointer;
-    background-color: rgb(128, 172, 62);
-    color: white;               /* optional: better contrast */
+   border: 2px solid rgb(128, 172, 62);
+   width: 20vw;
+   height: 5vh;
+   font-size: 1vw;
+   margin-top: 2vh;
+   display: flex;
+   /* Make button a flex container */
+   align-items: center;
+   /* Vertically center */
+   justify-content: center;
+   /* Horizontally center */
+   cursor: pointer;
+   background-color: rgb(128, 172, 62);
+   color: white;
+   /* optional: better contrast */
 }
 
 
-.account-link{
+.account-link {
 
-    /* border: 2px solid yellow; */
-    margin-top: 2vh;
+   /* border: 2px solid yellow; */
+   margin-top: 2vh;
    text-decoration: none;
-    list-style: none;
+   list-style: none;
 }
 
-.account-link a{
-    text-decoration: none;
-    color: blue;
+.account-link a {
+   text-decoration: none;
+   color: blue;
 }
 
 
@@ -86,100 +91,100 @@
 
 
 
-@media screen and (max-width:480px)
-{
-   .logindiv{
+@media screen and (max-width:480px) {
+   .logindiv {
 
-    width: 90vw;
-    border-radius: 10px;
-    margin-top: 20vh;
-       height: fit-content;
-       padding: 6vw 0;
+      width: 90vw;
+      border-radius: 10px;
+      margin-top: 20vh;
+      height: fit-content;
+      padding: 6vw 0;
    }
 
-   .logheadign{
-    font-size: 6vw;
-    margin-bottom: 4vw;
+   .logheadign {
+      font-size: 6vw;
+      margin-bottom: 4vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 80vw;
-    font-size: 4vw;
-    height: 15vw;
+      width: 80vw;
+      font-size: 4vw;
+      height: 15vw;
       border-radius: 5px;
    }
 
-     .update-link{
+   .update-link {
 
-   
-   left: -25vw;
-   padding-bottom: 4vw;
-   font-size: 4vw;
+
+      left: -25vw;
+      padding-bottom: 4vw;
+      font-size: 4vw;
+   }
+
+
+   .account-link a {
+
+      font-size: 4vw;
+   }
+
 }
-   
-
-   .account-link a{
-
-    font-size: 4vw;
-   }
- 
-}
 
 
 
 
-@media screen and (max-width:768px) and (min-width:481px)
-{
-   .logindiv{
+@media screen and (max-width:768px) and (min-width:481px) {
+   .logindiv {
 
-    width: 50vw;
-    border-radius: 10px;
-    margin-top: 20vh;
-       height: fit-content;
-       padding: 4vw 0;
+      width: 50vw;
+      border-radius: 10px;
+      margin-top: 20vh;
+      height: fit-content;
+      padding: 4vw 0;
    }
 
-   .logheadign{
-    font-size: 4vw;
-    margin-bottom: 2vw;
+   .logheadign {
+      font-size: 4vw;
+      margin-bottom: 2vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 40vw;
-    font-size: 2vw;
-    height: 7vw;
+      width: 40vw;
+      font-size: 2vw;
+      height: 7vw;
       border-radius: 5px;
    }
 
-      .update-link{
+   .update-link {
 
-   
-   left: -12vw;
-   padding-bottom: 2vw;
-   font-size: 2vw;
+
+      left: -12vw;
+      padding-bottom: 2vw;
+      font-size: 2vw;
+   }
+
+
+   .account-link a {
+
+      font-size: 2vw;
+   }
+
 }
-   
-
-   .account-link a{
-
-    font-size: 2vw;
-   }
- 
-}
 
 
 
@@ -188,197 +193,197 @@
 
 
 
-@media screen and (max-width:1024px)  and (min-width:769px)
-{
-   .logindiv{
+@media screen and (max-width:1024px) and (min-width:769px) {
+   .logindiv {
 
-    width: 50vw;
-    border-radius: 10px;
-    margin-top: 15vh;
-       height: fit-content;
-       row-gap: 2vh;
-       padding: 4vw 0;
+      width: 50vw;
+      border-radius: 10px;
+      margin-top: 15vh;
+      height: fit-content;
+      row-gap: 2vh;
+      padding: 4vw 0;
    }
 
-   .logheadign{
-    font-size: 2.5vw;
-   margin-bottom: 2vw;
+   .logheadign {
+      font-size: 2.5vw;
+      margin-bottom: 2vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 40vw;
-    font-size: 2vw;
-    height: 5vw;
+      width: 40vw;
+      font-size: 2vw;
+      height: 5vw;
       border-radius: 5px;
    }
 
-      .update-link{
+   .update-link {
 
-   
-   left: -12vw;
-   padding-bottom: 1.5vw;
-   font-size: 2vw;
+
+      left: -12vw;
+      padding-bottom: 1.5vw;
+      font-size: 2vw;
+   }
+
+
+   .account-link a {
+
+      font-size: 2vw;
+   }
+
 }
-   
-
-   .account-link a{
-
-    font-size: 2vw;
-   }
- 
-}
 
 
 
 
 
-@media screen and (max-width:1440px) and (min-width:1025px)
-{
-   .logindiv{
+@media screen and (max-width:1440px) and (min-width:1025px) {
+   .logindiv {
 
-    width: 35vw;
-    border-radius: 10px;
-    margin-top: 15vh;
-       height: fit-content;
-       padding: 3vw 0;
+      width: 35vw;
+      border-radius: 10px;
+      margin-top: 15vh;
+      height: fit-content;
+      padding: 3vw 0;
    }
 
-   .logheadign{
-    font-size: 2vw;
-    margin-bottom: 2vw;
+   .logheadign {
+      font-size: 2vw;
+      margin-bottom: 2vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 30vw;
-    font-size: 1.2vw;
-    height: 3vw;
+      width: 30vw;
+      font-size: 1.2vw;
+      height: 3vw;
       border-radius: 5px;
    }
 
-   .update-link{
+   .update-link {
 
-  
-   left: -10vw;
-   padding-bottom: 1vw;
+
+      left: -10vw;
+      padding-bottom: 1vw;
+   }
+
+
+   .account-link a {
+
+      font-size: 1.2vw;
+   }
+
 }
-   
-
-   .account-link a{
-
-    font-size: 1.2vw;
-   }
- 
-}
 
 
 
-@media screen and (max-width:2560px) and (min-width:1441px)
-{
-   .logindiv{
+@media screen and (max-width:2560px) and (min-width:1441px) {
+   .logindiv {
 
-    width: 30vw;
-    border-radius: 10px;
-    margin-top: 15vh;
-       height: fit-content;
-         padding: 3vw 0;
+      width: 30vw;
+      border-radius: 10px;
+      margin-top: 15vh;
+      height: fit-content;
+      padding: 3vw 0;
    }
 
-   .logheadign{
-    font-size: 2.5vw;
-    margin-bottom: 2vw;
+   .logheadign {
+      font-size: 2.5vw;
+      margin-bottom: 2vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 25vw;
-    font-size: 1.5vw;
-    height: 3vw;
+      width: 25vw;
+      font-size: 1.5vw;
+      height: 3vw;
       border-radius: 5px;
    }
 
-   .update-link{
+   .update-link {
 
-   
-   left: -8vw;
-   padding-bottom: 1vw;
-   font-size: 1vw;
+
+      left: -8vw;
+      padding-bottom: 1vw;
+      font-size: 1vw;
+   }
+
+
+   .account-link a {
+
+      font-size: 1.5vw;
+   }
+
 }
-   
-
-   .account-link a{
-
-    font-size: 1.5vw;
-   }
- 
-}
 
 
 
 
-@media screen and (min-width:2561px) 
-{
-   .logindiv{
+@media screen and (min-width:2561px) {
+   .logindiv {
 
-    width: 30vw;
-    border-radius: 10px;
-    margin-top: 15vh;
-       height: fit-content;
-       padding: 3vw 0;
+      width: 30vw;
+      border-radius: 10px;
+      margin-top: 15vh;
+      height: fit-content;
+      padding: 3vw 0;
 
    }
 
-   .logheadign{
-    font-size: 2.5vw;
-    margin-bottom: 2vw;
+   .logheadign {
+      font-size: 2.5vw;
+      margin-bottom: 2vw;
    }
 
-   .logininputdiv{
+   .logininputdiv {
 
 
       row-gap: 2vh;
    }
 
-   .loginh2,#text_input{
+   .loginh2,
+   #text_input {
 
-    width: 25vw;
-    font-size: 1.5vw;
-    height: 3vw;
+      width: 25vw;
+      font-size: 1.5vw;
+      height: 3vw;
       border-radius: 5px;
    }
 
 
-     .update-link{
+   .update-link {
 
-   
-   left: -8vw;
-   padding-bottom: 1vw;
-   font-size: 1vw;
-}
-   
 
-   .account-link a{
-
-    font-size: 1.5vw;
+      left: -8vw;
+      padding-bottom: 1vw;
+      font-size: 1vw;
    }
- 
+
+
+   .account-link a {
+
+      font-size: 1.5vw;
+   }
+
 }

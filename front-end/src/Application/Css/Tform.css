@@ -1,30 +1,29 @@
+.transaction-form {
 
-.transaction-form{
-
-    width: 90vw;
-    margin-top: 20vw;
-    /* padding: 8vw 0; */
-    row-gap: 4vw;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid black;
-    padding-bottom: 2vw;
+  width: 90vw;
+  margin-top: 20vw;
+  /* padding: 8vw 0; */
+  row-gap: 4vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  padding-bottom: 2vw;
 
 }
 
-.transaction-form-heading{
+.transaction-form-heading {
 
   margin-top: 5vw;
 }
 
 
-.transaction-form>div{
+.transaction-form>div {
 
   display: flex;
   flex-direction: column;
@@ -32,35 +31,36 @@
 }
 
 
-.transaction-form>div>label{
+.transaction-form>div>label {
 
   font-size: 3vw;
 }
 
 
-.transaction-form>div>input, button{
+.transaction-form>div>input,
+button {
 
-   font-size: 3vw;
-   width: 70vw;
-   height: 8vw;
-   text-align: center;
+  font-size: 3vw;
+  width: 70vw;
+  height: 8vw;
+  text-align: center;
 }
 
 
-#container-radio{
+#container-radio {
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   column-gap: 2vw;
-  
+
   /* border: 2px solid black; */
   width: 60vw;
   font-size: 3vw;
 }
 
-#container-radio>div{
+#container-radio>div {
 
   display: flex;
   flex-direction: row;
@@ -72,7 +72,7 @@
 
 }
 
-button{
+button {
 
   margin-bottom: 5vw;
   color: white;
@@ -80,9 +80,9 @@ button{
 }
 
 
-label>sup{
+label>sup {
 
-  color:red;
+  color: red;
 }
 
 
@@ -102,7 +102,7 @@ label>sup{
 @media screen and (max-width:480px) and (min-width:0px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 90vw;
     margin-top: 20vw;
@@ -111,16 +111,16 @@ label>sup{
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 5vw;
-   
+
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 2vw;
 
@@ -128,7 +128,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 4.5vw;
 
@@ -137,30 +137,32 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 4.5vw;
-      width: 80vw;
-      height: 15vw;
-      
+    font-size: 4.5vw;
+    width: 80vw;
+    height: 15vw;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 80vw;
     font-size: 3.5vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 3.5vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 3.5vw;
 
@@ -168,7 +170,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 4.5vw;
 
@@ -176,7 +178,7 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 2vw;
     height: 2vw;
   }
@@ -192,7 +194,7 @@ label>sup{
 @media screen and (max-width:768px) and (min-width:481px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 80vw;
     margin-top: 20vw;
@@ -201,16 +203,16 @@ label>sup{
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 5vw;
-   
+
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 2vw;
 
@@ -218,7 +220,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 4vw;
 
@@ -227,30 +229,32 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 4vw;
-      width: 70vw;
-      height: 10vw;
-      
+    font-size: 4vw;
+    width: 70vw;
+    height: 10vw;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 80vw;
     font-size: 3.5vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 3.5vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 3.5vw;
 
@@ -258,7 +262,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 4.5vw;
 
@@ -266,7 +270,7 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 2vw;
     height: 2vw;
   }
@@ -288,31 +292,31 @@ label>sup{
 @media screen and (max-width:1024px) and (min-width:769px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 40vw;
-    margin-top:0vw;
+    margin-top: 0vw;
     row-gap: 2vw;
     padding: 2vw 0;
     /* margin-right: -25vw; */
     height: fit-content;
-  
-  
+
+
 
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 2.5vw;
     margin-top: 0;
-   
+
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 0.5vw;
 
@@ -320,7 +324,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 1.5vw;
 
@@ -329,32 +333,34 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 1.5vw;
-      width: 35vw;
-      height: 4vw;
-      border-radius: 5px;
-      
+    font-size: 1.5vw;
+    width: 35vw;
+    height: 4vw;
+    border-radius: 5px;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 35vw;
-    
+
     column-gap: 0vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 1.5vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 1.5vw;
 
@@ -362,7 +368,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 2vw;
     margin-bottom: 0;
@@ -371,7 +377,7 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 2vw;
     height: 2vw;
   }
@@ -384,32 +390,32 @@ label>sup{
 @media screen and (max-width:1440px) and (min-width:1025px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 35vw;
-    margin-top:0vw;
+    margin-top: 0vw;
     row-gap: 2.3vw;
     padding: 2vw 0;
-  
+
     height: fit-content;
     border: 1px solid black;
-  
-  
+
+
 
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 2vw;
     margin-top: 0;
-   /* border: 1px solid black; */
+    /* border: 1px solid black; */
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 0.5vw;
 
@@ -417,7 +423,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 1vw;
 
@@ -426,32 +432,34 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 1vw;
-      width: 30vw;
-      height: 3.5vw;
-      border-radius: 5px;
-      
+    font-size: 1vw;
+    width: 30vw;
+    height: 3.5vw;
+    border-radius: 5px;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 35vw;
-    
+
     column-gap: 0vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 1vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 1vw;
 
@@ -459,7 +467,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 1vw;
     margin-bottom: 0;
@@ -468,7 +476,7 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 1vw;
     height: 1vw;
   }
@@ -488,31 +496,31 @@ label>sup{
 @media screen and (max-width:2560px) and (min-width:1441px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 35vw;
-    margin-top:0vw;
+    margin-top: 0vw;
     row-gap: 2vw;
     padding: 2vw 0;
     /* margin-right: -25vw; */
     height: fit-content;
-  
-  
+
+
 
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 2vw;
     margin-top: 0;
-   /* border: 1px solid black; */
+    /* border: 1px solid black; */
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 0.5vw;
 
@@ -520,7 +528,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 1vw;
 
@@ -529,32 +537,34 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 1vw;
-      width: 30vw;
-      height: 3vw;
-      border-radius: 5px;
-      
+    font-size: 1vw;
+    width: 30vw;
+    height: 3vw;
+    border-radius: 5px;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 35vw;
-    
+
     column-gap: 0vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 1vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 1vw;
 
@@ -562,7 +572,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 1vw;
     margin-bottom: 0;
@@ -571,7 +581,7 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 1vw;
     height: 1vw;
   }
@@ -582,34 +592,34 @@ label>sup{
 
 
 
-@media screen and (min-width:2561px)  {
+@media screen and (min-width:2561px) {
 
 
-  .transaction-form{
+  .transaction-form {
 
     width: 35vw;
-    margin-top:0vw;
+    margin-top: 0vw;
     row-gap: 2vw;
     padding: 2vw 0;
     /* margin-right: -25vw; */
     height: fit-content;
-  
-  
+
+
 
   }
 
 
-  .transaction-form-heading{
+  .transaction-form-heading {
 
     font-size: 2vw;
     margin-top: 0;
-   /* border: 1px solid black; */
+    /* border: 1px solid black; */
 
 
   }
 
 
-  .transaction-form>div{
+  .transaction-form>div {
 
     row-gap: 0.5vw;
 
@@ -617,7 +627,7 @@ label>sup{
   }
 
 
-  .transaction-form>div>label{
+  .transaction-form>div>label {
 
     font-size: 1vw;
 
@@ -626,32 +636,34 @@ label>sup{
   }
 
 
-  .transaction-form>div>input,.submit-button{
+  .transaction-form>div>input,
+  .submit-button {
 
-      font-size: 1vw;
-      width: 30vw;
-      height: 3vw;
-      border-radius: 5px;
-      
+    font-size: 1vw;
+    width: 30vw;
+    height: 3vw;
+    border-radius: 5px;
+
 
 
   }
 
-  #container-radio{
+  #container-radio {
 
     width: 35vw;
-    
+
     column-gap: 0vw;
 
 
   }
-  #container-radio>label{
+
+  #container-radio>label {
 
     font-size: 1vw;
   }
 
 
-  #container-radio>div{
+  #container-radio>div {
 
     font-size: 1vw;
 
@@ -659,7 +671,7 @@ label>sup{
   }
 
 
-  button{
+  button {
 
     font-size: 1vw;
     margin-bottom: 0;
@@ -668,12 +680,10 @@ label>sup{
 
   }
 
-  #radio-input{
+  #radio-input {
     width: 1vw;
     height: 1vw;
   }
 
 
 }
-  
-  

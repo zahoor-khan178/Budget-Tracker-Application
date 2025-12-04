@@ -33,10 +33,10 @@ const Toggle = () => {
 
   return (
     <>
-      {isMobile &&  <Humberger onClick={visibility}  isnavvisible={visible}/>}
-      {visible && <Nav onClose={closeNav} />} 
-      {!isMobile && <Nav  />} 
-    
+      {isMobile && <Humberger onClick={visibility} isnavvisible={visible} />}
+      {visible && <Nav onClose={closeNav} />}
+      {!isMobile && <Nav />}
+
     </>
   );
 };

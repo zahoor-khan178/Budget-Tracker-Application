@@ -1,36 +1,35 @@
+.update-form {
 
-.update-form{
-
-    border:2px solid green; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    background-color: white;
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  background-color: white;
 }
 
-.input-field{
+.input-field {
 
-    border: 2px solid rgb(128, 172, 62);
-    width: 20vw;
-    height: 5vh;
-    margin: 1vh;
-    font-size: 1.5vw;
-    text-align: center;
+  border: 2px solid rgb(128, 172, 62);
+  width: 20vw;
+  height: 5vh;
+  margin: 1vh;
+  font-size: 1.5vw;
+  text-align: center;
 }
 
 
-#transactiontype-div{
+#transactiontype-div {
 
-    /* border: 1px solid black; */
-    width: 20vw;
-    height: 5vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    
+  /* border: 1px solid black; */
+  width: 20vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 
 }
 
@@ -44,48 +43,48 @@
 
 @media screen and (max-width:480px) and (min-width:0px) {
 
-    .update-form{
-  
-      width: 90vw;
-      row-gap: 3vw;
-      padding: 4vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
+
+    width: 90vw;
+    row-gap: 3vw;
+    padding: 4vw 0;
+    border-radius: 10px;
+  }
 
 
-     #heading{
-        font-size: 4vw;
-    }
+  #heading {
+    font-size: 4vw;
+  }
 
-  
-  
-    .input-field{
-  
-      width: 80vw;
-         height: 10vw;
-      font-size: 3.5vw;
-    }
 
-      #error-message{
 
-        font-size: 3vw;
-        margin-top: -3vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 70vw;
-      font-size: 3.5vw;
-      column-gap: 8vw;
-    }
+  .input-field {
 
-    button{
+    width: 80vw;
+    height: 10vw;
+    font-size: 3.5vw;
+  }
 
-        border-radius: 5px;
-    }
-  
+  #error-message {
+
+    font-size: 3vw;
+    margin-top: -3vw;
+    color: red;
+
+  }
+
+  #transactiontype-div {
+
+    width: 70vw;
+    font-size: 3.5vw;
+    column-gap: 8vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }
 
 
@@ -96,46 +95,46 @@
 
 @media screen and (max-width:768px) and (min-width:481px) {
 
-    .update-form{
-  
-      width: 70vw;
-      row-gap: 3vw;
-      padding: 3vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
 
-      #heading{
-        font-size: 3vw;
-    }
-  
-    .input-field{
-  
-      width: 60vw;
-         height: 6vw;
-      font-size: 2.5vw;
-    }
+    width: 70vw;
+    row-gap: 3vw;
+    padding: 3vw 0;
+    border-radius: 10px;
+  }
+
+  #heading {
+    font-size: 3vw;
+  }
+
+  .input-field {
+
+    width: 60vw;
+    height: 6vw;
+    font-size: 2.5vw;
+  }
 
 
-     #error-message{
+  #error-message {
 
-        font-size: 2vw;
-        margin-top: -2vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 70vw;
-      font-size: 2.5vw;
-      column-gap: 6vw;
-    }
+    font-size: 2vw;
+    margin-top: -2vw;
+    color: red;
 
-    button{
+  }
 
-        border-radius: 5px;
-    }
-  
+  #transactiontype-div {
+
+    width: 70vw;
+    font-size: 2.5vw;
+    column-gap: 6vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }
 
 
@@ -145,45 +144,45 @@
 
 @media screen and (max-width:1024px) and (min-width:769px) {
 
-    .update-form{
-  
-      width: 45vw;
-      row-gap: 2vw;
-      padding: 3vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
 
-      #heading{
-        font-size: 2.3vw;
-    }
-  
-    .input-field{
-  
-      width: 35vw;
-         height: 4vw;
-      font-size: 1.8vw;
-    }
+    width: 45vw;
+    row-gap: 2vw;
+    padding: 3vw 0;
+    border-radius: 10px;
+  }
 
-      #error-message{
+  #heading {
+    font-size: 2.3vw;
+  }
 
-        font-size: 1.5vw;
-        margin-top: -2vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 35vw;
-      font-size: 1.8vw;
-      column-gap: 3vw;
-    }
+  .input-field {
 
-    button{
+    width: 35vw;
+    height: 4vw;
+    font-size: 1.8vw;
+  }
 
-        border-radius: 5px;
-    }
-  
+  #error-message {
+
+    font-size: 1.5vw;
+    margin-top: -2vw;
+    color: red;
+
+  }
+
+  #transactiontype-div {
+
+    width: 35vw;
+    font-size: 1.8vw;
+    column-gap: 3vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }
 
 
@@ -193,45 +192,45 @@
 
 @media screen and (max-width:1440px) and (min-width:1025px) {
 
-    .update-form{
-  
-      width: 35vw;
-      row-gap: 2vw;
-      padding: 3vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
 
-      #heading{
-        font-size: 2vw;
-    }
-  
-    .input-field{
-  
-      width: 30vw;
-         height: 3vw;
-      font-size: 1vw;
-    }
+    width: 35vw;
+    row-gap: 2vw;
+    padding: 3vw 0;
+    border-radius: 10px;
+  }
 
-    #error-message{
+  #heading {
+    font-size: 2vw;
+  }
 
-        font-size: 1vw;
-        margin-top: -2vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 25vw;
-      font-size: 1vw;
-      column-gap: 3vw;
-    }
+  .input-field {
 
-    button{
+    width: 30vw;
+    height: 3vw;
+    font-size: 1vw;
+  }
 
-        border-radius: 5px;
-    }
-  
+  #error-message {
+
+    font-size: 1vw;
+    margin-top: -2vw;
+    color: red;
+
+  }
+
+  #transactiontype-div {
+
+    width: 25vw;
+    font-size: 1vw;
+    column-gap: 3vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }
 
 
@@ -244,89 +243,89 @@
 
 @media screen and (max-width:2560px) and (min-width:1441px) {
 
-    .update-form{
-  
-      width: 30vw;
-      row-gap: 1vw;
-      padding: 3vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
 
-      #heading{
-        font-size: 2vw;
-    }
-  
-    .input-field{
-  
-      width: 25vw;
-         height: 3vw;
-      font-size: 1vw;
-    }
+    width: 30vw;
+    row-gap: 1vw;
+    padding: 3vw 0;
+    border-radius: 10px;
+  }
 
-      #error-message{
+  #heading {
+    font-size: 2vw;
+  }
 
-        font-size: 1vw;
-        margin-top: -1vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 25vw;
-      font-size: 1vw;
-      column-gap: 3vw;
-    }
+  .input-field {
 
-    button{
+    width: 25vw;
+    height: 3vw;
+    font-size: 1vw;
+  }
 
-        border-radius: 5px;
-    }
-  
+  #error-message {
+
+    font-size: 1vw;
+    margin-top: -1vw;
+    color: red;
+
+  }
+
+  #transactiontype-div {
+
+    width: 25vw;
+    font-size: 1vw;
+    column-gap: 3vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }
 
 
 
 
-@media screen and (min-width:2561px)  {
+@media screen and (min-width:2561px) {
 
-    .update-form{
-  
-      width: 30vw;
-      row-gap: 1vw;
-      padding: 3vw 0;
-      border-radius: 10px;
-    }
+  .update-form {
 
-      #heading{
-        font-size: 2vw;
-    }
-  
-    .input-field{
-  
-      width: 25vw;
-         height: 3vw;
-      font-size: 1vw;
-    }
+    width: 30vw;
+    row-gap: 1vw;
+    padding: 3vw 0;
+    border-radius: 10px;
+  }
 
-      #error-message{
+  #heading {
+    font-size: 2vw;
+  }
 
-        font-size: 1vw;
-        margin-top: -1vw;
-        color: red;
-       
-    }
-  
-    #transactiontype-div{
-  
-      width: 25vw;
-      font-size: 1vw;
-      column-gap: 3vw;
-    }
+  .input-field {
 
-    button{
+    width: 25vw;
+    height: 3vw;
+    font-size: 1vw;
+  }
 
-        border-radius: 5px;
-    }
-  
+  #error-message {
+
+    font-size: 1vw;
+    margin-top: -1vw;
+    color: red;
+
+  }
+
+  #transactiontype-div {
+
+    width: 25vw;
+    font-size: 1vw;
+    column-gap: 3vw;
+  }
+
+  button {
+
+    border-radius: 5px;
+  }
+
 }

@@ -24,8 +24,8 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-        localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+      localStorage.removeItem('user.email');
+      localStorage.removeItem('user.name');
       navigate("/login", { state: { from: location.pathname } });
       setLoading(false);
       return;
@@ -42,7 +42,7 @@ const Transaclist = () => {
         alert("Your session has expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.email');
         localStorage.removeItem('user.name');
         navigate("/login", { state: { from: location.pathname } }, { replace: true });
         return;
@@ -88,8 +88,8 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-        localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+      localStorage.removeItem('user.email');
+      localStorage.removeItem('user.name');
       navigate("/login", { state: { from: location.pathname } }, { replace: true });
       return;
     }
@@ -143,8 +143,8 @@ const Transaclist = () => {
       );
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-        localStorage.removeItem('user.email');
-        localStorage.removeItem('user.name');
+      localStorage.removeItem('user.email');
+      localStorage.removeItem('user.name');
       navigate("/login", { state: { from: location.pathname } }, { replace: true });
       return;
     }
@@ -161,7 +161,7 @@ const Transaclist = () => {
         alert("Your session has expired. Please login again.");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-          localStorage.removeItem('user.email');
+        localStorage.removeItem('user.email');
         localStorage.removeItem('user.name');
         navigate("/login", { state: { from: location.pathname } }, { replace: true });
         setTransactions([]);
