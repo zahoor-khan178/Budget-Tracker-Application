@@ -39,3 +39,5 @@ You can try the live application here:
 
 https://github.com/user-attachments/assets/ba605159-4ac3-4d1e-b1ad-a07a2ba076d4
 
+![image alt](https://github.com/zahoor-khan178/Budget-Tracker-Application/blob/05223f72965ded5da6443ec024d1e7c1735b2ca4/budget%20tracker%20demo%20images.png)
+
