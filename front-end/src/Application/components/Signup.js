@@ -28,10 +28,12 @@ const Signup = () => {
             return alert("name is required");
         if (!email)
             return alert("email is required");
-        if (!email.endsWith("@gmail.com")) return alert("Invalid Gmail");
+        if (!email.endsWith("@gmail.com")) 
+            return alert("Invalid Gmail");
         if (!password)
             return alert("password is required");
-        if (password.length !== 8) return alert("Password must be 8 characters long");
+        if (password.length < 6) 
+            return alert("Password must be at least 6 characters long");
         if (confirmpassword !== password)
             return alert("passwords do not match");
 
@@ -123,7 +125,7 @@ const Signup = () => {
                 className='form-input'
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                pattern=".{8}"
+                pattern=".{6,}"   //  at least 6 characters long
                 title="Password must be exactly 8 characters long"
                 required
             />
